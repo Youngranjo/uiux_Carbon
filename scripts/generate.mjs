@@ -88,12 +88,13 @@ const CONTAINER_CHILDREN = {
   'cds-structured-list': () => `<cds-structured-list-head><cds-structured-list-header-row><cds-structured-list-header-cell>Column A</cds-structured-list-header-cell></cds-structured-list-header-row></cds-structured-list-head><cds-structured-list-body><cds-structured-list-row><cds-structured-list-cell>Row 1</cds-structured-list-cell></cds-structured-list-row></cds-structured-list-body>`,
 };
 
-function demoMarkupForTag(tag) {
+function demoMarkupForTag(tag, outerName) {
+  const outer = outerName || tag.name;
   // Composed containers get curated children only — generic attribute-filling (e.g.
   // `value`/`name` falling back to the humanized tag name) produces nonsensical values
   // like name="Radio button group" that add noise without adding clarity.
   if (CONTAINER_CHILDREN[tag.name]) {
-    return `<${tag.name}>${CONTAINER_CHILDREN[tag.name]()}</${tag.name}>`;
+    return `<${outer}>${CONTAINER_CHILDREN[tag.name]()}</${outer}>`;
   }
 
   const attrs = sampleAttrs(tag);
@@ -109,7 +110,7 @@ function demoMarkupForTag(tag) {
     .join('');
   const bodyText = tag.hasDefaultSlot || !tag.slots?.length ? escapeHtml(label) : '';
 
-  return `<${tag.name}${attrStr ? ' ' + attrStr : ''}>${slotChildren}${bodyText}</${tag.name}>`;
+  return `<${outer}${attrStr ? ' ' + attrStr : ''}>${slotChildren}${bodyText}</${outer}>`;
 }
 
 // ---------- 1. core/components/<Tag>.html — one real, runnable HTML file per Web Component tag ----------
@@ -158,9 +159,7 @@ ${attrRows || '        <tr><td colspan="4">none documented</td></tr>'}
     </tbody>
   </table>
 
-  <script type="module">
-    import '../../assets/carbon-web-components.bundle.js';
-  </script>
+  <script src="../../assets/carbon-web-components.bundle.js"></script>
 </body>
 </html>
 `;
@@ -275,18 +274,23 @@ const indexFamilies = families
         name: tag.name,
         description: (tag.description || '').split('\n')[0],
         demoHtml: demoMarkupForTag(tag),
+        vueSnippet: demoMarkupForTag(tag, pascal),
         coreFile: `core/components/${pascal}.html`,
         vueFile: `vue/components/${pascal}.vue`,
         attrCount: (tag.attributes || []).length,
       };
     });
     const description = tagEntries[0]?.description || (reactExports.length ? `React: ${reactExports.slice(0, 3).join(', ')}` : '');
+    const reactSnippet = reactExports.length
+      ? `import { ${reactExports.slice(0, 4).join(', ')}${reactExports.length > 4 ? ', ...' : ''} } from './react/components/${folder}';\n\n// re-exports the real @carbon/react package (${reactExports.length} export${reactExports.length > 1 ? 's' : ''} total — see the full file)`
+      : `// ${folder} is only experimental (unstable_/preview_) in @carbon/react today.\n// Stable today via the real Web Component:\nimport '@carbon/web-components/es/components/${wcFolder}/index.js';`;
     return {
       folder,
       category: categorize(folder),
       description,
       reactExports,
       reactFile: reactExports.length || tags.length ? `react/components/${folder}.jsx` : null,
+      reactSnippet,
       wcFolder,
       tags: tagEntries,
     };

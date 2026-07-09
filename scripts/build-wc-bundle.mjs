@@ -33,7 +33,12 @@ const iconSizeRedirect = {
 await build({
   entryPoints: ['node_modules/@carbon/web-components/es/index.js'],
   bundle: true,
-  format: 'esm',
+  // IIFE (not 'esm') so this can be loaded with a plain <script src="...">, not
+  // <script type="module">. Module scripts are fetched under CORS rules that Chrome/Edge
+  // refuse for file:// URLs ("Cross origin requests are only supported for HTTP"), so
+  // double-clicking index.html instead of running a server left every custom element
+  // undefined and rendering as plain inline text — this is what fixes that.
+  format: 'iife',
   outfile: 'assets/carbon-web-components.bundle.js',
   minify: true,
   plugins: [iconSizeRedirect],
