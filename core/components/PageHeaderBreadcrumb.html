@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  cds-page-header-breadcrumb — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PageHeaderBreadcrumb — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-page-header-breadcrumb</code></h1>
+  <p>Page header Breadcrumb Bar.</p>
+
+  <div class="demo">
+    <cds-page-header-breadcrumb>Page Header Breadcrumb</cds-page-header-breadcrumb>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>border</code></td><td><code>boolean</code></td><td>true</td><td>Specify if breadcrumb bar has bottom border.</td></tr>
+        <tr><td><code>within-grid</code></td><td><code>boolean</code></td><td>false</td><td>Set to `true` if the breadcrumb bar is sitting within a grid
+(ie. when used in tandem with page-header-hero-image)</td></tr>
+        <tr><td><code>page-actions-flush</code></td><td><code>boolean</code></td><td>false</td><td>Set to `true` if page actions should be flush (no padding)</td></tr>
+        <tr><td><code>content-actions-flush</code></td><td><code>boolean</code></td><td>false</td><td>Set to `true` if content actions should be flush (no padding)</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

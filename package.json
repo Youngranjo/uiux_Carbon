@@ -1,0 +1,30 @@
+{
+  "name": "carbon",
+  "version": "1.0.0",
+  "description": "Carbon Design System component explorer — HTML/React/Vue sources generated from the real @carbon packages",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx serve .",
+    "extract": "node scripts/extract-manifest.mjs",
+    "bundle": "node scripts/build-wc-bundle.mjs",
+    "generate": "node scripts/generate.mjs && node scripts/generate-readmes.mjs",
+    "build": "npm run extract && npm run bundle && npm run generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@carbon/icons": "^11.83.0",
+    "@carbon/icons-react": "^11.83.0",
+    "@carbon/react": "^1.111.0",
+    "@carbon/styles": "^1.110.0",
+    "@carbon/web-components": "^2.58.0",
+    "lit": "^3.3.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}

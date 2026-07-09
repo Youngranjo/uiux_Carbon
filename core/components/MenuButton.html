@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  cds-menu-button — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MenuButton — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-menu-button</code></h1>
+  <p>Menu button.</p>
+
+  <div class="demo">
+    <cds-menu-button kind="primary" size="lg" menu-alignment="bottom">Menu Button</cds-menu-button>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>disabled</code></td><td><code>string</code></td><td></td><td>Specify whether the MenuButton should be disabled, or not.</td></tr>
+        <tr><td><code>kind</code></td><td><code>MENU_BUTTON_KIND</code></td><td>&quot;primary&quot;</td><td>Specify the type of button to be used as the base for the trigger button.</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td></td><td>Provide the label to be rendered on the trigger button.</td></tr>
+        <tr><td><code>menu-alignment</code></td><td><code>POPOVER_ALIGNMENT</code></td><td>&quot;bottom&quot;</td><td>Experimental property. Specify how the menu should align with the button element</td></tr>
+        <tr><td><code>menu-border</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the menu should have a border.</td></tr>
+        <tr><td><code>menu-background-token</code></td><td><code>MENU_BACKGROUND_TOKEN</code></td><td>&quot;layer&quot;</td><td>Specify the background token to use for the menu. Default is &#39;layer&#39;.</td></tr>
+        <tr><td><code>size</code></td><td><code>MENU_BUTTON_SIZE</code></td><td>&quot;lg&quot;</td><td>Specify the size of the button and menu.</td></tr>
+        <tr><td><code>tab-index</code></td><td><code>number</code></td><td>0</td><td>Specify the tabIndex of the button.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

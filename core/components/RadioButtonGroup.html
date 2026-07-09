@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  cds-radio-button-group — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RadioButtonGroup — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-radio-button-group</code></h1>
+  <p>Radio button group.</p>
+
+  <div class="demo">
+    <cds-radio-button-group label-position="right" orientation="horizontal">Radio Button Group</cds-radio-button-group>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>defaultSelected</code></td><td><code>string</code></td><td></td><td>The `value` attribute for the `&lt;input&gt;` for selection.</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the radio button group should be disabled.</td></tr>
+        <tr><td><code>label-position</code></td><td><code>RADIO_BUTTON_LABEL_POSITION</code></td><td>&quot;right&quot;</td><td>The label position.</td></tr>
+        <tr><td><code>legend-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The label position.</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td></td><td>The helper text.</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is currently in warning state</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the text that is displayed when the control is in warning state</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the currently value is invalid.</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is invalid.</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td></td><td>The `name` attribute for the `&lt;input&gt;` for selection.</td></tr>
+        <tr><td><code>orientation</code></td><td><code>RADIO_BUTTON_ORIENTATION</code></td><td>&quot;horizontal&quot;</td><td>The orientation to lay out radio buttons.</td></tr>
+        <tr><td><code>readOnly</code></td><td><code>boolean</code></td><td>false</td><td>Controls the readonly state of the radio button group.</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>`true` to specify if input selection in group is required.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td></td><td>The `value` attribute for the `&lt;input&gt;` for selection.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

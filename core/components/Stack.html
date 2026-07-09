@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  cds-stack — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Stack — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-stack</code></h1>
+  <p>The Stack component is a useful layout utility in a component-based model.
+This allows components to not use margin and instead delegate the
+responsibility of positioning and layout to parent components.
+
+In the case of the Stack component, it uses the spacing scale from the
+Design Language in order to determine how much space there should be between
+items rendered by the Stack component. It also supports a custom `gap` prop
+which will allow a user to provide a custom value for the gap of the layout.
+
+This component supports both horizontal and vertical orientations.</p>
+
+  <div class="demo">
+    <cds-stack orientation="vertical">Stack</cds-stack>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>orientation</code></td><td><code>STACK_ORIENTATION</code></td><td>&quot;vertical&quot;</td><td>Specify the orientation of them items in the Stack</td></tr>
+        <tr><td><code>gap</code></td><td><code>string</code></td><td></td><td>Provide either a custom value or a step from the spacing scale to be used
+as the gap in the layout</td></tr>
+        <tr><td><code>use-custom-gap-value</code></td><td><code>boolean</code></td><td>false</td><td>Turn on when passing in custom value to &#39;gap&#39; attribute (ie. gap=&quot;2rem&quot;)</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

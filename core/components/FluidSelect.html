@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  cds-fluid-select — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FluidSelect — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-fluid-select</code></h1>
+  <p>Fluid text select.</p>
+
+  <div class="demo">
+    <cds-fluid-select id="select" required-validity-message="Please fill out this field.">Fluid Select</cds-fluid-select>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>isFluid</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the textarea is fluid or not</td></tr>
+        <tr><td><code>autofocus</code></td><td><code>boolean</code></td><td>false</td><td>Sets the select to be focussed automatically on page load. Defaults to false</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Controls the disabled state of the select</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The helper text.</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the label should be hidden, or not</td></tr>
+        <tr><td><code>id</code></td><td><code>string</code></td><td>&quot;select&quot;</td><td>ID to link the `label` and `select`</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the currently value is invalid.</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is invalid.</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the currently value is warn.</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is warn.</td></tr>
+        <tr><td><code>label-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The label text.</td></tr>
+        <tr><td><code>label-styles-disable</code></td><td><code>boolean</code></td><td>false</td><td>Specify if you want to disable the default label styling</td></tr>
+        <tr><td><code>inline</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether you want the inline version of this control</td></tr>
+        <tr><td><code>multiple</code></td><td><code>boolean</code></td><td></td><td>`true` to enable multiple selection.</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the select in the `FormData`</td></tr>
+        <tr><td><code>pattern</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Pattern to validate the select against for HTML validity checking</td></tr>
+        <tr><td><code>placeholder</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Value to display when the select has an empty `value`</td></tr>
+        <tr><td><code>readonly</code></td><td><code>boolean</code></td><td>false</td><td>Controls the readonly state of the select</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>Boolean property to set the required status</td></tr>
+        <tr><td><code>required-validity-message</code></td><td><code>string</code></td><td>&quot;Please fill out this field.&quot;</td><td>The special validity message for `required`.</td></tr>
+        <tr><td><code>selectedIndex</code></td><td><code>number</code></td><td></td><td>The selected index.</td></tr>
+        <tr><td><code>size</code></td><td><code>INPUT_SIZE | undefined</code></td><td></td><td>The input box size.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The value of the text area.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

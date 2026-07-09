@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  cds-dismissible-tag — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DismissibleTag — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-dismissible-tag</code></h1>
+  <p>Dismissible Tag.</p>
+
+  <div class="demo">
+    <cds-dismissible-tag size="md" title="Clear filter" type="gray">Dismissible Tag</cds-dismissible-tag>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>dismiss-tooltip-alignment</code></td><td><code>string</code></td><td>&quot;bottom&quot;</td><td>Specify the tooltip alignment for the dismiss button</td></tr>
+        <tr><td><code>dismiss-tooltip-label</code></td><td><code>string | undefined</code></td><td></td><td>Provide a custom tooltip label for the dismiss button</td></tr>
+        <tr><td><code>tag-title</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide a custom `title` to be inserted in the tag.</td></tr>
+        <tr><td><code>text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide text to be rendered inside of a the tag.</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td>&quot;Clear filter&quot;</td><td>Text to show on filter tag &quot;clear&quot; buttons. Corresponds to the attribute with the same name</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the tag should be disabled</td></tr>
+        <tr><td><code>filter</code></td><td><code>boolean</code></td><td>false</td><td>Determine if is a filter/chip</td></tr>
+        <tr><td><code>has-custom-icon</code></td><td><code>boolean</code></td><td>false</td><td>`true` if there is a custom icon.</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>true</td><td>`true` if the tag should be open.</td></tr>
+        <tr><td><code>size</code></td><td><code>TAG_SIZE</code></td><td>&quot;md&quot;</td><td>The size of the tag.</td></tr>
+        <tr><td><code>type</code></td><td><code>TAG_TYPE</code></td><td>&quot;gray&quot;</td><td>The type of the tag.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+  cds-dropdown — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dropdown — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-dropdown</code></h1>
+  <p>Dropdown.</p>
+
+  <div class="demo">
+    <cds-dropdown size="md" direction="bottom" required-validity-message="Please fill out this field.">Dropdown</cds-dropdown>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>aria-label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>&#39;aria-label&#39; of the ListBox component.
+Specify a label to be read by screen readers on the container node</td></tr>
+        <tr><td><code>direction</code></td><td><code>DROPDOWN_DIRECTION</code></td><td>&quot;bottom&quot;</td><td>Specify the direction of the dropdown. Can be either top or bottom.</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether auto align functionality should be applied</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this dropdown should be disabled.</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The helper text.</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the title text should be hidden or not</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is invalid.</td></tr>
+        <tr><td><code>title-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the title text that will be read by a screen reader when visiting this control</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the dropdown in the `FormData`</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this dropdown should be open.</td></tr>
+        <tr><td><code>read-only</code></td><td><code>boolean</code></td><td>false</td><td>Whether or not the Dropdown is readonly</td></tr>
+        <tr><td><code>isFluid</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the dropdown is fluid or not</td></tr>
+        <tr><td><code>size</code></td><td><code>DROPDOWN_SIZE</code></td><td>&quot;md&quot;</td><td>Dropdown size.</td></tr>
+        <tr><td><code>toggle-label-closed</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `aria-label` attribute for the UI indicating the closed state.</td></tr>
+        <tr><td><code>toggle-label-open</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `aria-label` attribute for the UI indicating the open state.</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Generic label that will be used as the textual representation of what this field is for</td></tr>
+        <tr><td><code>type</code></td><td><code>DROPDOWN_TYPE</code></td><td>&quot;&quot;</td><td>`true` if this dropdown should use the inline UI variant.</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is currently in warning state</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the text that is displayed when the control is in warning state</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>`true` to show the UI of the invalid state.</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the value is required.</td></tr>
+        <tr><td><code>required-validity-message</code></td><td><code>string</code></td><td>&quot;Please fill out this field.&quot;</td><td>The special validity message for `required`.</td></tr>
+        <tr><td><code>validity-message</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The validity message.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The value of the selected item.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

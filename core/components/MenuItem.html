@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  cds-menu-item — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MenuItem — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-menu-item</code></h1>
+  <p>Menu Item.</p>
+
+  <div class="demo">
+    <cds-menu-item kind="default" boundaries="{&quot;x&quot;:-1,&quot;y&quot;:-1}" aria-checked="this.getAttribute(&#39;selected&#39;) ?? &#39;false&#39;">Menu Item</cds-menu-item>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>label</code></td><td><code>string</code></td><td></td><td>Label for the menu item.</td></tr>
+        <tr><td><code>shortcut</code></td><td><code>string</code></td><td></td><td>Shortcut for the menu item.</td></tr>
+        <tr><td><code>disabled</code></td><td><code>string</code></td><td></td><td>Disabled property for the menu item.</td></tr>
+        <tr><td><code>danger-description</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the message read by screen readers for the danger menu item variant</td></tr>
+        <tr><td><code>submenuOpen</code></td><td><code>boolean</code></td><td>false</td><td>Whether the menu submen for an item is open or not.</td></tr>
+        <tr><td><code>kind</code></td><td><code>MENU_ITEM_KIND</code></td><td>&quot;default&quot;</td><td></td></tr>
+        <tr><td><code>boundaries</code></td><td><code>{ x: number | [number, number]; y: number | [number, number]; }</code></td><td>{&quot;x&quot;:-1,&quot;y&quot;:-1}</td><td>Menu boundaries.</td></tr>
+        <tr><td><code>aria-checked</code></td><td><code>string | null</code></td><td>&quot;this.getAttribute(&#39;selected&#39;) ?? &#39;false&#39;&quot;</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

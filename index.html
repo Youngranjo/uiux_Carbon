@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carbon Design System — Component Explorer</title>
+<link rel="stylesheet" href="assets/carbon-styles.min.css" />
+<style>
+  :root {
+    --blue-60: #0f62fe;
+    --blue-70: #0043ce;
+    --gray-100: #161616;
+    --gray-90: #262626;
+    --gray-80: #393939;
+    --gray-70: #525252;
+    --gray-60: #6f6f6f;
+    --gray-30: #c6c6c6;
+    --gray-20: #e0e0e0;
+    --gray-10: #f4f4f4;
+    --white: #ffffff;
+    --sidebar-w: 300px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    color: var(--gray-100);
+    background: var(--white);
+  }
+  code, pre, .mono { font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; }
+
+  header {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; gap: 1rem;
+    height: 48px; padding: 0 1rem;
+    background: var(--gray-100); color: var(--white);
+  }
+  header .brand { font-weight: 600; font-size: 14px; white-space: nowrap; }
+  header .brand small { color: var(--gray-30); font-weight: 400; margin-left: .5rem; }
+  header .spacer { flex: 1; }
+  header .install {
+    display: flex; align-items: center; gap: .5rem;
+    background: #000; border-radius: 4px; padding: 4px 10px;
+    font-size: 12px; color: #24a148;
+  }
+  header .install button {
+    background: none; border: none; color: var(--gray-30); cursor: pointer; font-size: 12px;
+    padding: 2px 6px;
+  }
+  header .install button:hover { color: var(--white); }
+
+  .layout { display: flex; min-height: calc(100vh - 48px); }
+
+  aside {
+    width: var(--sidebar-w); flex: none;
+    border-right: 1px solid var(--gray-20);
+    height: calc(100vh - 48px); position: sticky; top: 48px;
+    overflow-y: auto; padding-bottom: 2rem;
+  }
+  .search-box { padding: 12px; border-bottom: 1px solid var(--gray-20); }
+  .search-box input {
+    width: 100%; height: 40px; border: 1px solid var(--gray-30); background: var(--gray-10);
+    padding: 0 12px; font-size: 14px; font-family: inherit; outline: none;
+  }
+  .search-box input:focus { border-color: var(--blue-60); }
+  .stats { padding: 8px 12px; font-size: 12px; color: var(--gray-60); border-bottom: 1px solid var(--gray-20); }
+  .cat-group { border-bottom: 1px solid var(--gray-20); }
+  .cat-title {
+    font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--gray-70); padding: 12px 12px 6px;
+  }
+  .cat-items { list-style: none; margin: 0; padding: 0 0 8px; }
+  .cat-items li a {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+    padding: 6px 12px 6px 20px; font-size: 14px; color: var(--gray-100);
+    text-decoration: none; border-left: 3px solid transparent;
+  }
+  .cat-items li a:hover { background: var(--gray-10); }
+  .cat-items li a.active { background: #edf5ff; border-left-color: var(--blue-60); color: var(--blue-70); font-weight: 600; }
+  .cat-items li a .n { color: var(--gray-60); font-size: 11px; }
+  .cat-items li a.wc-only .n { color: #8a3800; }
+
+  main { flex: 1; min-width: 0; padding: 2rem 2.5rem 6rem; max-width: 1100px; }
+  .welcome h1 { font-size: 2.5rem; font-weight: 300; margin: 0 0 .25rem; }
+  .welcome p.lead { font-size: 1.125rem; color: var(--gray-70); max-width: 640px; }
+  .install-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .install-card { border: 1px solid var(--gray-20); padding: 1rem; }
+  .install-card h3 { margin: 0 0 .5rem; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--gray-70); }
+  .install-card pre { background: var(--gray-100); color: #24a148; padding: 10px 12px; overflow-x: auto; font-size: 13px; margin: 0; }
+  .stat-row { display: flex; gap: 2rem; margin: 2rem 0; flex-wrap: wrap; }
+  .stat { border-left: 2px solid var(--blue-60); padding-left: 12px; }
+  .stat .num { font-size: 2rem; font-weight: 300; line-height: 1; }
+  .stat .lbl { font-size: 12px; color: var(--gray-60); text-transform: uppercase; letter-spacing: .04em; }
+
+  .crumb { font-size: 12px; color: var(--gray-60); margin-bottom: 4px; }
+  .detail h1 { font-size: 2rem; font-weight: 400; margin: 0 0 .25rem; }
+  .detail .desc { color: var(--gray-70); margin-bottom: 1.5rem; max-width: 640px; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 6px; }
+  .badge.react { background: #e8f0fe; color: #0043ce; }
+  .badge.wc { background: #defbe6; color: #0e6027; }
+  .badge.preview { background: #fff8e1; color: #8a3800; }
+
+  .tag-block { border: 1px solid var(--gray-20); margin-bottom: 1.5rem; }
+  .tag-block .tag-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; background: var(--gray-10); border-bottom: 1px solid var(--gray-20);
+  }
+  .tag-block .tag-head code { font-size: 13px; font-weight: 600; }
+  .tag-block .tag-desc { font-size: 12px; color: var(--gray-60); }
+  .demo-area { padding: 2rem; display: flex; align-items: center; min-height: 72px; background: var(--white); }
+
+  .tabs { display: flex; border-bottom: 1px solid var(--gray-20); }
+  .tabs button {
+    font-family: inherit; font-size: 13px; padding: 8px 16px; background: none; border: none;
+    border-bottom: 2px solid transparent; cursor: pointer; color: var(--gray-70);
+  }
+  .tabs button.active { border-bottom-color: var(--blue-60); color: var(--gray-100); font-weight: 600; }
+  .code-panel { display: none; }
+  .code-panel.active { display: block; }
+  .code-panel pre {
+    margin: 0; padding: 14px 16px; background: var(--gray-100); color: #f4f4f4;
+    font-size: 12.5px; overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+  }
+  .code-panel .links { padding: 8px 16px; border-top: 1px solid var(--gray-20); font-size: 12px; }
+  .code-panel .links a { color: var(--blue-60); text-decoration: none; margin-right: 12px; }
+  .code-panel .links a:hover { text-decoration: underline; }
+
+  .empty-note { border: 1px dashed var(--gray-30); padding: 1.5rem; color: var(--gray-70); font-size: 14px; }
+  footer.page-footer { padding: 2rem 2.5rem; color: var(--gray-60); font-size: 12px; border-top: 1px solid var(--gray-20); }
+  a.back { font-size: 13px; color: var(--blue-60); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Carbon Design System <small>Component Explorer · 실제 @carbon 공식 소스 기반</small></div>
+  <div class="spacer"></div>
+  <div class="install">
+    <span id="install-cmd" class="mono">npm install --save @carbon/react</span>
+    <button id="copy-install" title="복사">Copy</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="search-box">
+      <input id="search" type="text" placeholder="컴포넌트 검색 (예: Button, DataTable)" autocomplete="off" />
+    </div>
+    <div class="stats" id="stats"></div>
+    <nav id="nav"></nav>
+  </aside>
+
+  <main id="main">
+    <!-- filled by renderWelcome() / renderDetail() -->
+  </main>
+</div>
+
+<footer class="page-footer">
+  공식 문서: <a class="back" href="https://carbondesignsystem.com/developing/frameworks/react/" target="_blank" rel="noopener">carbondesignsystem.com/developing/frameworks/react</a>
+  · 이 페이지의 라이브 데모는 <code>@carbon/web-components</code> 실제 소스를 esbuild로 번들링해 오프라인으로 로드합니다 (재현/모사 아님).
+</footer>
+
+<script type="module">
+  import './assets/carbon-web-components.bundle.js';
+</script>
+<script src="assets/index-data.js"></script>
+<script>
+(function () {
+  const DATA = window.__CARBON_INDEX__;
+  const families = DATA.families;
+  const nav = document.getElementById('nav');
+  const main = document.getElementById('main');
+  const searchInput = document.getElementById('search');
+  const statsEl = document.getElementById('stats');
+
+  const totalTags = DATA.generatedTagCount;
+  const totalReactExports = families.reduce((n, f) => n + f.reactExports.length, 0);
+  statsEl.textContent = `${families.length}개 컴포넌트 패밀리 · Web Component 태그 ${totalTags}개 · React export ${totalReactExports}개`;
+
+  const categories = {};
+  for (const f of families) {
+    (categories[f.category] ??= []).push(f);
+  }
+  const categoryOrder = ['Buttons', 'Forms & inputs', 'Data display', 'Content layout', 'Navigation & shell',
+    'Overlays', 'Feedback & status', 'Layout', 'Typography & content', 'Skeletons', 'AI', 'Utilities', 'Other'];
+
+  function buildNav(filter) {
+    nav.innerHTML = '';
+    const q = (filter || '').trim().toLowerCase();
+    for (const cat of categoryOrder) {
+      const items = (categories[cat] || []).filter((f) => !q || f.folder.toLowerCase().includes(q));
+      if (!items.length) continue;
+      const group = document.createElement('div');
+      group.className = 'cat-group';
+      const title = document.createElement('div');
+      title.className = 'cat-title';
+      title.textContent = cat;
+      group.appendChild(title);
+      const ul = document.createElement('ul');
+      ul.className = 'cat-items';
+      for (const f of items) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${f.folder}`;
+        a.dataset.folder = f.folder;
+        const isWcOnly = f.reactExports.length === 0 && f.tags.length > 0;
+        if (isWcOnly) a.classList.add('wc-only');
+        a.innerHTML = `<span>${f.folder}</span><span class="n">${isWcOnly ? 'WC only' : f.tags.length ? f.tags.length + ' tag' : 'React'}</span>`;
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+      group.appendChild(ul);
+      nav.appendChild(group);
+    }
+  }
+
+  function renderWelcome() {
+    document.title = 'Carbon Design System — Component Explorer';
+    main.innerHTML = `
+      <div class="welcome">
+        <h1>Carbon Design System</h1>
+        <p class="lead">IBM의 오픈소스 디자인 시스템 Carbon을 HTML(Web Components) · React · Vue 세 가지 소스로 정리한 로컬 스타일 가이드입니다. 왼쪽에서 컴포넌트를 선택하세요.</p>
+
+        <div class="stat-row">
+          <div class="stat"><div class="num">${families.length}</div><div class="lbl">Component families</div></div>
+          <div class="stat"><div class="num">${totalTags}</div><div class="lbl">Web Component tags</div></div>
+          <div class="stat"><div class="num">${totalReactExports}</div><div class="lbl">React named exports</div></div>
+        </div>
+
+        <div class="install-cards">
+          <div class="install-card">
+            <h3>React (공식)</h3>
+            <pre>npm install --save @carbon/react @carbon/styles</pre>
+          </div>
+          <div class="install-card">
+            <h3>Web Components (공식, HTML/Vue 공용)</h3>
+            <pre>npm install --save @carbon/web-components @carbon/styles</pre>
+          </div>
+          <div class="install-card">
+            <h3>Vue (커뮤니티 가이드)</h3>
+            <pre>npm install --save @carbon/web-components @carbon/styles
+# main.js
+app.config.compilerOptions.isCustomElement =
+  (tag) => tag.startsWith('cds-')</pre>
+          </div>
+        </div>
+
+        <p style="color:var(--gray-70); font-size:14px; max-width:640px;">
+          <strong>폴더 구조</strong> — <code>core/</code>는 프레임워크 없이 쓰는 순수 HTML(Web Components),
+          <code>react/</code>는 <code>@carbon/react</code> 재export 래퍼, <code>vue/</code>는 Web Components를
+          감싼 얇은 Vue SFC 래퍼입니다. 세 폴더 모두 <code>node_modules</code>에 실제로 설치된 IBM 공식 패키지
+          소스를 그대로 사용하며, 재구현된 코드가 아닙니다.
+        </p>
+      </div>
+    `;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function reactSnippet(f) {
+    if (f.reactExports.length) {
+      return `import { ${f.reactExports.slice(0, 4).join(', ')}${f.reactExports.length > 4 ? ', ...' : ''} } from './react/components/${f.folder}';\n\n// re-exports the real @carbon/react package (see full file for all ${f.reactExports.length} exports)`;
+    }
+    return `// ${f.folder} is only experimental (unstable_/preview_) in @carbon/react today.\n// Stable today via the real Web Component:\nimport '@carbon/web-components/es/components/${f.wcFolder}/index.js';`;
+  }
+
+  function renderDetail(folder) {
+    const f = families.find((x) => x.folder === folder);
+    if (!f) return renderWelcome();
+    document.title = `${f.folder} — Carbon Component Explorer`;
+
+    const badges = [
+      f.reactExports.length ? `<span class="badge react">React · ${f.reactExports.length} export${f.reactExports.length > 1 ? 's' : ''}</span>` : '',
+      f.tags.length ? `<span class="badge wc">Web Component · ${f.tags.length} tag${f.tags.length > 1 ? 's' : ''}</span>` : '',
+      !f.reactExports.length && f.tags.length ? `<span class="badge preview">experimental in @carbon/react</span>` : '',
+    ].join('');
+
+    const tagBlocks = f.tags.map((t) => `
+      <div class="tag-block">
+        <div class="tag-head">
+          <code>&lt;${t.name}&gt;</code>
+          <span class="tag-desc">${escapeHtml(t.description)} · attribute ${t.attrCount}개</span>
+        </div>
+        <div class="demo-area">${t.demoHtml}</div>
+        <div class="code-panel active">
+          <pre class="mono">${escapeHtml(t.demoHtml)}</pre>
+          <div class="links">
+            <a href="${t.coreFile}" target="_blank">HTML 소스 열기 →</a>
+            <a href="${t.vueFile}" target="_blank">Vue 소스 열기 →</a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    main.innerHTML = `
+      <div class="crumb"><a class="back" href="#">← 전체 목록</a> / ${f.category}</div>
+      <div class="detail">
+        <h1>${f.folder}</h1>
+        <div class="desc">${badges}</div>
+        ${f.tags.length ? `<h3 style="font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-70);">Web Component 라이브 데모</h3>${tagBlocks}` : ''}
+
+        <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-70);">React</h3>
+        <div class="tag-block">
+          <div class="code-panel active">
+            <pre class="mono">${escapeHtml(reactSnippet(f))}</pre>
+            <div class="links">
+              ${f.reactFile ? `<a href="${f.reactFile}" target="_blank">React 소스 열기 (react/components/${f.folder}.jsx) →</a>` : ''}
+            </div>
+          </div>
+        </div>
+
+        ${!f.tags.length && !f.reactExports.length ? '<div class="empty-note">이 항목은 React 컨텍스트/유틸리티(ErrorBoundary, FeatureFlags 등)로, 시각적 컴포넌트가 아닙니다.</div>' : ''}
+      </div>
+    `;
+  }
+
+  function setActive(folder) {
+    document.querySelectorAll('.cat-items a').forEach((a) => a.classList.toggle('active', a.dataset.folder === folder));
+  }
+
+  function route() {
+    const folder = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (!folder) { renderWelcome(); setActive(null); return; }
+    renderDetail(folder);
+    setActive(folder);
+  }
+
+  buildNav('');
+  window.addEventListener('hashchange', route);
+  route();
+
+  searchInput.addEventListener('input', (e) => buildNav(e.target.value));
+
+  document.getElementById('copy-install').addEventListener('click', () => {
+    navigator.clipboard?.writeText('npm install --save @carbon/react @carbon/styles');
+    const btn = document.getElementById('copy-install');
+    const prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => (btn.textContent = prev), 1200);
+  });
+})();
+</script>
+</body>
+</html>

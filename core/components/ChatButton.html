@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  cds-chat-button — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ChatButton — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-chat-button</code></h1>
+  <p>Chat Button</p>
+
+  <div class="demo">
+    <cds-chat-button kind="primary" size="lg">Chat Button</cds-chat-button>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the button should be disabled.</td></tr>
+        <tr><td><code>kind</code></td><td><code>CHAT_BUTTON_KIND</code></td><td>&quot;primary&quot;</td><td>Specify whether the `ChatButton` should be disabled</td></tr>
+        <tr><td><code>size</code></td><td><code>CHAT_BUTTON_SIZE</code></td><td>&quot;lg&quot;</td><td>Chat button size.</td></tr>
+        <tr><td><code>is-quick-action</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the `ChatButton` should be rendered as a quick action button</td></tr>
+        <tr><td><code>is-selected</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the quick action `ChatButton` should be rendered as selected. This disables the input</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

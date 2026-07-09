@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  cds-checkbox-group — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CheckboxGroup — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-checkbox-group</code></h1>
+  <p>Check box.</p>
+
+  <div class="demo">
+    <cds-checkbox-group orientation="vertical">Checkbox Group</cds-checkbox-group>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>aria-labelledby</code></td><td><code>string</code></td><td></td><td>fieldset `aria-labelledby`</td></tr>
+        <tr><td><code>disabled</code></td><td><code>string</code></td><td></td><td>Specify whether the form group is currently disabled</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td></td><td>Provide text for the form group for additional help</td></tr>
+        <tr><td><code>invalid</code></td><td><code>string</code></td><td></td><td>Specify whether the form group is currently invalid</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td></td><td>Provide the text that is displayed when the form group is in an invalid state</td></tr>
+        <tr><td><code>legend-id</code></td><td><code>string</code></td><td></td><td>Provide id for the fieldset &lt;legend&gt; which corresponds to the fieldset
+`aria-labelledby`</td></tr>
+        <tr><td><code>legend-text</code></td><td><code>string</code></td><td></td><td>Provide the text to be rendered inside of the fieldset &lt;legend&gt;</td></tr>
+        <tr><td><code>orientation</code></td><td><code>CHECKBOX_ORIENTATION</code></td><td>&quot;vertical&quot;</td><td>Provide the orientation for how the checkbox should be displayed</td></tr>
+        <tr><td><code>readonly</code></td><td><code>boolean</code></td><td>false</td><td>Whether the CheckboxGroup should be read-only</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the form group is currently in warning state</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the text that is displayed when the form group is in warning state</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

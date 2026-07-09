@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  cds-table — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Table — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-table</code></h1>
+  <p>Data table.</p>
+
+  <div class="demo">
+    <cds-table size="lg" filterRows="(rowText: string, searchString: string) =&gt;\n    rowText.toLowerCase().indexOf(searchString.toLowerCase()) &lt; 0" headerCount="0">Table</cds-table>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>batch-expansion</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this table should support batch expansion</td></tr>
+        <tr><td><code>expandable</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the rows should be able to be expandable</td></tr>
+        <tr><td><code>filterRows</code></td><td><code>(rowText: string, searchString: string) =&gt; boolean</code></td><td>&quot;(rowText: string, searchString: string) =&gt;\n    rowText.toLowerCase().indexOf(searchString.toLowerCase()) &lt; 0&quot;</td><td>The method used when filtering the table with the search bar.
+Can be replaced with custom method.</td></tr>
+        <tr><td><code>headerCount</code></td><td><code>number</code></td><td>0</td><td>The total headers</td></tr>
+        <tr><td><code>is-selectable</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this table contains selectable rows</td></tr>
+        <tr><td><code>is-sortable</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this table should support sorting.</td></tr>
+        <tr><td><code>locale</code></td><td><code>string</code></td><td>&quot;en&quot;</td><td>The table size.</td></tr>
+        <tr><td><code>overflow-menu-on-hover</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the overflow menu (if it exists) should be shown always, or only on hover</td></tr>
+        <tr><td><code>radio</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control should be a radio button or inline checkbox</td></tr>
+        <tr><td><code>size</code></td><td><code>TABLE_SIZE</code></td><td>&quot;lg&quot;</td><td>The table size.</td></tr>
+        <tr><td><code>use-static-width</code></td><td><code>boolean</code></td><td>false</td><td>TODO: Uncomment when Carbon fully implements sticky header
+Specify whether the header should be sticky.
+Still experimental: may not work with every combination of table props</td></tr>
+        <tr><td><code>use-zebra-styles</code></td><td><code>boolean</code></td><td>false</td><td>true to add useZebraStyles striping.</td></tr>
+        <tr><td><code>with-header</code></td><td><code>string</code></td><td></td><td></td></tr>
+        <tr><td><code>with-row-ai-labels</code></td><td><code>boolean</code></td><td>false</td><td>true if AI Labels are added in the rows</td></tr>
+        <tr><td><code>with-row-slugs</code></td><td><code>boolean</code></td><td>false</td><td>true if slugs are added in the rows</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  cds-side-nav-menu — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SideNavMenu — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-side-nav-menu</code></h1>
+  <p>Side nav menu.</p>
+
+  <div class="demo">
+    <cds-side-nav-menu>Side Nav Menu</cds-side-nav-menu>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>active</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the menu has active menu item.</td></tr>
+        <tr><td><code>expanded</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the menu should be open.</td></tr>
+        <tr><td><code>large</code></td><td><code>boolean</code></td><td>false</td><td>Specify if this is a large variation of the side nav menu</td></tr>
+        <tr><td><code>force-collapsed</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the menu should be forced collapsed upon side nav&#39;s expanded state.</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The title text.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

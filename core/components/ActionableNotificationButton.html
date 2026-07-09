@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  cds-actionable-notification-button — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ActionableNotificationButton — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-actionable-notification-button</code></h1>
+  <p>Actionable notification action button.</p>
+
+  <div class="demo">
+    <cds-actionable-notification-button kind="primary" size="lg" type="button">Actionable Notification Button</cds-actionable-notification-button>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>autofocus</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the button should have input focus when the page loads.</td></tr>
+        <tr><td><code>batch-action</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the button is being used within a data table batch action toolbar</td></tr>
+        <tr><td><code>button-class-name</code></td><td><code>string</code></td><td></td><td>Specify an optional className to be added to your Button</td></tr>
+        <tr><td><code>danger-description</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the message read by screen readers for the danger button variants</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the Button should be disabled, or not</td></tr>
+        <tr><td><code>download</code></td><td><code>string</code></td><td></td><td>The default file name, used if this button is rendered as `&lt;a&gt;`.</td></tr>
+        <tr><td><code>has-main-content</code></td><td><code>boolean</code></td><td>false</td><td>`true` if there is a non-icon content.</td></tr>
+        <tr><td><code>href</code></td><td><code>string</code></td><td></td><td>Optionally specify an href for your Button to become an `&lt;a&gt;` element</td></tr>
+        <tr><td><code>hreflang</code></td><td><code>string</code></td><td></td><td>The language of what `href` points to, if this button is rendered as `&lt;a&gt;`.</td></tr>
+        <tr><td><code>isExpressive</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the Button is expressive, or not.</td></tr>
+        <tr><td><code>isSelected</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the Button is currently selected. Only applies to the icon only Ghost variant.</td></tr>
+        <tr><td><code>kind</code></td><td><code>BUTTON_KIND</code></td><td>&quot;primary&quot;</td><td>Specify the kind of Button you want to create. `primary`, `secondary`,`tertiary`, `ghost`, `danger`, `danger-tertiary`, `danger-ghost`</td></tr>
+        <tr><td><code>link-role</code></td><td><code>string</code></td><td>&quot;button&quot;</td><td>The a11y role for `&lt;a&gt;`.</td></tr>
+        <tr><td><code>openTooltip</code></td><td><code>boolean</code></td><td>false</td><td>Boolean to determine if tooltip is open.</td></tr>
+        <tr><td><code>ping</code></td><td><code>string</code></td><td></td><td>URLs to ping, if this button is rendered as `&lt;a&gt;`.</td></tr>
+        <tr><td><code>rel</code></td><td><code>string</code></td><td></td><td>Optionally specify a `rel` when using an `&lt;a&gt;` element.</td></tr>
+        <tr><td><code>size</code></td><td><code>string</code></td><td>&quot;lg&quot;</td><td>Specify the size of the button, from the following list of sizes: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`</td></tr>
+        <tr><td><code>tab-index</code></td><td><code>number</code></td><td>0</td><td>Optional prop to specify the tabIndex of the Button</td></tr>
+        <tr><td><code>target</code></td><td><code>string</code></td><td></td><td>Optionally specify a `target` when using an `&lt;a&gt;` element.</td></tr>
+        <tr><td><code>tooltip-alignment</code></td><td><code>BUTTON_TOOLTIP_ALIGNMENT</code></td><td>&quot;&quot;</td><td>Specify the alignment of the tooltip to the icon-only button.
+Can be one of: start, center, or end.</td></tr>
+        <tr><td><code>tooltip-position</code></td><td><code>BUTTON_TOOLTIP_POSITION</code></td><td>&quot;top&quot;</td><td>Specify the direction of the tooltip for icon-only buttons.
+Can be either top, right, bottom, or left.</td></tr>
+        <tr><td><code>tooltip-text</code></td><td><code>string</code></td><td></td><td>If rendering an `icon-only` button through `slot=&quot;icon&quot;`, Specify the text to be rendered in the tooltip. If using
+`cds-badge-indicator` with no count prop then the text should include describing there is a new notification.</td></tr>
+        <tr><td><code>type</code></td><td><code>BUTTON_TYPE</code></td><td>&quot;button&quot;</td><td>Optional prop to specify the type of the Button.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

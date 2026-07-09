@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  cds-date-picker — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DatePicker — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-date-picker</code></h1>
+  <p>Date picker.</p>
+
+  <div class="demo">
+    <cds-date-picker>Date Picker</cds-date-picker>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>allow-input</code></td><td><code>boolean</code></td><td>true</td><td>flatpickr prop passthrough. Allows the user to enter a date directly into the input field</td></tr>
+        <tr><td><code>close-on-select</code></td><td><code>boolean</code></td><td>true</td><td>flatpickr prop passthrough. Controls whether the calendar dropdown closes upon selection.</td></tr>
+        <tr><td><code>date-format</code></td><td><code>string</code></td><td></td><td>The date format to let Flatpickr use.</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Controls the disabled state of the input</td></tr>
+        <tr><td><code>enabled-range</code></td><td><code>string</code></td><td></td><td>The date range that a user can pick in calendar dropdown.</td></tr>
+        <tr><td><code>max-date</code></td><td><code>string</code></td><td></td><td>The maximum date that a user can start picking from.</td></tr>
+        <tr><td><code>min-date</code></td><td><code>string</code></td><td></td><td>The minimum date that a user can start picking from.</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the input in the `FormData`</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the date picker should be open.</td></tr>
+        <tr><td><code>readonly</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the component should be read-only</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td></td><td>The date(s) in ISO8601 format (date portion only), for range mode, &#39;/&#39; is used for separate start/end dates.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

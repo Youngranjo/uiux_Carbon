@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  cds-column — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Column — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-column</code></h1>
+  <p>The column component.</p>
+
+  <div class="demo">
+    <cds-column>Column</cds-column>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>sm</code></td><td><code>ColumnSpec | undefined</code></td><td></td><td>Specify column size
+Keys sm, md, lg, xlg, max
+
+Values
+- N, P, { span:N start:S}, { start: S, end: E}
+N = number
+P = percentage
+S = Start column
+E = End column (does not reach e.g. start 1 end 3 is same as start 1 span 2)</td></tr>
+        <tr><td><code>md</code></td><td><code>ColumnSpec | undefined</code></td><td></td><td></td></tr>
+        <tr><td><code>lg</code></td><td><code>ColumnSpec | undefined</code></td><td></td><td></td></tr>
+        <tr><td><code>xlg</code></td><td><code>ColumnSpec | undefined</code></td><td></td><td></td></tr>
+        <tr><td><code>max</code></td><td><code>ColumnSpec | undefined</code></td><td></td><td></td></tr>
+        <tr><td><code>span</code></td><td><code>ColumnSpecSimple | undefined</code></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

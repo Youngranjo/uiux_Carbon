@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  cds-tooltip-content — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TooltipContent — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-tooltip-content</code></h1>
+  <p>Tooltip content.</p>
+
+  <div class="demo">
+    <cds-tooltip-content backgroundToken="layer" slot="content">Tooltip Content</cds-tooltip-content>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>align</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the popover alignment</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether a auto align functionality should be applied</td></tr>
+        <tr><td><code>caret</code></td><td><code>string</code></td><td></td><td>Specify whether a caret should be rendered</td></tr>
+        <tr><td><code>dropShadow</code></td><td><code>boolean</code></td><td>true</td><td>Specify whether a dropShadow should be rendered</td></tr>
+        <tr><td><code>border</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether a border should be rendered on the popover</td></tr>
+        <tr><td><code>highContrast</code></td><td><code>boolean</code></td><td>false</td><td>Render the component using the high-contrast variant</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the component is currently open or closed</td></tr>
+        <tr><td><code>tabTip</code></td><td><code>boolean</code></td><td>false</td><td>Render the component using the tab tip variant</td></tr>
+        <tr><td><code>backgroundToken</code></td><td><code>POPOVER_BACKGROUND_TOKEN</code></td><td>&quot;layer&quot;</td><td>Specify the background token to use. Default is &#39;layer&#39;.</td></tr>
+        <tr><td><code>slot</code></td><td><code>string</code></td><td>&quot;content&quot;</td><td>The shadow slot this popover content should be in.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

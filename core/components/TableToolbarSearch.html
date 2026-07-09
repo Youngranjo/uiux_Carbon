@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  cds-table-toolbar-search — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TableToolbarSearch — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-table-toolbar-search</code></h1>
+  <p>Table toolbar search.</p>
+
+  <div class="demo">
+    <cds-table-toolbar-search size="lg" placeholder="Search" autocomplete="off">Table Toolbar Search</cds-table-toolbar-search>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>persistent</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the search box should be always be open.</td></tr>
+        <tr><td><code>autocomplete</code></td><td><code>string</code></td><td>&quot;off&quot;</td><td>Specify an optional value for the autocomplete property on the underlying &lt;input&gt;,
+defaults to &quot;off&quot;</td></tr>
+        <tr><td><code>autofocus</code></td><td><code>boolean</code></td><td>false</td><td>Sets the input to be focussed automatically on page load. Defaults to false</td></tr>
+        <tr><td><code>close-button-label-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify a label to be read by screen readers on the &quot;close&quot; button</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the search box should be disabled.</td></tr>
+        <tr><td><code>expandable</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the search bar can be expandable</td></tr>
+        <tr><td><code>expanded</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the search box should be expanded.</td></tr>
+        <tr><td><code>hasCustomIcon</code></td><td><code>boolean</code></td><td>false</td><td></td></tr>
+        <tr><td><code>label-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The label text.</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The form name in `FormData`.</td></tr>
+        <tr><td><code>role</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the role for the underlying &lt;input&gt;, defaults to searchbox</td></tr>
+        <tr><td><code>placeholder</code></td><td><code>string</code></td><td>&quot;Search&quot;</td><td>The placeholder text.</td></tr>
+        <tr><td><code>size</code></td><td><code>SEARCH_SIZE</code></td><td>&quot;lg&quot;</td><td>The search box size.</td></tr>
+        <tr><td><code>type</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `&lt;input&gt;` name.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The value.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

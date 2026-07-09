@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  cds-tooltip — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tooltip — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-tooltip</code></h1>
+  <p>Trigger button of tooltip.</p>
+
+  <div class="demo">
+    <cds-tooltip enter-delay-ms="100" leave-delay-ms="300" timeoutId="0">Tooltip</cds-tooltip>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>data-table</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this tooltip is in a data table row</td></tr>
+        <tr><td><code>closeOnActivation</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the tooltip should be closed when clicked</td></tr>
+        <tr><td><code>defaultOpen</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the tooltip should be open when it first renders</td></tr>
+        <tr><td><code>enter-delay-ms</code></td><td><code>number</code></td><td>100</td><td>Specify the duration in milliseconds to delay before displaying the tooltip</td></tr>
+        <tr><td><code>leave-delay-ms</code></td><td><code>number</code></td><td>300</td><td>Specify the duration in milliseconds to delay before hiding the tooltip</td></tr>
+        <tr><td><code>keyboard-only</code></td><td><code>boolean</code></td><td>false</td><td>Only open tooltip on keyboard interactions, this is used for interactive tags
+(ie. operational-tag, selectable-tag)</td></tr>
+        <tr><td><code>size</code></td><td><code>boolean</code></td><td>false</td><td>Specify the size of the tooltip</td></tr>
+        <tr><td><code>timeoutId</code></td><td><code>number</code></td><td>0</td><td>Specify the timeout reference for the tooltip</td></tr>
+        <tr><td><code>toolbar-action</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the tooltip should be open when it first renders</td></tr>
+        <tr><td><code>align</code></td><td><code>string</code></td><td>&quot;top&quot;</td><td>Specify how the trigger should align with the tooltip</td></tr>
+        <tr><td><code>alignment-axis-offset</code></td><td><code>number | undefined</code></td><td></td><td>**Experimental:** Provide an offset value for alignment axis. Only takes effect when `autoalign` is enabled.</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether a auto align functionality should be applied</td></tr>
+        <tr><td><code>caret</code></td><td><code>boolean</code></td><td>true</td><td>Specify whether a caret should be rendered</td></tr>
+        <tr><td><code>dropShadow</code></td><td><code>boolean</code></td><td>true</td><td>Specify whether a dropShadow should be rendered</td></tr>
+        <tr><td><code>border</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether a border should be rendered on the popover</td></tr>
+        <tr><td><code>highContrast</code></td><td><code>boolean</code></td><td>false</td><td>Render the component using the high-contrast variant</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the component is currently open or closed</td></tr>
+        <tr><td><code>tabTip</code></td><td><code>boolean</code></td><td>false</td><td>Render the component using the tab tip variant</td></tr>
+        <tr><td><code>backgroundToken</code></td><td><code>POPOVER_BACKGROUND_TOKEN</code></td><td>&quot;layer&quot;</td><td>Specify the background token to use. Default is &#39;layer&#39;.</td></tr>
+        <tr><td><code>autoalign-boundary</code></td><td><code>string | undefined</code></td><td></td><td>Specify a bounding element to be used for autoAlign calculations. The viewport is used by default.
+Takes one of the following: &#39;clippingAncestors&#39;, &#39;#elementid&#39;, &#39;#elementid_1, #elementid_2&#39;, &#39;rect(x, y, width, height)&#39;
+This prop is currently experimental and is subject to future changes.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

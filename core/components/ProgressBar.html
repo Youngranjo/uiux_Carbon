@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  cds-progress-bar — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ProgressBar — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-progress-bar</code></h1>
+  <p>Progress bar.</p>
+
+  <div class="demo">
+    <cds-progress-bar size="big" type="default" max="100">Progress Bar</cds-progress-bar>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td></td><td>The current progress as a textual representation.</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>string</code></td><td></td><td>Whether the label should be visually hidden.</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td></td><td>A label describing the progress bar.</td></tr>
+        <tr><td><code>max</code></td><td><code>number</code></td><td>100</td><td>The maximum value.</td></tr>
+        <tr><td><code>size</code></td><td><code>PROGRESS_BAR_SIZE</code></td><td>&quot;big&quot;</td><td>Specify the size of the ProgressBar.</td></tr>
+        <tr><td><code>status</code></td><td><code>PROGRESS_BAR_STATUS</code></td><td>&quot;active&quot;</td><td>Specify the status.</td></tr>
+        <tr><td><code>type</code></td><td><code>PROGRESS_BAR_TYPE</code></td><td>&quot;default&quot;</td><td>Defines the alignment variant of the progress bar.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td></td><td>The current value.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

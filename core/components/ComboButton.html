@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  cds-combo-button — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ComboButton — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-combo-button</code></h1>
+  <p>Combo button.</p>
+
+  <div class="demo">
+    <cds-combo-button size="lg" menu-alignment="top" tooltip-alignment="top">Combo Button</cds-combo-button>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>disabled</code></td><td><code>string</code></td><td></td><td>Specify whether the ComboButton should be disabled, or not.</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td></td><td>Provide the label to be rendered on the primary action button.</td></tr>
+        <tr><td><code>menu-alignment</code></td><td><code>POPOVER_ALIGNMENT</code></td><td>&quot;top&quot;</td><td>Experimental property. Specify how the menu should align with the button element</td></tr>
+        <tr><td><code>onClick</code></td><td><code>((event: Event) =&gt; void) | undefined</code></td><td></td><td>Provide an optional function to be called when the primary action element is clicked.</td></tr>
+        <tr><td><code>size</code></td><td><code>COMBO_BUTTON_SIZE</code></td><td>&quot;lg&quot;</td><td>Specify the size of the button and menu.</td></tr>
+        <tr><td><code>tooltip-alignment</code></td><td><code>ICON_BUTTON_TOOLTIP_ALIGNMENT</code></td><td>&quot;top&quot;</td><td>Specify how the trigger tooltip should be aligned.</td></tr>
+        <tr><td><code>tooltip-content</code></td><td><code>string</code></td><td>&quot;Additional actions&quot;</td><td>Provide the tooltip content for the icon button.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

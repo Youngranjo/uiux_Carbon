@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  cds-modal — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Modal — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-modal</code></h1>
+  <p>Modal.</p>
+
+  <div class="demo">
+    <cds-modal size="md" loading-status="inactive" loading-success-delay="1500">Modal</cds-modal>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>enable-dialog-element</code></td><td><code>boolean</code></td><td>false</td><td>Enable the use of native dialog element instead of div with role=&quot;dialog&quot;</td></tr>
+        <tr><td><code>aria-label</code></td><td><code>string | null</code></td><td></td><td>Specify text for the accessibility label of the header</td></tr>
+        <tr><td><code>container-class</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The additional CSS class names for the container &lt;div&gt; of the element.</td></tr>
+        <tr><td><code>full-width</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether or not the Modal content should have any inner padding.</td></tr>
+        <tr><td><code>has-scrolling-content</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the modal contains scrolling content</td></tr>
+        <tr><td><code>size</code></td><td><code>MODAL_SIZE</code></td><td>&quot;md&quot;</td><td>Modal size.</td></tr>
+        <tr><td><code>should-submit-on-enter</code></td><td><code>boolean</code></td><td>false</td><td>Specify if Enter key should be used as &quot;submit&quot; action that clicks the primary footer button</td></tr>
+        <tr><td><code>loading-status</code></td><td><code>&quot;inactive&quot; | &quot;active&quot; | &quot;finished&quot; | &quot;error&quot;</code></td><td>&quot;inactive&quot;</td><td>Specify the loading status</td></tr>
+        <tr><td><code>loading-description</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the description for the loading text</td></tr>
+        <tr><td><code>loading-success-delay</code></td><td><code>number</code></td><td>1500</td><td>Provide a delay for the setTimeout for success</td></tr>
+        <tr><td><code>loading-icon-description</code></td><td><code>string</code></td><td>&quot;Loading&quot;</td><td>Specify the description for the loading icon</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the modal should be open.</td></tr>
+        <tr><td><code>alert</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the Modal is displaying an alert, error or warning.
+Should go hand in hand with the danger prop.</td></tr>
+        <tr><td><code>prevent-close-on-click-outside</code></td><td><code>boolean</code></td><td>false</td><td>Prevent closing on click outside of modal</td></tr>
+        <tr><td><code>prevent-close</code></td><td><code>boolean</code></td><td>false</td><td>Prevent the modal from closing after clicking the close button</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

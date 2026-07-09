@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+  cds-side-panel — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SidePanel — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-side-panel</code></h1>
+  <p>SidePanel.</p>
+
+  <div class="demo">
+    <cds-side-panel size="md" close-icon-description="Close" navigation-back-icon-description="Back">Side Panel</cds-side-panel>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>animate-title</code></td><td><code>boolean</code></td><td>true</td><td>Determines if the title will animate on scroll</td></tr>
+        <tr><td><code>close-icon-description</code></td><td><code>string</code></td><td>&quot;Close&quot;</td><td>Sets the close button icon description</td></tr>
+        <tr><td><code>condensed-actions</code></td><td><code>boolean</code></td><td>false</td><td>Determines whether the side panel should render the condensed version (affects action buttons primarily)</td></tr>
+        <tr><td><code>current-step</code></td><td><code>string</code></td><td></td><td>Sets the current step of the side panel</td></tr>
+        <tr><td><code>include-overlay</code></td><td><code>boolean</code></td><td>false</td><td>Determines whether the side panel should render with an overlay</td></tr>
+        <tr><td><code>label-text</code></td><td><code>string</code></td><td></td><td>Sets the label text which will display above the title text</td></tr>
+        <tr><td><code>navigation-back-icon-description</code></td><td><code>string</code></td><td>&quot;Back&quot;</td><td>Sets the icon description for the navigation back icon button</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the side-panel should be open.</td></tr>
+        <tr><td><code>placement</code></td><td><code>SIDE_PANEL_PLACEMENT</code></td><td>&quot;right&quot;</td><td>SidePanel placement.</td></tr>
+        <tr><td><code>prevent-close-on-click-outside</code></td><td><code>boolean</code></td><td>false</td><td>Prevent closing on click outside of side-panel</td></tr>
+        <tr><td><code>selector-initial-focus</code></td><td><code>string</code></td><td></td><td>The initial location of focus in the side panel</td></tr>
+        <tr><td><code>selector-page-content</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Selector for page content, used to push content to side except</td></tr>
+        <tr><td><code>size</code></td><td><code>SIDE_PANEL_SIZE</code></td><td>&quot;md&quot;</td><td>SidePanel size.</td></tr>
+        <tr><td><code>slide-in</code></td><td><code>boolean</code></td><td>false</td><td>Determines if this panel slides in</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td></td><td>Sets the title text</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

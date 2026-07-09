@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  cds-header-menu-item — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HeaderMenuItem — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-header-menu-item</code></h1>
+  <p>Header submenu item.</p>
+
+  <div class="demo">
+    <cds-header-menu-item role="listitem">Header Menu Item</cds-header-menu-item>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>href</code></td><td><code>string</code></td><td></td><td>Link `href`.</td></tr>
+        <tr><td><code>rel</code></td><td><code>string</code></td><td></td><td>The link type.</td></tr>
+        <tr><td><code>target</code></td><td><code>string</code></td><td></td><td>The link target.</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td></td><td>The title.</td></tr>
+        <tr><td><code>is-active</code></td><td><code>boolean</code></td><td>false</td><td>Applies selected styles to the item if a user sets this to true and `aria-current !== &#39;page&#39;`.</td></tr>
+        <tr><td><code>aria-current</code></td><td><code>string</code></td><td></td><td>indicates that this element represents the current item</td></tr>
+        <tr><td><code>role</code></td><td><code>string</code></td><td>&quot;listitem&quot;</td><td>As child of &lt;ul&gt;, this element must have role of listitem</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

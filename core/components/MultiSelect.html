@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  cds-multi-select — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MultiSelect — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-multi-select</code></h1>
+  <p>Multi select.</p>
+
+  <div class="demo">
+    <cds-multi-select size="md" autocomplete="off" clear-selection-description="Total items selected: ">Multi Select</cds-multi-select>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>filterable</code></td><td><code>string</code></td><td></td><td></td></tr>
+        <tr><td><code>autocomplete</code></td><td><code>string</code></td><td>&quot;off&quot;</td><td>The native `autocomplete` attribute for the filterable input.</td></tr>
+        <tr><td><code>clear-selection-label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `aria-label` attribute for the icon to clear selection.</td></tr>
+        <tr><td><code>clear-selection-description</code></td><td><code>string</code></td><td>&quot;Total items selected: &quot;</td><td>Specify the text that should be read for screen readers that describes total items selected</td></tr>
+        <tr><td><code>clear-selection-text</code></td><td><code>string</code></td><td>&quot;To clear selection, press Delete or Backspace.&quot;</td><td>Specify the text that should be read for screen readers to clear selection.</td></tr>
+        <tr><td><code>locale</code></td><td><code>string</code></td><td>&quot;en&quot;</td><td>Specify the locale of the control. Used for the default compareItems used for sorting the list of items in the control.</td></tr>
+        <tr><td><code>select-all</code></td><td><code>boolean</code></td><td>false</td><td>Enables rendering of a “Select all” multi-select-item</td></tr>
+        <tr><td><code>selection-feedback</code></td><td><code>SELECTION_FEEDBACK_OPTION</code></td><td>&quot;top-after-reopen&quot;</td><td>Specify feedback (mode) of the selection.
+`top`: selected item jumps to top
+`fixed`: selected item stays at it&#39;s position
+`top-after-reopen`: selected item jump to top after reopen dropdown</td></tr>
+        <tr><td><code>aria-label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>&#39;aria-label&#39; of the ListBox component.
+Specify a label to be read by screen readers on the container node</td></tr>
+        <tr><td><code>direction</code></td><td><code>DROPDOWN_DIRECTION</code></td><td>&quot;bottom&quot;</td><td>Specify the direction of the dropdown. Can be either top or bottom.</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether auto align functionality should be applied</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this dropdown should be disabled.</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The helper text.</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the title text should be hidden or not</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is invalid.</td></tr>
+        <tr><td><code>title-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the title text that will be read by a screen reader when visiting this control</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the dropdown in the `FormData`</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>`true` if this dropdown should be open.</td></tr>
+        <tr><td><code>read-only</code></td><td><code>boolean</code></td><td>false</td><td>Whether or not the Dropdown is readonly</td></tr>
+        <tr><td><code>isFluid</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the dropdown is fluid or not</td></tr>
+        <tr><td><code>size</code></td><td><code>DROPDOWN_SIZE</code></td><td>&quot;md&quot;</td><td>Dropdown size.</td></tr>
+        <tr><td><code>toggle-label-closed</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `aria-label` attribute for the UI indicating the closed state.</td></tr>
+        <tr><td><code>toggle-label-open</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The `aria-label` attribute for the UI indicating the open state.</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Generic label that will be used as the textual representation of what this field is for</td></tr>
+        <tr><td><code>type</code></td><td><code>DROPDOWN_TYPE</code></td><td>&quot;&quot;</td><td>`true` if this dropdown should use the inline UI variant.</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is currently in warning state</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the text that is displayed when the control is in warning state</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>`true` to show the UI of the invalid state.</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the value is required.</td></tr>
+        <tr><td><code>required-validity-message</code></td><td><code>string</code></td><td>&quot;Please fill out this field.&quot;</td><td>The special validity message for `required`.</td></tr>
+        <tr><td><code>validity-message</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The validity message.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The value of the selected item.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

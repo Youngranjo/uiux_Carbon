@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+  cds-fluid-textarea — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FluidTextarea — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-fluid-textarea</code></h1>
+  <p>Fluid text area input.</p>
+
+  <div class="demo">
+    <cds-fluid-textarea type="text" counter-mode="character" rows="4">Fluid Textarea</cds-fluid-textarea>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>cols</code></td><td><code>string</code></td><td></td><td>The number of columns for the textarea to show by default</td></tr>
+        <tr><td><code>counter-mode</code></td><td><code>&quot;character&quot; | &quot;word&quot;</code></td><td>&quot;character&quot;</td><td>Specify the method used for calculating the counter number</td></tr>
+        <tr><td><code>id</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>ID to link the `label` and `textarea`</td></tr>
+        <tr><td><code>rows</code></td><td><code>number</code></td><td>4</td><td>The number of rows for the textarea to show by default</td></tr>
+        <tr><td><code>autocomplete</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>May be any of the standard HTML autocomplete options</td></tr>
+        <tr><td><code>autofocus</code></td><td><code>boolean</code></td><td>false</td><td>Sets the input to be focussed automatically on page load. Defaults to false</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Controls the disabled state of the input</td></tr>
+        <tr><td><code>enable-counter</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether to display the character counter</td></tr>
+        <tr><td><code>helper-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The helper text.</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Message which is displayed if the value is invalid.</td></tr>
+        <tr><td><code>max-count</code></td><td><code>string</code></td><td></td><td>Max character count allowed for input. This is needed in order for enableCounter to display</td></tr>
+        <tr><td><code>warn</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is currently in warning state</td></tr>
+        <tr><td><code>warn-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Provide the text that is displayed when the control is in warning state</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether you want the underlying label to be visually hidden</td></tr>
+        <tr><td><code>label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Generic label that will be used as the textual representation of what this field is for</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the input in the `FormData`</td></tr>
+        <tr><td><code>pattern</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Pattern to validate the textarea against for HTML validity checking</td></tr>
+        <tr><td><code>placeholder</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Value to display when the input has an empty `value`</td></tr>
+        <tr><td><code>readonly</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the component should be read-only</td></tr>
+        <tr><td><code>hidePasswordLabel</code></td><td><code>string</code></td><td>&quot;Hide password&quot;</td><td>&quot;Hide password&quot; tooltip text on password visibility toggle</td></tr>
+        <tr><td><code>showPasswordLabel</code></td><td><code>string</code></td><td>&quot;Show password&quot;</td><td>&quot;Show password&quot; tooltip text on password visibility toggle</td></tr>
+        <tr><td><code>show-password-visibility-toggle</code></td><td><code>boolean</code></td><td>false</td><td>Boolean property to render password visibility toggle</td></tr>
+        <tr><td><code>size</code></td><td><code>INPUT_SIZE | undefined</code></td><td></td><td>The input box size.</td></tr>
+        <tr><td><code>isFluid</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the textarea is fluid or not</td></tr>
+        <tr><td><code>inline</code></td><td><code>boolean</code></td><td>false</td><td>true to use the inline version.</td></tr>
+        <tr><td><code>tooltipAlignment</code></td><td><code>INPUT_TOOLTIP_ALIGNMENT</code></td><td>&quot;center&quot;</td><td>Specify the alignment of the tooltip to the icon-only button.
+Can be one of: start, center, or end.</td></tr>
+        <tr><td><code>tooltipDirection</code></td><td><code>INPUT_TOOLTIP_DIRECTION</code></td><td>&quot;bottom&quot;</td><td>Specify the direction of the tooltip for icon-only buttons.
+Can be either top, right, bottom, or left.</td></tr>
+        <tr><td><code>type</code></td><td><code>INPUT_TYPE</code></td><td>&quot;text&quot;</td><td>The type of the input. Can be one of the types listed in the INPUT_TYPE enum</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>Specify if the currently value is invalid.</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>Boolean property to set the required status</td></tr>
+        <tr><td><code>required-validity-message</code></td><td><code>string</code></td><td>&quot;Please fill out this field.&quot;</td><td>The special validity message for `required`.</td></tr>
+        <tr><td><code>validity-message</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The validity message. If present and non-empty, this input shows the UI of its invalid state.</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td></td><td>The value of the input.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

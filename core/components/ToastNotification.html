@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  cds-toast-notification — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ToastNotification — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-toast-notification</code></h1>
+  <p>Toast notification.</p>
+
+  <div class="demo">
+    <cds-toast-notification kind="success">Toast Notification</cds-toast-notification>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>caption</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify the caption</td></tr>
+        <tr><td><code>aria-label</code></td><td><code>string</code></td><td></td><td>Provide a description for &quot;close&quot; icon button that can be read by screen readers</td></tr>
+        <tr><td><code>hide-close-button</code></td><td><code>boolean</code></td><td>false</td><td>`true` to hide the close button.</td></tr>
+        <tr><td><code>status-icon-description</code></td><td><code>string</code></td><td></td><td>Provide a description for &quot;status&quot; icon that can be read by screen readers</td></tr>
+        <tr><td><code>kind</code></td><td><code>NOTIFICATION_KIND</code></td><td>&quot;success&quot;</td><td>Notification kind.</td></tr>
+        <tr><td><code>low-contrast</code></td><td><code>boolean</code></td><td>false</td><td>Low contrast mode</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>true</td><td>`true` if the notification should be open.</td></tr>
+        <tr><td><code>timeout</code></td><td><code>number | null</code></td><td></td><td>Specify an optional duration the notification should be closed in</td></tr>
+        <tr><td><code>subtitle</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The subtitle.</td></tr>
+        <tr><td><code>title</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The title.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

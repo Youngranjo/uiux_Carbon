@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  cds-code-snippet — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CodeSnippet — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-code-snippet</code></h1>
+  <p>Basic code snippet.</p>
+
+  <div class="demo">
+    <cds-code-snippet type="single" feedback="Copied!" feedback-timeout="2000">Code Snippet</cds-code-snippet>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>copy-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Optional text to copy. If not specified, the `children` node&#39;s `innerText`
+will be used as the copy value.</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the button should be disabled.</td></tr>
+        <tr><td><code>feedback</code></td><td><code>string</code></td><td>&quot;Copied!&quot;</td><td>Specify the string displayed when the snippet is copied</td></tr>
+        <tr><td><code>feedback-timeout</code></td><td><code>number</code></td><td>2000</td><td>Specify the time it takes for the feedback message to timeout</td></tr>
+        <tr><td><code>hide-copy-button</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether or not a copy button should be used/rendered.</td></tr>
+        <tr><td><code>maxCollapsedNumberOfRows</code></td><td><code>number</code></td><td>15</td><td>Specify the maximum number of rows to be shown when in collapsed view</td></tr>
+        <tr><td><code>maxExpandedNumberOfRows</code></td><td><code>number</code></td><td>0</td><td>Specify the maximum number of rows to be shown when in expanded view</td></tr>
+        <tr><td><code>minCollapsedNumberOfRows</code></td><td><code>number</code></td><td>3</td><td>Specify the minimum number of rows to be shown when in collapsed view</td></tr>
+        <tr><td><code>minExpandedNumberOfRows</code></td><td><code>number</code></td><td>16</td><td>Specify the minimum number of rows to be shown when in expanded view</td></tr>
+        <tr><td><code>show-less-text</code></td><td><code>string</code></td><td>&quot;Show less&quot;</td><td>Specify a string that is displayed when the Code Snippet has been
+interacted with to show less lines</td></tr>
+        <tr><td><code>show-more-text</code></td><td><code>string</code></td><td>&quot;Show more&quot;</td><td>Specify a string that is displayed when the Code Snippet text is more
+than 15 lines</td></tr>
+        <tr><td><code>tooltip-content</code></td><td><code>string</code></td><td>&quot;Copy to clipboard&quot;</td><td>Tooltip content for the copy button.</td></tr>
+        <tr><td><code>wrap-text</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the button should be disabled.</td></tr>
+        <tr><td><code>type</code></td><td><code>CODE_SNIPPET_TYPE</code></td><td>&quot;single&quot;</td><td>The type of code snippet.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

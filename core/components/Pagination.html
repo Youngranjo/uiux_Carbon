@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  cds-pagination — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pagination — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-pagination</code></h1>
+  <p>Pagination UI.</p>
+
+  <div class="demo">
+    <cds-pagination size="md" backward-text="Previous page" backward-text-tooltip-position="top">Pagination</cds-pagination>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>backward-text</code></td><td><code>string</code></td><td>&quot;Previous page&quot;</td><td>The assistive text for the button to go to previous page.</td></tr>
+        <tr><td><code>backward-text-tooltip-position</code></td><td><code>PAGINATION_TOOLTIP_POSITION</code></td><td>&quot;top&quot;</td><td>Specify the position of the tooltip for the backward button. Can be one of: top, right, bottom, or left.</td></tr>
+        <tr><td><code>page</code></td><td><code>number</code></td><td>1</td><td>The current page</td></tr>
+        <tr><td><code>is-last-page</code></td><td><code>boolean</code></td><td></td><td>`true` to explicitly state that user is at the last page.</td></tr>
+        <tr><td><code>items-per-page-text</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The translatable text indicating the number of items per page.</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the pagination UI should be disabled.</td></tr>
+        <tr><td><code>forward-text</code></td><td><code>string</code></td><td>&quot;Next page&quot;</td><td>The assistive text for the button to go to next page.</td></tr>
+        <tr><td><code>forward-text-tooltip-position</code></td><td><code>PAGINATION_TOOLTIP_POSITION</code></td><td>&quot;top&quot;</td><td>Specify the position of the tooltip for the forward button. Can be one of: top, right, bottom, or left.</td></tr>
+        <tr><td><code>page-input-disabled</code></td><td><code>boolean</code></td><td>false</td><td>true if the select box to change the page should be disabled.</td></tr>
+        <tr><td><code>page-size</code></td><td><code>number</code></td><td>10</td><td>Number of items per page.</td></tr>
+        <tr><td><code>page-size-input-disabled</code></td><td><code>string</code></td><td></td><td>true if the select box to change the items per page should be disabled.</td></tr>
+        <tr><td><code>page-size-label-text</code></td><td><code>string</code></td><td></td><td>The label text for the UI to select page size.</td></tr>
+        <tr><td><code>pages-unknown</code></td><td><code>boolean</code></td><td>false</td><td>true if the total number of items is unknown.</td></tr>
+        <tr><td><code>size</code></td><td><code>PAGINATION_SIZE</code></td><td>&quot;md&quot;</td><td>Specify the size of the Pagination.</td></tr>
+        <tr><td><code>start</code></td><td><code>number</code></td><td>0</td><td>The row number where current page start with, index that starts with zero.</td></tr>
+        <tr><td><code>total-items</code></td><td><code>number</code></td><td></td><td>The number of total items.</td></tr>
+        <tr><td><code>totalPages</code></td><td><code>number</code></td><td>1</td><td>The number of total pages.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

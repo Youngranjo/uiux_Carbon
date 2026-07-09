@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+  cds-tabs — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tabs — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-tabs</code></h1>
+  <p>Tabs.</p>
+
+  <div class="demo">
+    <cds-tabs selecting-items-assistive-text="Selecting items. Use up and down arrow keys to navigate." selected-item-assistive-text="Selected an item." selected-index="0">Tabs</cds-tabs>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>selecting-items-assistive-text</code></td><td><code>string</code></td><td>&quot;Selecting items. Use up and down arrow keys to navigate.&quot;</td><td>An assistive text for screen reader to announce, telling the open state.</td></tr>
+        <tr><td><code>selected-item-assistive-text</code></td><td><code>string</code></td><td>&quot;Selected an item.&quot;</td><td>An assistive text for screen reader to announce, telling that an item is selected.</td></tr>
+        <tr><td><code>trigger-content</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The content of the trigger button for narrow mode.</td></tr>
+        <tr><td><code>type</code></td><td><code>TABS_TYPE</code></td><td>&quot;&quot;</td><td>Tabs type.</td></tr>
+        <tr><td><code>vertical</code></td><td><code>boolean</code></td><td>false</td><td>`true` if the tabs are in vertical orientation.
+This is automatically set by `cds-tabs-vertical`.</td></tr>
+        <tr><td><code>dismissable</code></td><td><code>string</code></td><td></td><td>Whether the rendered Tab children should be dismissable.</td></tr>
+        <tr><td><code>icon-size</code></td><td><code>TABS_ICON_SIZE | undefined</code></td><td></td><td>Specify the icon size used by icon-only tabs.</td></tr>
+        <tr><td><code>full-width</code></td><td><code>boolean</code></td><td>false</td><td>Used for tabs within a grid, this makes it so tabs span the full container width and have the same width. Only available on contained tabs with &lt;9 children</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>The value of the selected item.</td></tr>
+        <tr><td><code>selected-index</code></td><td><code>number</code></td><td>0</td><td>Specify a selected index for the initially selected content</td></tr>
+        <tr><td><code>selection-mode</code></td><td><code>string</code></td><td>&quot;automatic&quot;</td><td>Choose whether or not to automatically change selection on focus when left/right arrow pressed. Defaults to &#39;automatic&#39;</td></tr>
+        <tr><td><code>size</code></td><td><code>TABS_SIZE</code></td><td>&quot;&quot;</td><td>Specify the size of the tabs.
+
+Supports `sm` and `md` for line tabs.
+Supports `sm`, `md`, and `lg` for contained tabs.
+Supports `xl` only when `vertical` is set; otherwise `xl` falls back to `lg`.</td></tr>
+        <tr><td><code>icon</code></td><td><code>boolean</code></td><td>false</td><td>Icon only.</td></tr>
+        <tr><td><code>low-contrast</code></td><td><code>boolean</code></td><td>false</td><td>`true` to use the low contrast version.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

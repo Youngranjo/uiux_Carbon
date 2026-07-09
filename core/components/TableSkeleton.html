@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  cds-table-skeleton — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TableSkeleton — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-table-skeleton</code></h1>
+  <p>Data table skeleton</p>
+
+  <div class="demo">
+    <cds-table-skeleton column-count="5" row-count="5">Table Skeleton</cds-table-skeleton>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>column-count</code></td><td><code>number</code></td><td>5</td><td>Specify the number of columns that you want to render in the skeleton state</td></tr>
+        <tr><td><code>row-count</code></td><td><code>number</code></td><td>5</td><td>Specify the number of rows that you want to render in the skeleton state</td></tr>
+        <tr><td><code>show-header</code></td><td><code>boolean</code></td><td>true</td><td>Specify if the table header should be rendered as part of the skeleton.</td></tr>
+        <tr><td><code>show-toolbar</code></td><td><code>boolean</code></td><td>true</td><td>Specify if the table toolbar should be rendered as part of the skeleton.</td></tr>
+        <tr><td><code>zebra</code></td><td><code>boolean</code></td><td>false</td><td>true to add useZebraStyles striping.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

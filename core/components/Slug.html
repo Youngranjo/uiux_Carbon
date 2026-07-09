@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+  cds-slug — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Slug — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-slug</code></h1>
+  <p>Basic slug.</p>
+
+  <div class="demo">
+    <cds-slug size="xs" alignment="top" slot="slug">Slug</cds-slug>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>slot</code></td><td><code>string</code></td><td>&quot;slug&quot;</td><td></td></tr>
+        <tr><td><code>ai-text</code></td><td><code>string</code></td><td>&quot;AI&quot;</td><td>Specify the correct translation of the AI text</td></tr>
+        <tr><td><code>ai-text-label</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Specify additional text to be rendered next to the AI label in the inline variant</td></tr>
+        <tr><td><code>kind</code></td><td><code>SLUG_KIND</code></td><td>&quot;&quot;</td><td>Specify the type of Slug, from the following list of types: (default, inline)</td></tr>
+        <tr><td><code>revert-active</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the revert button should be visible</td></tr>
+        <tr><td><code>revert-label</code></td><td><code>string</code></td><td>&quot;Revert to AI input&quot;</td><td>Specify whether the revert button should be visible</td></tr>
+        <tr><td><code>size</code></td><td><code>SLUG_SIZE</code></td><td>&quot;xs&quot;</td><td>Slug size should be mini, 2xs, xs, sm, md, lg, xl.</td></tr>
+        <tr><td><code>slug-label</code></td><td><code>string</code></td><td>&quot;Show information&quot;</td><td>Specify the text that will be provided to the aria-label of the `Slug` button</td></tr>
+        <tr><td><code>previousValue</code></td><td><code>string</code></td><td></td><td></td></tr>
+        <tr><td><code>alignment</code></td><td><code>POPOVER_ALIGNMENT</code></td><td>&quot;top&quot;</td><td>How the tooltip is aligned to the trigger button.</td></tr>
+        <tr><td><code>alignment-axis-offset</code></td><td><code>number</code></td><td>0</td><td>**Experimental:** Provide an offset value for alignment axis. Only takes effect when `autoalign` is enabled.</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether a auto align functionality should be applied</td></tr>
+        <tr><td><code>button-label</code></td><td><code>string</code></td><td>&quot;Show information&quot;</td><td>The label for the toggle button</td></tr>
+        <tr><td><code>open</code></td><td><code>boolean</code></td><td>false</td><td>Set whether toggletip is open</td></tr>
+        <tr><td><code>default-open</code></td><td><code>boolean</code></td><td>false</td><td>Set whether toggletip is open by default.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<!--
+  cds-skeleton-text — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SkeletonText — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-skeleton-text</code></h1>
+  <p>Skeleton text.</p>
+
+  <div class="demo">
+    <cds-skeleton-text width="100%" lineCount="3">Skeleton Text</cds-skeleton-text>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>optional-classes</code></td><td><code>string</code></td><td></td><td>Specify optional classes to be added to your SkeletonText</td></tr>
+        <tr><td><code>type</code></td><td><code>SKELETON_TEXT_TYPE</code></td><td>&quot;&quot;</td><td>The type of skeleton text.</td></tr>
+        <tr><td><code>heading</code></td><td><code>boolean</code></td><td>false</td><td>Determines if the skeleton text should be rendered as a heading.</td></tr>
+        <tr><td><code>width</code></td><td><code>string</code></td><td>&quot;100%&quot;</td><td>width (in px or %) of single line of text or max-width of paragraph lines</td></tr>
+        <tr><td><code>paragraph</code></td><td><code>boolean</code></td><td>false</td><td>will generate multiple lines of text</td></tr>
+        <tr><td><code>lineCount</code></td><td><code>number</code></td><td>3</td><td>the number of lines in a paragraph</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

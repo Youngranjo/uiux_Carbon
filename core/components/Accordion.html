@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+  cds-accordion — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Accordion — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-accordion</code></h1>
+  <p>Accordion container.</p>
+
+  <div class="demo">
+    <cds-accordion size="md" alignment="END">Accordion</cds-accordion>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>size</code></td><td><code>ACCORDION_SIZE</code></td><td>&quot;md&quot;</td><td>Accordion size should be sm, md, lg.</td></tr>
+        <tr><td><code>alignment</code></td><td><code>ACCORDION_ALIGNMENT</code></td><td>&quot;END&quot;</td><td>Specify the alignment of the accordion heading title and chevron</td></tr>
+        <tr><td><code>isFlush</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether Accordion text should be flush, default is false, does not work with align=&quot;start&quot;</td></tr>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Disable all accordion items inside this accordion.</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

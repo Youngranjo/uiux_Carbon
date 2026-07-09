@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+  cds-definition-tooltip — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DefinitionTooltip — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-definition-tooltip</code></h1>
+  <p>Definition tooltip.</p>
+
+  <div class="demo">
+    <cds-definition-tooltip align="bottom">Definition Tooltip</cds-definition-tooltip>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>align</code></td><td><code>string</code></td><td>&quot;bottom&quot;</td><td>Specify how the trigger should align with the tooltip</td></tr>
+        <tr><td><code>autoalign</code></td><td><code>boolean</code></td><td>false</td><td>Will auto-align Definition Tooltip. This prop is currently experimental and is subject to future changes.</td></tr>
+        <tr><td><code>default-open</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the tooltip should be open when it first renders</td></tr>
+        <tr><td><code>open-on-hover</code></td><td><code>boolean</code></td><td>false</td><td>Specifies whether the `DefinitionTooltip` should open on hover or not</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>

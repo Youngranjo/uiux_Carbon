@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  cds-time-picker — real Carbon Web Component, loaded from the official @carbon/web-components
+  package (bundled offline at ../../assets/carbon-web-components.bundle.js).
+  Source: node_modules/@carbon/web-components (npm install --save @carbon/web-components)
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TimePicker — Carbon Web Component</title>
+  <link rel="stylesheet" href="../../assets/carbon-styles.min.css" />
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; padding: 2rem; background: #fff; }
+    .demo { padding: 2rem; border: 1px solid #e0e0e0; margin-block: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    td, th { border: 1px solid #e0e0e0; padding: 6px 10px; text-align: left; vertical-align: top; }
+    h1 { font-size: 1.5rem; } code { background: #f4f4f4; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <p><a href="../../index.html">&larr; back to index</a></p>
+  <h1><code>cds-time-picker</code></h1>
+  <p>Time Picker component.</p>
+
+  <div class="demo">
+    <cds-time-picker size="md" placeholder="hh:mm" type="text">Time Picker</cds-time-picker>
+  </div>
+
+  <h2>Attributes</h2>
+  <table>
+    <thead><tr><th>name</th><th>type</th><th>default</th><th>description</th></tr></thead>
+    <tbody>
+        <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is disabled</td></tr>
+        <tr><td><code>invalid-text</code></td><td><code>string</code></td><td>&quot;Invalid time format.&quot;</td><td>Provide the text that is displayed when the control is in an invalid state</td></tr>
+        <tr><td><code>warning</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is in warning state</td></tr>
+        <tr><td><code>warning-text</code></td><td><code>string</code></td><td>&quot;Warning message.&quot;</td><td>Provide the text that is displayed when the control is in a warning state</td></tr>
+        <tr><td><code>hide-label</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the label should be hidden</td></tr>
+        <tr><td><code>name</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Name for the input in FormData</td></tr>
+        <tr><td><code>label-text</code></td><td><code>string</code></td><td>&quot;Select a time&quot;</td><td>Provide label text to be read by screen readers</td></tr>
+        <tr><td><code>placeholder</code></td><td><code>string</code></td><td>&quot;hh:mm&quot;</td><td>Placeholder text for the input</td></tr>
+        <tr><td><code>readOnly</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control should be read-only</td></tr>
+        <tr><td><code>max-length</code></td><td><code>number</code></td><td>5</td><td>Specify the maximum length of the input value</td></tr>
+        <tr><td><code>pattern</code></td><td><code>string</code></td><td>&quot;(1[012]|[1-9]):[0-5][0-9](\\s)?&quot;</td><td>Pattern for input validation</td></tr>
+        <tr><td><code>size</code></td><td><code>TIME_PICKER_SIZE</code></td><td>&quot;md&quot;</td><td>Size of the time picker</td></tr>
+        <tr><td><code>type</code></td><td><code>string</code></td><td>&quot;text&quot;</td><td>Input type</td></tr>
+        <tr><td><code>invalid</code></td><td><code>boolean</code></td><td>false</td><td>Specify whether the control is currently invalid</td></tr>
+        <tr><td><code>required</code></td><td><code>boolean</code></td><td>false</td><td>Whether the input is required</td></tr>
+        <tr><td><code>required-validity-message</code></td><td><code>string</code></td><td>&quot;Please fill out this field.&quot;</td><td>Custom message for required validation</td></tr>
+        <tr><td><code>validity-message</code></td><td><code>string</code></td><td>&quot;&quot;</td><td>Validity message</td></tr>
+        <tr><td><code>value</code></td><td><code>string</code></td><td></td><td>Value of the input</td></tr>
+    </tbody>
+  </table>
+
+  <script type="module">
+    import '../../assets/carbon-web-components.bundle.js';
+  </script>
+</body>
+</html>
