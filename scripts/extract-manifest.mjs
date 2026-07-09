@@ -1,7 +1,20 @@
 // Parses the REAL installed @carbon/react and @carbon/web-components source
 // (node_modules, not hand-typed guesses) into one manifest.json describing every
 // component "family": its React named exports + its Web Component custom-element tags.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+
+// Real slot names, read straight from each component's compiled Lit render template
+// (`<slot name="...">`) — custom-elements.json does not document slots, so this is the
+// only accurate source. Used so demos put content in the slot the component actually
+// expects (e.g. accordion-item's heading is slot="title", not the default slot).
+function extractSlots(tsPath) {
+  const jsPath = tsPath.replace(/^\.\/src\//, 'node_modules/@carbon/web-components/es/').replace(/\.ts$/, '.js');
+  if (!existsSync(jsPath)) return { named: [], hasDefault: false };
+  const src = readFileSync(jsPath, 'utf8');
+  const named = [...new Set([...src.matchAll(/<slot\s+name="([a-zA-Z0-9-]+)"/g)].map((m) => m[1]))];
+  const hasDefault = /<slot(?:\s+@slotchange[^>]*)?>/.test(src);
+  return { named, hasDefault };
+}
 
 const reactIndexSrc = readFileSync('node_modules/@carbon/react/lib/index.js', 'utf8');
 const wcManifest = JSON.parse(readFileSync('node_modules/@carbon/web-components/custom-elements.json', 'utf8'));
@@ -27,10 +40,12 @@ for (const m of reactIndexSrc.matchAll(/^exports\.([A-Za-z0-9_$]+) = (require_[A
 // ---- 3. Web component tags grouped by folder (from custom-elements.json `path`) ----
 const wcFolderToTags = new Map();
 for (const tag of wcManifest.tags) {
+  if (!tag.name.startsWith('cds-')) continue; // drop internal/Storybook-only helper tags
   const m = tag.path.match(/\.\/src\/components\/([^/]+)\//);
   if (!m) continue;
   const folder = m[1];
   if (!wcFolderToTags.has(folder)) wcFolderToTags.set(folder, []);
+  const slots = extractSlots(tag.path);
   wcFolderToTags.get(folder).push({
     name: tag.name,
     description: tag.description || '',
@@ -41,6 +56,8 @@ for (const tag of wcManifest.tags) {
       description: a.description || '',
     })),
     events: (tag.events || []).map((e) => e.name),
+    slots: slots.named,
+    hasDefaultSlot: slots.hasDefault,
   });
 }
 

@@ -6,7 +6,7 @@ Carbon은 IBM 공식 Vue 패키지가 없습니다. 공식 가이드는 "Vue는 
 
 ```
 vue/
-└── components/*.vue   Web Component 태그 1개당 파일 1개 (총 217개)
+└── components/*.vue   Web Component 태그 1개당 파일 1개 (총 216개)
 ```
 
 ## 설치
@@ -308,13 +308,11 @@ import Button from './components/Button.vue';
 | `StructuredList.vue` | `<cds-structured-list>` | StructuredList |
 | `ContentSwitcherItem.vue` | `<cds-content-switcher-item>` | Switch |
 | `ContentSwitcher.vue` | `<cds-content-switcher>` | Switch |
-| `TabsStoryWrapper.vue` | `<tabs-story-wrapper>` | TabContent |
 | `TabSkeleton.vue` | `<cds-tab-skeleton>` | TabContent |
 | `Tab.vue` | `<cds-tab>` | TabContent |
 | `TabsSkeleton.vue` | `<cds-tabs-skeleton>` | TabContent |
 | `TabsVertical.vue` | `<cds-tabs-vertical>` | TabContent |
 | `Tabs.vue` | `<cds-tabs>` | TabContent |
-| `TabsStoryWrapper.vue` | `<tabs-story-wrapper>` | Tabs |
 | `TabSkeleton.vue` | `<cds-tab-skeleton>` | Tabs |
 | `Tab.vue` | `<cds-tab>` | Tabs |
 | `TabsSkeleton.vue` | `<cds-tabs-skeleton>` | Tabs |

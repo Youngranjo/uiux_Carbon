@@ -6,7 +6,7 @@
 
 ```
 core/
-└── components/*.html   Web Component 태그 1개당 파일 1개 (총 217개)
+└── components/*.html   Web Component 태그 1개당 파일 1개 (총 216개)
 ```
 
 ## 설치
@@ -296,13 +296,11 @@ npm install --save @carbon/web-components @carbon/styles
 | `StructuredList.html` | `<cds-structured-list>` | StructuredList | Structured list wrapper. |
 | `ContentSwitcherItem.html` | `<cds-content-switcher-item>` | Switch | Content switcher button. |
 | `ContentSwitcher.html` | `<cds-content-switcher>` | Switch | Content switcher. |
-| `TabsStoryWrapper.html` | `<tabs-story-wrapper>` | TabContent | Wrapper component for dismissable tabs story with state management |
 | `TabSkeleton.html` | `<cds-tab-skeleton>` | TabContent | Skeleton of tab. |
 | `Tab.html` | `<cds-tab>` | TabContent | Basic tab. |
 | `TabsSkeleton.html` | `<cds-tabs-skeleton>` | TabContent | Skeleton of tabs. |
 | `TabsVertical.html` | `<cds-tabs-vertical>` | TabContent | Vertical tabs container component. |
 | `Tabs.html` | `<cds-tabs>` | TabContent | Tabs. |
-| `TabsStoryWrapper.html` | `<tabs-story-wrapper>` | Tabs | Wrapper component for dismissable tabs story with state management |
 | `TabSkeleton.html` | `<cds-tab-skeleton>` | Tabs | Skeleton of tab. |
 | `Tab.html` | `<cds-tab>` | Tabs | Basic tab. |
 | `TabsSkeleton.html` | `<cds-tabs-skeleton>` | Tabs | Skeleton of tabs. |

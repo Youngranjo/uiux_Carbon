@@ -41,28 +41,75 @@ function categorize(folder) {
   return 'Other';
 }
 
+// Attribute names that directly carry visible text — worth setting even when their
+// documented default is "" (an empty default just means "no placeholder text", not
+// "not meant to be used"). Carbon commonly pairs one of these with a same-named slot
+// that falls back to the attribute's value (e.g. accordion-item's `title` attr feeds
+// its `slot="title"` fallback), so filling the attribute is often enough on its own.
+const CONTENT_ATTR_NAMES = ['title', 'label', 'label-text', 'helper-text', 'value', 'placeholder', 'name'];
 const PREFERRED_DEMO_ATTRS = ['kind', 'size', 'value', 'label', 'title', 'placeholder', 'name', 'type', 'alignment'];
 
+function humanize(name) {
+  return name.replace(/^cds-/, '').replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+}
+
 function sampleAttrs(tag) {
-  // Prefer well-known, illustrative string attributes over boolean/internal ones.
-  const candidates = (tag.attributes || []).filter(
-    (a) => a.name !== 'styles' && !/^on/.test(a.name) && a.type !== 'boolean' && a.default && a.default !== '""'
-  );
-  const preferred = PREFERRED_DEMO_ATTRS.map((name) => candidates.find((a) => a.name === name)).filter(Boolean);
-  const rest = candidates.filter((a) => !preferred.includes(a));
+  const usable = (tag.attributes || []).filter((a) => a.name !== 'styles' && !/^on/.test(a.name) && a.type !== 'boolean');
+  const withValue = usable
+    .filter((a) => (a.default && a.default !== '""') || CONTENT_ATTR_NAMES.includes(a.name) || tag.slots?.includes(a.name))
+    .map((a) => ({ ...a, demoValue: a.default && a.default !== '""' ? a.default.replace(/^"|"$/g, '') : humanize(tag.name) }));
+  const preferred = PREFERRED_DEMO_ATTRS.map((name) => withValue.find((a) => a.name === name)).filter(Boolean);
+  const rest = withValue.filter((a) => !preferred.includes(a));
   return [...preferred, ...rest].slice(0, 3);
 }
 
+// A handful of Carbon components are containers that only look/behave right with real
+// children (an <cds-accordion> with plain text isn't valid usage — it expects
+// <cds-accordion-item> children). Composing 2-3 real child tags here, instead of a
+// generic text node, is the difference between a demo that looks broken and one that
+// actually shows the component.
+const CONTAINER_CHILDREN = {
+  'cds-accordion': () => `<cds-accordion-item title="Section 1 title">Section 1 content.</cds-accordion-item><cds-accordion-item title="Section 2 title">Section 2 content.</cds-accordion-item>`,
+  'cds-tabs': () => `<cds-tab id="tab-1" target="panel-1" value="tab-1">Tab 1</cds-tab><cds-tab id="tab-2" target="panel-2" value="tab-2">Tab 2</cds-tab>`,
+  'cds-select': () => `<cds-select-item value="1">Option 1</cds-select-item><cds-select-item value="2">Option 2</cds-select-item>`,
+  'cds-dropdown': () => `<cds-dropdown-item value="1">Option 1</cds-dropdown-item><cds-dropdown-item value="2">Option 2</cds-dropdown-item>`,
+  'cds-multi-select': () => `<cds-multi-select-item value="1">Option 1</cds-multi-select-item><cds-multi-select-item value="2">Option 2</cds-multi-select-item>`,
+  'cds-combo-box': () => `<cds-combo-box-item value="1">Option 1</cds-combo-box-item><cds-combo-box-item value="2">Option 2</cds-combo-box-item>`,
+  'cds-radio-button-group': () => `<cds-radio-button value="1" label-text="Option 1"></cds-radio-button><cds-radio-button value="2" label-text="Option 2"></cds-radio-button>`,
+  'cds-content-switcher': () => `<cds-content-switcher-item value="1">First</cds-content-switcher-item><cds-content-switcher-item value="2">Second</cds-content-switcher-item>`,
+  'cds-tile-group': () => `<cds-radio-tile value="1">Tile 1</cds-radio-tile><cds-radio-tile value="2">Tile 2</cds-radio-tile>`,
+  'cds-breadcrumb': () => `<cds-breadcrumb-item><cds-breadcrumb-link href="#">Home</cds-breadcrumb-link></cds-breadcrumb-item><cds-breadcrumb-item><cds-breadcrumb-link href="#">Section</cds-breadcrumb-link></cds-breadcrumb-item>`,
+  'cds-contained-list': () => `<cds-contained-list-item>Item 1</cds-contained-list-item><cds-contained-list-item>Item 2</cds-contained-list-item>`,
+  'cds-overflow-menu': () => `<cds-overflow-menu-body><cds-overflow-menu-item>Action 1</cds-overflow-menu-item><cds-overflow-menu-item>Action 2</cds-overflow-menu-item></cds-overflow-menu-body>`,
+  'cds-ordered-list': () => `<cds-list-item>First item</cds-list-item><cds-list-item>Second item</cds-list-item>`,
+  'cds-unordered-list': () => `<cds-list-item>First item</cds-list-item><cds-list-item>Second item</cds-list-item>`,
+  'cds-button-set': () => `<cds-button kind="secondary">Cancel</cds-button><cds-button kind="primary">Save</cds-button>`,
+  'cds-checkbox-group': () => `<cds-checkbox value="1">Option 1</cds-checkbox><cds-checkbox value="2">Option 2</cds-checkbox>`,
+  'cds-structured-list': () => `<cds-structured-list-head><cds-structured-list-header-row><cds-structured-list-header-cell>Column A</cds-structured-list-header-cell></cds-structured-list-header-row></cds-structured-list-head><cds-structured-list-body><cds-structured-list-row><cds-structured-list-cell>Row 1</cds-structured-list-cell></cds-structured-list-row></cds-structured-list-body>`,
+};
+
 function demoMarkupForTag(tag) {
+  // Composed containers get curated children only — generic attribute-filling (e.g.
+  // `value`/`name` falling back to the humanized tag name) produces nonsensical values
+  // like name="Radio button group" that add noise without adding clarity.
+  if (CONTAINER_CHILDREN[tag.name]) {
+    return `<${tag.name}>${CONTAINER_CHILDREN[tag.name]()}</${tag.name}>`;
+  }
+
   const attrs = sampleAttrs(tag);
-  const attrStr = attrs
-    .map((a) => {
-      const val = a.default.replace(/^"|"$/g, '');
-      return `${a.name}="${escapeHtml(val)}"`;
-    })
-    .join(' ');
-  const label = tagToPascal(tag.name).replace(/([a-z])([A-Z])/g, '$1 $2');
-  return `<${tag.name}${attrStr ? ' ' + attrStr : ''}>${escapeHtml(label)}</${tag.name}>`;
+  const usedNames = new Set(attrs.map((a) => a.name));
+  const attrStr = attrs.map((a) => `${a.name}="${escapeHtml(a.demoValue)}"`).join(' ');
+  const label = humanize(tag.name);
+
+  // Fill any named slot not already covered by an attribute of the same name (e.g.
+  // notification's slot="subtitle" has no matching attribute, so it needs real markup).
+  const slotChildren = (tag.slots || [])
+    .filter((slotName) => !usedNames.has(slotName))
+    .map((slotName) => `<span slot="${slotName}">${escapeHtml(humanize(slotName))}</span>`)
+    .join('');
+  const bodyText = tag.hasDefaultSlot || !tag.slots?.length ? escapeHtml(label) : '';
+
+  return `<${tag.name}${attrStr ? ' ' + attrStr : ''}>${slotChildren}${bodyText}</${tag.name}>`;
 }
 
 // ---------- 1. core/components/<Tag>.html — one real, runnable HTML file per Web Component tag ----------

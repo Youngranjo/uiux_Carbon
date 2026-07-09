@@ -34,7 +34,11 @@
         "events": [
           "cds-accordion-item-beingtoggled",
           "cds-accordion-item-toggled"
-        ]
+        ],
+        "slots": [
+          "title"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-accordion",
@@ -65,7 +69,9 @@
             "description": "Disable all accordion items inside this accordion."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -218,7 +224,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-ai-label",
@@ -307,7 +315,9 @@
             "description": "Set whether toggletip is open by default."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -331,13 +341,17 @@
             "description": "Custom styles to apply to skeleton icon"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-ai-skeleton-placeholder",
         "description": "AI skeleton placeholder.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-ai-skeleton-text",
@@ -368,7 +382,9 @@
             "description": "the number of lines in a paragraph"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -383,7 +399,9 @@
         "name": "cds-column-hang",
         "description": "The column component.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-column",
@@ -420,7 +438,9 @@
             "description": ""
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-grid",
@@ -456,7 +476,9 @@
             "description": "Add a row gap to the grid that matches the current gutter size.\nThis is useful when you want consistent vertical spacing between rows."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -480,7 +502,9 @@
             "description": "The shadow slot the badge-indicator should be in."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -497,7 +521,9 @@
         "name": "cds-breadcrumb-item",
         "description": "Breadcrumb item.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-breadcrumb-link",
@@ -578,7 +604,9 @@
             "description": "When enabled, applies Carbon's visited-link styles to browser-controlled :visited link state."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-breadcrumb-overflow-menu",
@@ -804,7 +832,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-breadcrumb",
@@ -823,7 +855,9 @@
             "description": "Specify the size of the Breadcrumb. Currently\nsupports the following: `sm` & `md` (default: 'md')"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -843,7 +877,9 @@
         "name": "cds-button-set-base",
         "description": "Button set without button checks",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-button-set",
@@ -856,7 +892,9 @@
             "description": "`true` if the buttons should be stacked. Only applies to the button-set variant."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-button",
@@ -992,7 +1030,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1007,7 +1049,9 @@
         "name": "cds-button-set-base",
         "description": "Button set without button checks",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-button-set",
@@ -1020,7 +1064,9 @@
             "description": "`true` if the buttons should be stacked. Only applies to the button-set variant."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-button",
@@ -1156,7 +1202,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1176,7 +1226,9 @@
             "description": "Specify the size of the `ChatButtonSkeleton`, from the following list of sizes: 'sm', 'md', 'lg'"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-chat-button",
@@ -1213,7 +1265,11 @@
             "description": "Specify whether the quick action `ChatButton` should be rendered as selected. This disables the input"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1282,7 +1338,13 @@
             "description": "Provide the text that is displayed when the form group is in warning state"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-checkbox",
@@ -1391,7 +1453,13 @@
         ],
         "events": [
           "cds-checkbox-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1459,7 +1527,13 @@
             "description": "Provide the text that is displayed when the form group is in warning state"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-checkbox",
@@ -1568,7 +1642,13 @@
         ],
         "events": [
           "cds-checkbox-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1677,7 +1757,9 @@
             "description": "The type of code snippet."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1711,7 +1793,9 @@
             "description": "The `value` attribute that is set to the parent `<cds-dropdown>` when this dropdown item is selected."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-combo-box",
@@ -1903,7 +1987,11 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "title-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -1957,7 +2045,9 @@
             "description": "Provide the tooltip content for the icon button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -1977,13 +2067,17 @@
         "name": "cds-modal-body-content",
         "description": "Modal body content",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-body",
         "description": "Modal body.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-close-button",
@@ -1996,7 +2090,9 @@
             "description": "Specify a label for the close button of the modal; defaults to close"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer-button",
@@ -2132,7 +2228,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer",
@@ -2145,13 +2243,20 @@
             "description": "`true` if this modal footer has more than two buttons."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-header",
         "description": "Modal header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-heading",
@@ -2164,7 +2269,9 @@
             "description": "The unique identifier for this heading element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-label",
@@ -2177,7 +2284,9 @@
             "description": "The unique identifier for this label element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal",
@@ -2276,7 +2385,9 @@
         "events": [
           "cds-modal-beingclosed",
           "cds-modal-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -2292,7 +2403,9 @@
         "name": "cds-contained-list-description",
         "description": "Contained list description text.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-contained-list-item",
@@ -2313,7 +2426,12 @@
         ],
         "events": [
           "cds-contained-list-item-click"
-        ]
+        ],
+        "slots": [
+          "icon",
+          "action"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-contained-list",
@@ -2343,7 +2461,12 @@
             "description": "Specify the size of the contained list."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "label",
+          "action"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -2394,7 +2517,11 @@
             "description": "Determines whether the tooltip should close when inner content is\nactivated (click, Enter or Space)"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tooltip-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-content-switcher",
@@ -2440,7 +2567,9 @@
         "events": [
           "cds-content-switcher-beingselected",
           "cds-content-switcher-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -2455,7 +2584,9 @@
         "name": "cds-menu-item-divider",
         "description": "Menu Item.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-menu-item-group",
@@ -2466,7 +2597,9 @@
             "description": "Label for the menu item."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-menu-item-radio-group",
@@ -2492,7 +2625,9 @@
             "description": "List of items in the radio group."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-menu-item-selectable",
@@ -2518,7 +2653,9 @@
             "description": ""
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-menu-item",
@@ -2569,7 +2706,12 @@
         ],
         "events": [
           "icon-detect"
-        ]
+        ],
+        "slots": [
+          "render-icon",
+          "submenu"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -2762,7 +2904,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tooltip-content"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -2812,7 +2958,9 @@
             "description": "The number in milliseconds to determine how long the tooltip should remain."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -2827,7 +2975,9 @@
         "name": "cds-button-set-base",
         "description": "Button set without button checks",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-button-set",
@@ -2840,7 +2990,9 @@
             "description": "`true` if the buttons should be stacked. Only applies to the button-set variant."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-button",
@@ -2976,7 +3128,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -3041,7 +3197,12 @@
         "events": [
           "cds-table-batch-actions-cancel-clicked",
           "cds-table-batch-actions-select-all-clicked"
-        ]
+        ],
+        "slots": [
+          "select-all-button-content",
+          "cancel-button-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-body",
@@ -3054,13 +3215,17 @@
             "description": "TODO: Uncomment when Carbon fully implements sticky header\nSpecify whether the header should be sticky.\nStill experimental: may not work with every combination of table props"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-cell-content",
         "description": "Data table cell content.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-cell",
@@ -3077,7 +3242,9 @@
             "description": "The table size."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-expanded-row",
@@ -3114,13 +3281,17 @@
             "description": "`true` if the previous table row has been selected"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-head",
         "description": "Data table header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-cell",
@@ -3163,13 +3334,20 @@
         ],
         "events": [
           "cds-table-header-cell-sort"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-description",
         "description": "Data table header description",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-row",
@@ -3243,13 +3421,17 @@
           "cds-checkbox-changed",
           "cds-table-row-expando-beingtoggled",
           "cds-table-row-expando-toggled"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-header-title",
         "description": "Data table header title",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-row",
@@ -3322,7 +3504,12 @@
           "cds-checkbox-changed",
           "cds-table-row-expando-beingtoggled",
           "cds-table-row-expando-toggled"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-skeleton",
@@ -3359,7 +3546,9 @@
             "description": "true to add useZebraStyles striping."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-toolbar-content",
@@ -3376,7 +3565,9 @@
             "description": "Table toolbar contents size"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-toolbar-search",
@@ -3475,7 +3666,9 @@
         ],
         "events": [
           "cds-search-input"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-toolbar",
@@ -3486,7 +3679,9 @@
             "description": "Toolbar size"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table",
@@ -3592,7 +3787,11 @@
           "cds-table-row-all-selected",
           "cds-table-sorted",
           "cds-table-filtered"
-        ]
+        ],
+        "slots": [
+          "toolbar"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -3635,7 +3834,12 @@
         "events": [
           "cds-table-batch-actions-cancel-clicked",
           "cds-table-batch-actions-select-all-clicked"
-        ]
+        ],
+        "slots": [
+          "select-all-button-content",
+          "cancel-button-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-body",
@@ -3648,13 +3852,17 @@
             "description": "TODO: Uncomment when Carbon fully implements sticky header\nSpecify whether the header should be sticky.\nStill experimental: may not work with every combination of table props"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-cell-content",
         "description": "Data table cell content.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-cell",
@@ -3671,7 +3879,9 @@
             "description": "The table size."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-expanded-row",
@@ -3708,13 +3918,17 @@
             "description": "`true` if the previous table row has been selected"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-head",
         "description": "Data table header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-cell",
@@ -3757,13 +3971,20 @@
         ],
         "events": [
           "cds-table-header-cell-sort"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-description",
         "description": "Data table header description",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-header-row",
@@ -3837,13 +4058,17 @@
           "cds-checkbox-changed",
           "cds-table-row-expando-beingtoggled",
           "cds-table-row-expando-toggled"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-header-title",
         "description": "Data table header title",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-row",
@@ -3916,7 +4141,12 @@
           "cds-checkbox-changed",
           "cds-table-row-expando-beingtoggled",
           "cds-table-row-expando-toggled"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-skeleton",
@@ -3953,7 +4183,9 @@
             "description": "true to add useZebraStyles striping."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-toolbar-content",
@@ -3970,7 +4202,9 @@
             "description": "Table toolbar contents size"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table-toolbar-search",
@@ -4069,7 +4303,9 @@
         ],
         "events": [
           "cds-search-input"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-table-toolbar",
@@ -4080,7 +4316,9 @@
             "description": "Toolbar size"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-table",
@@ -4186,7 +4424,11 @@
           "cds-table-row-all-selected",
           "cds-table-sorted",
           "cds-table-filtered"
-        ]
+        ],
+        "slots": [
+          "toolbar"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -4300,7 +4542,14 @@
             "description": "Provide the text that is displayed when the control is in warning state"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "label-text",
+          "ai-label",
+          "slug",
+          "helper-text"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-date-picker",
@@ -4371,7 +4620,9 @@
         "events": [
           "cds-date-picker-changed",
           "cds-date-picker-flatpickr-error"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -4484,7 +4735,14 @@
             "description": "Provide the text that is displayed when the control is in warning state"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "label-text",
+          "ai-label",
+          "slug",
+          "helper-text"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-date-picker",
@@ -4555,7 +4813,9 @@
         "events": [
           "cds-date-picker-changed",
           "cds-date-picker-flatpickr-error"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -4568,7 +4828,9 @@
         "name": "cds-dialog-body",
         "description": "Dialog body.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-dialog-close-button",
@@ -4581,13 +4843,17 @@
             "description": "Specify a label for the close button of the modal; defaults to close"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-dialog-controls",
         "description": "Dialog header controls.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-dialog-footer-button",
@@ -4723,7 +4989,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-dialog-footer",
@@ -4736,13 +5004,17 @@
             "description": "`true` if this modal footer has more than two buttons."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-dialog-header",
         "description": "Dialog header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-dialog-subtitle",
@@ -4755,7 +5027,9 @@
             "description": "Specify an optional id for the subtitle element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-dialog-title",
@@ -4768,7 +5042,9 @@
             "description": "Specify an optional id for the title element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-dialog",
@@ -4853,7 +5129,9 @@
         "events": [
           "cds-dialog-beingclosed",
           "cds-dialog-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -4888,7 +5166,9 @@
             "description": "The `value` attribute that is set to the parent `<cds-dropdown>` when this dropdown item is selected."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-dropdown",
@@ -5046,7 +5326,14 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "title-text",
+          "ai-label",
+          "slug",
+          "helper-text"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -5156,7 +5443,11 @@
         ],
         "events": [
           "cds-search-input"
-        ]
+        ],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -5231,7 +5522,9 @@
         ],
         "events": [
           "cds-file-uploader-button-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-file-uploader-drop-container",
@@ -5270,7 +5563,9 @@
         ],
         "events": [
           "cds-file-uploader-drop-container-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-file-uploader-item",
@@ -5322,13 +5617,17 @@
         "events": [
           "cds-file-uploader-item-beingdeleted",
           "cds-file-uploader-item-deleted"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-file-uploader-skeleton",
         "description": "The File uploader skeleton.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-file-uploader",
@@ -5353,7 +5652,13 @@
             "description": "The label title."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "label-title",
+          "label-description",
+          "drop-container"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -5369,7 +5674,9 @@
         "name": "cds-fluid-combo-box-skeleton",
         "description": "Fluid combo box skeleton.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-combo-box",
@@ -5567,7 +5874,9 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -5583,7 +5892,9 @@
         "name": "cds-fluid-combo-box-skeleton",
         "description": "Fluid combo box skeleton.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-combo-box",
@@ -5781,7 +6092,9 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -5796,7 +6109,9 @@
         "name": "cds-fluid-combo-box-skeleton",
         "description": "Fluid combo box skeleton.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-combo-box",
@@ -5994,7 +6309,9 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -6023,7 +6340,9 @@
             "description": "Specify the size of the ListBox."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-dropdown",
@@ -6187,7 +6506,9 @@
           "cds-dropdown-toggled",
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -6203,7 +6524,9 @@
         "name": "cds-fluid-form",
         "description": "Presentational element for fluid form",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -6219,7 +6542,9 @@
         "name": "cds-fluid-multi-select-skeleton",
         "description": "Fluid multi select skeleton.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-multi-select",
@@ -6433,7 +6758,9 @@
           "cds-dropdown-selected",
           "cds-dropdown-toggled",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -6462,7 +6789,9 @@
             "description": "Specify the size of the Number Input skeleton."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-number-input",
@@ -6724,7 +7053,9 @@
         "events": [
           "cds-number-input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -6746,7 +7077,9 @@
             "description": "The search skeleton size."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-search",
@@ -6838,7 +7171,9 @@
         ],
         "events": [
           "cds-search-input"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -6861,7 +7196,9 @@
             "description": "`true` if the label should be hidden. Corresponds to the attribute with the same name."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-select",
@@ -7005,7 +7342,9 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -7028,7 +7367,9 @@
             "description": "Specify whether the label should be hidden, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-textarea",
@@ -7230,7 +7571,9 @@
         "events": [
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -7259,7 +7602,9 @@
             "description": "The text-input-skeleton size."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-text-input",
@@ -7438,7 +7783,9 @@
         ],
         "events": [
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -7598,7 +7945,9 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-time-picker-skeleton",
@@ -7611,7 +7960,9 @@
             "description": "Specify if there are only two TimePicker elements."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-time-picker",
@@ -7728,7 +8079,13 @@
         "events": [
           "change",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "invalid-text",
+          "warning-text",
+          "label-text"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -7887,7 +8244,9 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-time-picker-skeleton",
@@ -7900,7 +8259,9 @@
             "description": "Specify if there are only two TimePicker elements."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-fluid-time-picker",
@@ -8017,7 +8378,13 @@
         "events": [
           "change",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "invalid-text",
+          "warning-text",
+          "label-text"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8032,13 +8399,17 @@
         "name": "cds-form-item",
         "description": "Presentational element for form items",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-form",
         "description": "Presentational element for form",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8079,7 +8450,9 @@
             "description": "Provide the text for the message in the Form Group"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8094,13 +8467,17 @@
         "name": "cds-form-item",
         "description": "Presentational element for form items",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-form",
         "description": "Presentational element for form",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8115,13 +8492,17 @@
         "name": "cds-form-item",
         "description": "Presentational element for form items",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-form",
         "description": "Presentational element for form",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8141,7 +8522,9 @@
         "name": "cds-column-hang",
         "description": "The column component.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-column",
@@ -8178,7 +8561,9 @@
             "description": ""
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-grid",
@@ -8214,7 +8599,9 @@
             "description": "Add a row gap to the grid that matches the current gutter size.\nThis is useful when you want consistent vertical spacing between rows."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8230,7 +8617,9 @@
         "name": "cds-heading",
         "description": "The heading component",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8267,7 +8656,9 @@
             "description": "The aria-label for the icon"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8449,7 +8840,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tooltip-content"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -8479,7 +8874,9 @@
             "description": "Icon Indicator kind"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -8555,7 +8952,13 @@
             "description": "Provide the text that is displayed when the form group is in warning state"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-checkbox",
@@ -8664,7 +9067,13 @@
         ],
         "events": [
           "cds-checkbox-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "decorator",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8705,7 +9114,9 @@
         ],
         "events": [
           "cds-inline-loading-onsuccess"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8738,7 +9149,9 @@
         ],
         "events": [
           "cds-use-layer"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8767,7 +9180,9 @@
             "description": ""
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-layout",
@@ -8784,7 +9199,9 @@
             "description": "Density context for all descendant components."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8864,7 +9281,11 @@
             "description": "When enabled, applies Carbon's visited-link styles to browser-controlled :visited link state."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8886,7 +9307,11 @@
             "description": "`true` if this list item is a child of a nested list.\n`<cds-ordered-list>` or `<cds-unordered-list>` automatically sets this property."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "nested"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-ordered-list",
@@ -8911,7 +9336,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-unordered-list",
@@ -8930,7 +9357,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -8985,7 +9414,9 @@
             "description": "Specify whether you want the loading indicator to be spinning or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -9005,7 +9436,9 @@
         "name": "cds-menu-item-divider",
         "description": "Menu Item.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-menu-item-group",
@@ -9016,7 +9449,9 @@
             "description": "Label for the menu item."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-menu-item-radio-group",
@@ -9042,7 +9477,9 @@
             "description": "List of items in the radio group."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-menu-item-selectable",
@@ -9068,7 +9505,9 @@
             "description": ""
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-menu-item",
@@ -9119,7 +9558,12 @@
         ],
         "events": [
           "icon-detect"
-        ]
+        ],
+        "slots": [
+          "render-icon",
+          "submenu"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -9179,7 +9623,9 @@
             "description": "Specify the tabIndex of the button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -9196,13 +9642,17 @@
         "name": "cds-modal-body-content",
         "description": "Modal body content",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-body",
         "description": "Modal body.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-close-button",
@@ -9215,7 +9665,9 @@
             "description": "Specify a label for the close button of the modal; defaults to close"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer-button",
@@ -9351,7 +9803,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer",
@@ -9364,13 +9818,20 @@
             "description": "`true` if this modal footer has more than two buttons."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-header",
         "description": "Modal header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-heading",
@@ -9383,7 +9844,9 @@
             "description": "The unique identifier for this heading element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-label",
@@ -9396,7 +9859,9 @@
             "description": "The unique identifier for this label element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal",
@@ -9495,7 +9960,9 @@
         "events": [
           "cds-modal-beingclosed",
           "cds-modal-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -9510,13 +9977,17 @@
         "name": "cds-modal-body-content",
         "description": "Modal body content",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-body",
         "description": "Modal body.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-close-button",
@@ -9529,7 +10000,9 @@
             "description": "Specify a label for the close button of the modal; defaults to close"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer-button",
@@ -9665,7 +10138,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-modal-footer",
@@ -9678,13 +10153,20 @@
             "description": "`true` if this modal footer has more than two buttons."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-header",
         "description": "Modal header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-heading",
@@ -9697,7 +10179,9 @@
             "description": "The unique identifier for this heading element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal-label",
@@ -9710,7 +10194,9 @@
             "description": "The unique identifier for this label element"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-modal",
@@ -9809,7 +10295,9 @@
         "events": [
           "cds-modal-beingclosed",
           "cds-modal-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -9866,7 +10354,9 @@
             "description": "The `value` attribute that is set to the parent `<cds-dropdown>` when this dropdown item is selected."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-multi-select",
@@ -10074,7 +10564,11 @@
           "cds-dropdown-selected",
           "cds-dropdown-toggled",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "title-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -10225,7 +10719,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-actionable-notification",
@@ -10316,7 +10812,14 @@
         "events": [
           "cds-notification-beingclosed",
           "cds-notification-closed"
-        ]
+        ],
+        "slots": [
+          "title",
+          "subtitle",
+          "caption",
+          "action"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-callout-notification",
@@ -10413,7 +10916,12 @@
         "events": [
           "cds-notification-beingclosed",
           "cds-notification-closed"
-        ]
+        ],
+        "slots": [
+          "title",
+          "subtitle"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-inline-notification",
@@ -10474,7 +10982,12 @@
         "events": [
           "cds-notification-beingclosed",
           "cds-notification-closed"
-        ]
+        ],
+        "slots": [
+          "title",
+          "subtitle"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-toast-notification",
@@ -10541,7 +11054,13 @@
         "events": [
           "cds-notification-beingclosed",
           "cds-notification-closed"
-        ]
+        ],
+        "slots": [
+          "title",
+          "subtitle",
+          "caption"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -10814,7 +11333,14 @@
         "events": [
           "cds-number-input",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "helper-text",
+          "label-text",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -10836,7 +11362,11 @@
             "description": "`true` if this list item is a child of a nested list.\n`<cds-ordered-list>` or `<cds-unordered-list>` automatically sets this property."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "nested"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-ordered-list",
@@ -10861,7 +11391,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-unordered-list",
@@ -10880,7 +11412,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -10914,7 +11448,9 @@
             "description": "How the menu is aligned to the trigger button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-overflow-menu-item",
@@ -10959,7 +11495,11 @@
         ],
         "events": [
           "cds-overflow-menu-item-clicked"
-        ]
+        ],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-overflow-menu",
@@ -11185,7 +11725,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -11219,7 +11761,9 @@
             "description": "How the menu is aligned to the trigger button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-overflow-menu-item",
@@ -11264,7 +11808,11 @@
         ],
         "events": [
           "cds-overflow-menu-item-clicked"
-        ]
+        ],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-overflow-menu",
@@ -11490,7 +12038,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -11528,7 +12078,13 @@
             "description": "Set to `true` if content actions should be flush (no padding)"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon",
+          "content-actions",
+          "page-actions"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-page-header-content-text",
@@ -11541,7 +12097,9 @@
             "description": "Subtitle text of the page-header-content"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-page-header-content",
@@ -11560,25 +12118,39 @@
             "description": "Set to `true` if the breadcrumb bar is sitting within a grid\n(ie. when used in tandem with page-header-hero-image)"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon",
+          "contextual-actions",
+          "page-actions"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-page-header-hero-image",
         "description": "Page header Hero Image.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-page-header-tabs",
         "description": "Page header Tabs Bar.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [
+          "tags"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-page-header",
         "description": "Page header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -11695,7 +12267,11 @@
         "events": [
           "cds-pagination-changed-current",
           "cds-page-sizes-select-changed"
-        ]
+        ],
+        "slots": [
+          "label-text"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -11760,7 +12336,9 @@
         ],
         "events": [
           "cds-page-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -11835,7 +12413,9 @@
             "description": "The shadow slot this popover content should be in."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-popover",
@@ -11909,7 +12489,11 @@
         "events": [
           "cds-popover-beingclosed",
           "cds-popover-closed"
-        ]
+        ],
+        "slots": [
+          "content"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -11924,7 +12508,9 @@
         "name": "cds-button-set-base",
         "description": "Button set without button checks",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-button-set",
@@ -11937,7 +12523,9 @@
             "description": "`true` if the buttons should be stacked. Only applies to the button-set variant."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-button",
@@ -12073,7 +12661,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -12129,7 +12721,9 @@
             "description": "The current value."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -12168,7 +12762,9 @@
         "events": [
           "change",
           "onChange"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-progress-step",
@@ -12236,7 +12832,12 @@
             "description": "Specify whether the step is invalid"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "label-text",
+          "secondary-label-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -12335,7 +12936,12 @@
         "events": [
           "cds-radio-button-group-changed",
           "cds-radio-button-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-radio-button",
@@ -12438,7 +13044,12 @@
         ],
         "events": [
           "cds-radio-button-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -12536,7 +13147,12 @@
         "events": [
           "cds-radio-button-group-changed",
           "cds-radio-button-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-radio-button",
@@ -12639,7 +13255,12 @@
         ],
         "events": [
           "cds-radio-button-changed"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -12744,7 +13365,11 @@
             "description": "When enabled, applies Carbon's visited-link styles to browser-controlled :visited link state."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-expandable-tile",
@@ -12778,7 +13403,14 @@
         "events": [
           "cds-expandable-tile-beingtoggled",
           "cds-expandable-tile-toggled"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug",
+          "decorator",
+          "above-the-fold-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-radio-tile",
@@ -12827,7 +13459,12 @@
         "events": [
           "cds-radio-tile-selected",
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-selectable-tile",
@@ -12875,7 +13512,13 @@
         ],
         "events": [
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile-group",
@@ -12910,7 +13553,11 @@
         "events": [
           "cds-current-radio-tile-selection",
           "cds-current-selectable-tile-selections"
-        ]
+        ],
+        "slots": [
+          "legend"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile",
@@ -12929,7 +13576,13 @@
             "description": "Specify if the `Tile` component should be rendered with rounded corners.\nOnly valid when `ai-label` prop is present"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -13031,7 +13684,11 @@
         ],
         "events": [
           "cds-search-input"
-        ]
+        ],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -13046,7 +13703,9 @@
         "name": "cds-button-set-base",
         "description": "Button set without button checks",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-button-set",
@@ -13059,7 +13718,9 @@
             "description": "`true` if the buttons should be stacked. Only applies to the button-set variant."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-button",
@@ -13195,7 +13856,11 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -13224,7 +13889,9 @@
             "description": "The label."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select-item",
@@ -13255,7 +13922,9 @@
             "description": "The value."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select",
@@ -13399,7 +14068,14 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [
+          "helper-text",
+          "ai-label",
+          "slug",
+          "label-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -13427,7 +14103,9 @@
             "description": "The label."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select-item",
@@ -13458,7 +14136,9 @@
             "description": "The value."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select",
@@ -13602,7 +14282,14 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [
+          "helper-text",
+          "ai-label",
+          "slug",
+          "label-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -13630,7 +14317,9 @@
             "description": "The label."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select-item",
@@ -13661,7 +14350,9 @@
             "description": "The value."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-select",
@@ -13805,7 +14496,14 @@
         ],
         "events": [
           "cds-select-selected"
-        ]
+        ],
+        "slots": [
+          "helper-text",
+          "ai-label",
+          "slug",
+          "label-text"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -13835,7 +14533,9 @@
             "description": "Shape Indicator kind"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -13935,7 +14635,14 @@
           "cds-side-panel-beingclosed",
           "cds-side-panel-closed",
           "cds-side-panel-navigate-back"
-        ]
+        ],
+        "slots": [
+          "slug",
+          "subtitle",
+          "action-toolbar",
+          "actions"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -13950,7 +14657,9 @@
         "name": "cds-skeleton-icon",
         "description": "Skeleton icon.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -13970,7 +14679,9 @@
             "description": "Specify optional classes to be added to your SkeletonText"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -14020,7 +14731,9 @@
             "description": "the number of lines in a paragraph"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -14045,7 +14758,9 @@
             "description": "The skip link href."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -14119,7 +14834,9 @@
         ],
         "events": [
           "cds-slider-input-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-slider",
@@ -14238,7 +14955,14 @@
         "events": [
           "cds-slider-input-changed",
           "cds-slider-changed"
-        ]
+        ],
+        "slots": [
+          "label-text",
+          "lower-input",
+          "min-text",
+          "max-text"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -14387,7 +15111,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-slug",
@@ -14482,7 +15208,9 @@
             "description": "Set whether toggletip is open by default."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -14516,7 +15244,9 @@
             "description": "Turn on when passing in custom value to 'gap' attribute (ie. gap=\"2rem\")"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -14537,25 +15267,33 @@
         "name": "cds-structured-list-body",
         "description": "Structured list body.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list-cell",
         "description": "Structured list cell.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list-head",
         "description": "Structured list header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list-header-cell",
         "description": "Structured list header cell.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list-header-row",
@@ -14568,7 +15306,9 @@
             "description": "The `name` attribute for the `<input>` for selection.\nIf present, this structured list header row will show its selectable version of the UI."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list-row",
@@ -14599,7 +15339,9 @@
             "description": "The content to put into the `<title>` attribute of the selection icon."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-structured-list",
@@ -14624,7 +15366,9 @@
             "description": "Specify if structured list is flush, default is false"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -14676,7 +15420,11 @@
             "description": "Determines whether the tooltip should close when inner content is\nactivated (click, Enter or Space)"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tooltip-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-content-switcher",
@@ -14722,7 +15470,9 @@
         "events": [
           "cds-content-switcher-beingselected",
           "cds-content-switcher-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -14734,58 +15484,12 @@
     "wcFolder": "tabs",
     "tags": [
       {
-        "name": "tabs-story-wrapper",
-        "description": "Wrapper component for dismissable tabs story with state management",
-        "attributes": [
-          {
-            "name": "with-icons",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether to render tabs with icons"
-          },
-          {
-            "name": "disabled",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether tabs are disabled"
-          },
-          {
-            "name": "contained",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether tabs are contained"
-          },
-          {
-            "name": "dismissable",
-            "type": "boolean",
-            "default": "true",
-            "description": "Whether the rendered Tab children should be dismissable."
-          },
-          {
-            "name": "selection-mode",
-            "type": "string",
-            "default": "\"automatic\"",
-            "description": "Selection mode"
-          },
-          {
-            "name": "selected-index",
-            "type": "number",
-            "default": "0",
-            "description": "Selected index for the initially selected content"
-          },
-          {
-            "name": "size",
-            "type": "TABS_SIZE | undefined",
-            "description": "Size of the tabs"
-          }
-        ],
-        "events": []
-      },
-      {
         "name": "cds-tab-skeleton",
         "description": "Skeleton of tab.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tab",
@@ -14868,7 +15572,9 @@
         "events": [
           "cds-tab-beingclosed",
           "cds-tab-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tabs-skeleton",
@@ -14881,7 +15587,9 @@
             "description": "Provide the type of Tab"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tabs-vertical",
@@ -14893,7 +15601,12 @@
             "description": "Option to set a height style only if using vertical variation."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tabs",
+          "panel"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tabs",
@@ -14986,7 +15699,9 @@
           "cds-tabs-selected",
           "cds-content-switcher-beingselected",
           "cds-content-switcher-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -15006,58 +15721,12 @@
     "wcFolder": "tabs",
     "tags": [
       {
-        "name": "tabs-story-wrapper",
-        "description": "Wrapper component for dismissable tabs story with state management",
-        "attributes": [
-          {
-            "name": "with-icons",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether to render tabs with icons"
-          },
-          {
-            "name": "disabled",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether tabs are disabled"
-          },
-          {
-            "name": "contained",
-            "type": "boolean",
-            "default": "false",
-            "description": "Whether tabs are contained"
-          },
-          {
-            "name": "dismissable",
-            "type": "boolean",
-            "default": "true",
-            "description": "Whether the rendered Tab children should be dismissable."
-          },
-          {
-            "name": "selection-mode",
-            "type": "string",
-            "default": "\"automatic\"",
-            "description": "Selection mode"
-          },
-          {
-            "name": "selected-index",
-            "type": "number",
-            "default": "0",
-            "description": "Selected index for the initially selected content"
-          },
-          {
-            "name": "size",
-            "type": "TABS_SIZE | undefined",
-            "description": "Size of the tabs"
-          }
-        ],
-        "events": []
-      },
-      {
         "name": "cds-tab-skeleton",
         "description": "Skeleton of tab.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tab",
@@ -15140,7 +15809,9 @@
         "events": [
           "cds-tab-beingclosed",
           "cds-tab-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tabs-skeleton",
@@ -15153,7 +15824,9 @@
             "description": "Provide the type of Tab"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tabs-vertical",
@@ -15165,7 +15838,12 @@
             "description": "Option to set a height style only if using vertical variation."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "tabs",
+          "panel"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tabs",
@@ -15258,7 +15936,9 @@
           "cds-tabs-selected",
           "cds-content-switcher-beingselected",
           "cds-content-switcher-selected"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -15348,7 +16028,14 @@
           "cds-dismissible-tag-closed",
           "cds-tag-beingclosed",
           "cds-tag-closed"
-        ]
+        ],
+        "slots": [
+          "icon",
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-operational-tag",
@@ -15388,7 +16075,14 @@
         "events": [
           "cds-operational-tag-beforeselected",
           "cds-operational-tag-selected"
-        ]
+        ],
+        "slots": [
+          "icon",
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-selectable-tag",
@@ -15422,7 +16116,14 @@
         "events": [
           "cds-selectable-tag-beforeselected",
           "cds-selectable-tag-selected"
-        ]
+        ],
+        "slots": [
+          "icon",
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tag-skeleton",
@@ -15435,7 +16136,9 @@
             "description": "Specify the size of the Tag. Currently supports either `sm`,\n`md` (default) or `lg` sizes."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tag",
@@ -15487,7 +16190,14 @@
         "events": [
           "cds-tag-beingclosed",
           "cds-tag-closed"
-        ]
+        ],
+        "slots": [
+          "icon",
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -15556,7 +16266,18 @@
         "events": [
           "cds-tearsheet-beingclosed",
           "cds-tearsheet-closed"
-        ]
+        ],
+        "slots": [
+          "label",
+          "title",
+          "description",
+          "header-actions",
+          "header-navigation",
+          "slug",
+          "influencer",
+          "actions"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -15579,7 +16300,9 @@
             "description": "Specify whether the label should be hidden, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-textarea",
@@ -15781,7 +16504,14 @@
         "events": [
           "input",
           "invalid"
-        ]
+        ],
+        "slots": [
+          "label-text",
+          "helper-text",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -15811,7 +16541,9 @@
             "description": "The text-input-skeleton size."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-text-input",
@@ -15990,7 +16722,14 @@
         ],
         "events": [
           "invalid"
-        ]
+        ],
+        "slots": [
+          "label-text",
+          "helper-text",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -16112,7 +16851,11 @@
             "description": "When enabled, applies Carbon's visited-link styles to browser-controlled :visited link state."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-expandable-tile",
@@ -16146,7 +16889,14 @@
         "events": [
           "cds-expandable-tile-beingtoggled",
           "cds-expandable-tile-toggled"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug",
+          "decorator",
+          "above-the-fold-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-radio-tile",
@@ -16195,7 +16945,12 @@
         "events": [
           "cds-radio-tile-selected",
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-selectable-tile",
@@ -16243,7 +16998,13 @@
         ],
         "events": [
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile-group",
@@ -16278,7 +17039,11 @@
         "events": [
           "cds-current-radio-tile-selection",
           "cds-current-selectable-tile-selections"
-        ]
+        ],
+        "slots": [
+          "legend"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile",
@@ -16297,7 +17062,13 @@
             "description": "Specify if the `Tile` component should be rendered with rounded corners.\nOnly valid when `ai-label` prop is present"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -16402,7 +17173,11 @@
             "description": "When enabled, applies Carbon's visited-link styles to browser-controlled :visited link state."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator"
+        ],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-expandable-tile",
@@ -16436,7 +17211,14 @@
         "events": [
           "cds-expandable-tile-beingtoggled",
           "cds-expandable-tile-toggled"
-        ]
+        ],
+        "slots": [
+          "ai-label",
+          "slug",
+          "decorator",
+          "above-the-fold-content"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-radio-tile",
@@ -16485,7 +17267,12 @@
         "events": [
           "cds-radio-tile-selected",
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-selectable-tile",
@@ -16533,7 +17320,13 @@
         ],
         "events": [
           "cds-selectable-tile-changed"
-        ]
+        ],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile-group",
@@ -16568,7 +17361,11 @@
         "events": [
           "cds-current-radio-tile-selection",
           "cds-current-selectable-tile-selections"
-        ]
+        ],
+        "slots": [
+          "legend"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tile",
@@ -16587,7 +17384,13 @@
             "description": "Specify if the `Tile` component should be rendered with rounded corners.\nOnly valid when `ai-label` prop is present"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "decorator",
+          "ai-label",
+          "slug"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -16651,7 +17454,9 @@
             "description": "Size of the time picker select"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-time-picker",
@@ -16768,7 +17573,9 @@
         "events": [
           "change",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -16832,7 +17639,9 @@
             "description": "Size of the time picker select"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-time-picker",
@@ -16949,7 +17758,9 @@
         "events": [
           "change",
           "invalid"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -16965,7 +17776,9 @@
         "name": "cds-toggle-skeleton",
         "description": "",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-toggle",
@@ -17109,7 +17922,9 @@
         "events": [
           "cds-toggle-changed",
           "cds-checkbox-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -17124,7 +17939,9 @@
         "name": "cds-toggle-skeleton",
         "description": "",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-toggle",
@@ -17268,7 +18085,9 @@
         "events": [
           "cds-toggle-changed",
           "cds-checkbox-changed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -17324,7 +18143,13 @@
             "description": "Set whether toggletip is open by default."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "trigger",
+          "body-text",
+          "actions"
+        ],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -17365,7 +18190,11 @@
             "description": "Specifies whether the `DefinitionTooltip` should open on hover or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "definition"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tooltip-content",
@@ -17430,7 +18259,9 @@
             "description": "The shadow slot this popover content should be in."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-tooltip",
@@ -17558,7 +18389,9 @@
         "events": [
           "cds-popover-beingclosed",
           "cds-popover-closed"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       }
     ]
   },
@@ -17622,7 +18455,11 @@
         "events": [
           "eventSelected",
           "eventToggled"
-        ]
+        ],
+        "slots": [
+          "icon"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-tree-view",
@@ -17646,7 +18483,9 @@
             "description": "Specify the size of the tree from a list of available sizes."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -17835,7 +18674,9 @@
             "description": "Optional prop to specify the type of the Button."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-header-menu-button",
@@ -17880,7 +18721,9 @@
         ],
         "events": [
           "cds-header-menu-button-toggled"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-header-menu-item",
@@ -17923,7 +18766,9 @@
             "description": "As child of <ul>, this element must have role of listitem"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-header-menu",
@@ -17953,7 +18798,9 @@
             "description": "The `aria-label` attribute for the menu UI."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header-name",
@@ -17970,7 +18817,9 @@
             "description": "The product name prefix."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header-nav-item",
@@ -18013,7 +18862,9 @@
             "description": "As child of <ul>, this element must have role of listitem"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header-nav",
@@ -18025,7 +18876,9 @@
             "description": "The `aria-label` attribute for the menu bar UI."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header-panel",
@@ -18036,7 +18889,9 @@
             "description": "Specify whether the panel is expanded"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header-side-nav-items",
@@ -18049,25 +18904,33 @@
             "description": "Optionally specify if container will have a bottom divider to differentiate\nbetween original sidenav items and header menu items. False by default."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-header",
         "description": "Header.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-side-nav-divider",
         "description": "A divider in side nav.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-side-nav-items",
         "description": "Side nav items.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-side-nav-link",
@@ -18107,7 +18970,11 @@
             "description": "The title."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "title-icon"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-side-nav-menu-item",
@@ -18136,7 +19003,9 @@
             "description": "The title."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-side-nav-menu",
@@ -18176,7 +19045,11 @@
         "events": [
           "cds-side-nav-menu-beingtoggled",
           "cds-side-nav-menu-toggled"
-        ]
+        ],
+        "slots": [
+          "title-icon"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-side-nav",
@@ -18209,13 +19082,17 @@
         ],
         "events": [
           "cds-header-menu-button-toggled"
-        ]
+        ],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-switcher-divider",
         "description": "A divider in switcher.",
         "attributes": [],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
       },
       {
         "name": "cds-switcher-item",
@@ -18248,7 +19125,9 @@
             "description": "Specify if this is a large variation of the side nav link"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-switcher",
@@ -18263,7 +19142,9 @@
             "description": "Prop for accessibility labelled by on the underlying menu"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   },
@@ -18285,7 +19166,11 @@
             "description": "`true` if this list item is a child of a nested list.\n`<cds-ordered-list>` or `<cds-unordered-list>` automatically sets this property."
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [
+          "nested"
+        ],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-ordered-list",
@@ -18310,7 +19195,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       },
       {
         "name": "cds-unordered-list",
@@ -18329,7 +19216,9 @@
             "description": "Specify whether the list is nested, or not"
           }
         ],
-        "events": []
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": true
       }
     ]
   }
