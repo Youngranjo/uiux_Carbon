@@ -143,6 +143,10 @@ Web Component 공식 스토리는 lit-html 템플릿(`html\`<cds-accordion align
   (113개), 없으면 공식 가이드대로 Web Components(Carbon 11)를 감싼 얇은 SFC를 씁니다. 두 방식이
   섞여 있으므로 실제 프로젝트에 쓸 때는 파일 상단 주석에서 어느 쪽인지 반드시 확인하세요 — Carbon
   10/11이 같은 페이지에 같이 있으면 시각적으로 어긋납니다.
-- 아이콘 일부(`@carbon/web-components` 2.x가 기대하는 `16.js`/`20.js`/`24.js`)가 현재 배포된
-  `@carbon/icons` 11.83.0에는 없어(패키지 간 일시적 버전 불일치), 번들링 시 같은 아이콘의 사용 가능한
-  파일로 자동 대체했습니다 (`scripts/build-wc-bundle.mjs` 참고). 시각적으로는 문제없이 렌더링됩니다.
+- `@carbon/web-components`가 참조하는 아이콘 파일(`16.js`/`20.js`/`24.js`) 중 상당수가 현재 배포된
+  `@carbon/icons` 11.83.0의 `es/` 빌드에는 없습니다(패키지 간 일시적 버전 불일치). 처음엔 같은 아이콘의
+  아무 사이즈 파일로 대체했는데, chevron처럼 정사각형이 아닌 아이콘은 이렇게 하면 실제로 비율이 눌리거나
+  늘어나 보였습니다. `scripts/build-icon-overrides.mjs`가 같은 패키지 안에 그대로 남아있는
+  `@carbon/icons/metadata.json`(사이즈별 원본 path 데이터를 갖고 있음)에서 정확한 사이즈의 아이콘을
+  다시 만들어 채워 넣어 해결했습니다 — 실제 웹 컴포넌트가 쓰는 64개 아이콘 중 62개를 이렇게 복구했고,
+  `npm run bundle`을 실행할 때마다 자동으로 갱신됩니다.

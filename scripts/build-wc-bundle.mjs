@@ -1,9 +1,12 @@
 // Bundles the real @carbon/web-components source (from node_modules) into a single
 // offline-usable ESM file. The currently published @carbon/web-components 2.x still
-// imports old per-size icon paths (16.js/20.js/24.js) but @carbon/icons 11.83+ ships an
-// inconsistent mix of files per icon (some only "index.js", some only "32.js", some only
-// "24.js"...). This plugin resolves each broken import to whatever file actually exists
-// in that icon's real installed folder, so the bundle is built from real source, not stubs.
+// imports old per-size icon paths (16.js/20.js/24.js) but @carbon/icons 11.83+'s "es/"
+// build is missing most of them (only ships e.g. 32.js or a generic auto-scaling glyph).
+// `npm run icon-overrides` (scripts/build-icon-overrides.mjs) regenerates the exact
+// missing files from @carbon/icons/metadata.json, which still has the real per-size data
+// — this plugin prefers those regenerated files (correct artwork) and only falls back to
+// substituting a same-package differently-sized file (wrong proportions, but still real
+// Carbon iconography) for the handful metadata.json doesn't cover either.
 import { build } from 'esbuild';
 import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -12,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 const iconsPkgRoot = path.dirname(
   fileURLToPath(await import.meta.resolve('@carbon/icons/package.json'))
 );
+const overridesRoot = path.resolve('scripts/icon-overrides');
 
 const iconSizeRedirect = {
   name: 'carbon-icon-size-redirect',
@@ -19,6 +23,10 @@ const iconSizeRedirect = {
     b.onResolve({ filter: /@carbon\/icons\/es\/.+\/(16|20|24|32)\.js$/ }, (args) => {
       const m = args.path.match(/@carbon\/icons\/es\/(.+)\/(16|20|24|32)\.js$/);
       const [, iconName, requestedSize] = m;
+
+      const overridePath = path.join(overridesRoot, iconName, `${requestedSize}.js`);
+      if (existsSync(overridePath)) return { path: overridePath };
+
       const iconDir = path.join(iconsPkgRoot, 'es', iconName);
       if (!existsSync(iconDir)) return null;
       const files = readdirSync(iconDir);
