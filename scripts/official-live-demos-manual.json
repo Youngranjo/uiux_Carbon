@@ -153,7 +153,7 @@
         "title": "Skeleton",
         "html": "<cds-button-skeleton>\n</cds-button-skeleton>",
         "react": "<ButtonSkeleton />",
-        "vue": null
+        "vue": "<cv-button-skeleton size=\"default\" />"
       },
       {
         "title": "Large",
@@ -166,6 +166,22 @@
         "html": null,
         "react": null,
         "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" default=\"sm\" size=\"sm\">{{slotArgs.default}}</cv-button>"
+      }
+    ]
+  },
+  "ButtonSet": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": null,
+        "react": "<div\n  style={{\n    inlineSize: undefined,\n    maxInlineSize: '100%'\n  }}\n>\n  <ButtonSet>\n    <Button\n      kind=\"secondary\"\n      onClick={function Kbe(){}}\n    >\n      Secondary\n    </Button>\n    <Button\n      kind=\"primary\"\n      onClick={function Kbe(){}}\n    >\n      Primary\n    </Button>\n  </ButtonSet>\n</div>",
+        "vue": "<cv-button-set>\n  <cv-button>One</cv-button>\n  <cv-button kind=\"secondary\">Two</cv-button>\n  <cv-button kind=\"danger\">Three</cv-button>\n</cv-button-set>"
+      },
+      {
+        "title": "Fluid",
+        "html": null,
+        "react": "<div\n  style={{\n    inlineSize: '600px',\n    maxInlineSize: '100%'\n  }}\n>\n  <ButtonSet fluid>\n    <Button\n      kind=\"ghost\"\n      onClick={function Kbe(){}}\n    >\n      Ghost\n    </Button>\n    <Button\n      kind=\"secondary\"\n      onClick={function Kbe(){}}\n    >\n      Secondary\n    </Button>\n    <Button\n      kind=\"danger\"\n      onClick={function Kbe(){}}\n    >\n      Danger\n    </Button>\n  </ButtonSet>\n</div>",
+        "vue": null
       }
     ]
   }
