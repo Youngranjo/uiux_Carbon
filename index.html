@@ -231,9 +231,12 @@
       $nav.appendChild(el('<p class="sg-nav-cat">' + g.cat + '</p>'));
       items.forEach(function (f) {
         var isWcOnly = f.reactExports.length === 0 && f.tags.length > 0;
-        if (!f.tags.length) {
+        var examples = f.officialExamples || [];
+        // 예시가 1개(자동생성 "기본" 포함)뿐이면 하위 목록 없이 단일 링크 — 여러 개(수동 큐레이션한
+        // 기본/Controlled/Skeleton 등)일 때만 트리로 펼쳐서 각 예시로 바로 이동 가능하게 한다.
+        if (examples.length <= 1) {
           var cls = 'sg-link' + (f.folder === active ? ' is-active' : '');
-          $nav.appendChild(el('<a class="' + cls + '" href="#' + f.folder + '"><span>' + f.folder + '</span></a>'));
+          $nav.appendChild(el('<a class="' + cls + '" href="#' + f.folder + '"><span>' + f.folder + '</span>' + (isWcOnly ? '<span class="sg-badge">WC only</span>' : '') + '</a>'));
           return;
         }
         var open = f.folder === active || q.length > 0;
@@ -247,9 +250,9 @@
         );
         tree.appendChild(head);
         var kids = el('<div class="sg-tree-kids"></div>');
-        f.tags.forEach(function (t) {
+        examples.forEach(function (ex) {
           kids.appendChild(el(
-            '<a class="sg-sub' + (f.folder === active && activeTag === t.name ? ' is-active' : '') + '" href="#' + f.folder + '/' + t.name + '">' + t.name + '</a>'
+            '<a class="sg-sub' + (f.folder === active && activeTag === ex.title ? ' is-active' : '') + '" href="#' + f.folder + '/' + encodeURIComponent(ex.title) + '">' + escapeHtml(ex.title) + '</a>'
           ));
         });
         tree.appendChild(kids);
@@ -318,7 +321,7 @@
       : '<div class="sg-preview" style="color:var(--sg-tx-tertiary); font-size:13px;">이 예제는 실제 로직(반복문·아이콘 함수 호출 등)에 의존하고 있어 라이브 프리뷰로 안전하게 옮기지 못했습니다 — 아래 코드 탭의 실제 소스를 참고하세요.</div>';
 
     return (
-      '<div class="sg-example">' +
+      '<div class="sg-example" id="ex-' + encodeURIComponent(ex.title) + '">' +
         '<div class="sg-example-head"><div class="sg-example-title">' + escapeHtml(ex.title) + '</div></div>' +
         (ex.html ? preview : '') +
         '<div class="sg-codepanel" data-code="' + uid + '" style="border-top:1px solid var(--sg-line)">' +
@@ -356,7 +359,7 @@
     // duplicating a full live demo per tag now that officialExamplesSection covers the
     // real, accurate rendering.
     var tagLinks = f.tags.map(function (t) {
-      return '<a id="ex-' + encodeURIComponent(t.name) + '" class="sg-standalone-link" href="' + t.coreFile + '" target="_blank" rel="noopener" style="border-right:0;">&lt;' + t.name + '&gt; · attribute ' + t.attrCount + '개 →</a>';
+      return '<a class="sg-standalone-link" href="' + t.coreFile + '" target="_blank" rel="noopener" style="border-right:0;">&lt;' + t.name + '&gt; · attribute ' + t.attrCount + '개 →</a>';
     }).join('');
 
     $main.innerHTML =
