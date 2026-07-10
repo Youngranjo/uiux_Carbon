@@ -281,9 +281,11 @@ writeFileSync('scripts/categories.json', JSON.stringify(
 // ---------- 4. assets/index-data.js — catalog data consumed by the root index.html ----------
 let vueManifest = [];
 let vueStoryTemplates = {};
+let officialLiveDemos = {};
 try {
   vueManifest = JSON.parse(readFileSync('scripts/vue-manifest.json', 'utf8'));
   vueStoryTemplates = JSON.parse(readFileSync('scripts/vue-story-templates.json', 'utf8'));
+  officialLiveDemos = JSON.parse(readFileSync('scripts/official-live-demos.json', 'utf8'));
 } catch (e) {}
 
 const indexFamilies = families
@@ -303,6 +305,10 @@ const indexFamilies = families
       .find((t) => t) || null;
     const officialVueComponent = cvMatches[0]?.cvName || null;
     const vueStoryCachePath = officialVueComponent ? `scripts/vue-stories-cache/${officialVueComponent}.txt` : null;
+    // Real Storybook markup, statically resolved from the lit render() template so it can
+    // be mounted as an actual live custom-element demo (scripts/extract-official-demos.mjs)
+    // — best-effort: only present when the resolver could fully eliminate lit/JS syntax.
+    const officialLiveDemo = wcFolder ? officialLiveDemos[wcFolder] || null : null;
 
     if (officialHtml) writeFileSync(`core/components/${folder}.stories.ts`, readFileSync(wcStoryPath, 'utf8'));
     if (vueStoryCachePath && existsSync(vueStoryCachePath)) {
@@ -343,6 +349,7 @@ const indexFamilies = families
       officialVue,
       officialVueComponent,
       officialVueFile: vueStoryCachePath && existsSync(vueStoryCachePath) ? `vue/components/${folder}.stories.js` : null,
+      officialLiveDemo,
       tags: tagEntries,
     };
   })

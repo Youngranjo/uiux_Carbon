@@ -318,9 +318,14 @@
       .map(function (l) { return '<a class="sg-standalone-link" href="' + l.file + '" target="_blank" rel="noopener">' + l.file + ' 열기 →</a>'; })
       .join('');
 
+    var liveDemo = f.officialLiveDemo
+      ? '<div class="sg-preview">' + f.officialLiveDemo + '</div>'
+      : '<div class="sg-preview" style="color:var(--sg-tx-tertiary); font-size:13px;">이 컴포넌트는 공식 예제가 실제 로직(반복문·아이콘 함수 호출 등)에 의존하고 있어 라이브 프리뷰로 안전하게 옮기지 못했습니다 — 아래 코드 탭의 실제 소스를 참고하세요.</div>';
+
     return (
       '<section class="sg-section"><h2 class="sg-h2">공식 Storybook 예제</h2>' +
         '<p class="sg-example-desc" style="margin-bottom:12px;">carbon-design-system/carbon' + (f.officialVueComponent ? ' · carbon-components-vue' : '') + ' GitHub 소스에서 그대로 가져온 예제입니다 (재구현 아님).</p>' +
+        (f.officialHtml ? liveDemo : '') +
         '<div class="sg-codepanel" data-code="' + uid + '" style="border-top:1px solid var(--sg-line)">' +
           '<div class="sg-codetabs">' + tabs + '</div>' +
           '<div class="sg-codewrap">' + blocks + '<button type="button" class="sg-copybtn" data-copy-uid="' + uid + '">복사</button></div>' +
