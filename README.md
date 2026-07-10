@@ -125,6 +125,14 @@ Web Component 공식 스토리는 lit-html 템플릿(`html\`<cds-accordion align
 차라리 안 보여주는 게 낫다는 원칙으로 — 해당 컴포넌트는 조용히 건너뜁니다. 그 결과 81개 중 24개만
 라이브 프리뷰가 있고, 나머지는 코드 탭만 보여줍니다.
 
+### 수동 큐레이션 (`scripts/official-live-demos-manual.json`)
+
+자동 파싱이 못 푸는 컴포넌트, 또는 공식 사이트의 **모든 변형**(기본/Controlled/Skeleton/With Layer 등)을
+정확히 반영하고 싶을 때 쓰는 파일입니다. 공식 Storybook의 "Show code" 패널 내용을 그대로 붙여넣어
+`{ "<wcFolder>": { "examples": [{ "title", "html", "react", "vue" }, ...] } }` 형식으로 채우면,
+`generate.mjs`가 자동 추출 결과보다 이 파일을 항상 우선합니다. `npm run stories`가 덮어쓰지 않으므로
+한 번 채워두면 재생성해도 유지됩니다. Accordion(기본/Controlled/Skeleton/With Layer, 4개 변형)이 예시입니다.
+
 ## 알아둘 점
 
 - `react/components/*.jsx`의 대부분(105/116)은 `@carbon/react`의 **안정 공개 API**를 그대로

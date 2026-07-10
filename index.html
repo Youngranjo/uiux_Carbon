@@ -292,21 +292,15 @@
   /* 공식 Storybook 예제 — react.carbondesignsystem.com / web-components.carbondesignsystem.com /
      vue.carbondesignsystem.com 의 실제 소스(GitHub에서 가져옴)를 HTML/React/Vue 탭으로 보여준다.
      하나도 없으면 섹션 자체를 렌더링하지 않는다. */
-  function officialExamplesSection(f) {
-    var htmlSrc = f.officialHtml || ('// ' + f.folder + '의 공식 Web Component Storybook 예제를 찾지 못했습니다.\n// 위 라이브 데모 섹션의 실제 태그/속성을 참고하세요.');
-    var reactSrc = f.reactSnippet;
-    var vueSrc = f.officialVue
-      ? f.officialVue + (f.officialVueComponent ? '\n\n<!-- @carbon/vue 컴포넌트: ' + f.officialVueComponent + ' (Carbon 10) -->' : '')
-      : (f.officialVueComponent
-          ? '<' + f.officialVueComponent.replace(/^Cv/, '').replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase() + ' />\n\n<!-- @carbon/vue의 ' + f.officialVueComponent + '는 실제 존재하지만, 공식 예제 소스를 찾지 못해 스니펫을 생략합니다. -->'
-          : '<!-- ' + f.folder + '에 대응하는 @carbon/vue(Carbon 10) 컴포넌트를 찾지 못했습니다. -->');
-
+  function officialExampleCard(f, ex, idx) {
+    var uid = 'official-' + f.folder + '-' + idx;
     var langs = [
-      { key: 'html', src: htmlSrc, file: f.officialHtmlFile, label: 'web-components.carbondesignsystem.com' },
-      { key: 'react', src: reactSrc, file: f.reactStoryFile || f.reactFile, label: 'react.carbondesignsystem.com' },
-      { key: 'vue', src: vueSrc, file: f.officialVueFile, label: 'vue.carbondesignsystem.com (Carbon 10)' },
-    ];
-    var uid = 'official-' + f.folder;
+      { key: 'html', src: ex.html, file: f.officialHtmlFile },
+      { key: 'react', src: ex.react, file: f.reactStoryFile || f.reactFile },
+      { key: 'vue', src: ex.vue, file: f.officialVueFile },
+    ].filter(function (l) { return l.src; });
+    if (!langs.length) return '';
+
     var tabs = langs.map(function (l, li) {
       return '<button type="button" class="sg-codetab' + (li === 0 ? ' is-active' : '') + '" data-uid="' + uid + '" data-lang="' + l.key + '">' + LANG_LABEL[l.key] + '</button>';
     }).join('');
@@ -318,19 +312,33 @@
       .map(function (l) { return '<a class="sg-standalone-link" href="' + l.file + '" target="_blank" rel="noopener">' + l.file + ' 열기 →</a>'; })
       .join('');
 
-    var liveDemo = f.officialLiveDemo
-      ? '<div class="sg-preview">' + f.officialLiveDemo + '</div>'
-      : '<div class="sg-preview" style="color:var(--sg-tx-tertiary); font-size:13px;">이 컴포넌트는 공식 예제가 실제 로직(반복문·아이콘 함수 호출 등)에 의존하고 있어 라이브 프리뷰로 안전하게 옮기지 못했습니다 — 아래 코드 탭의 실제 소스를 참고하세요.</div>';
+    var preview = ex.liveRenderable
+      ? '<div class="sg-preview">' + ex.html + '</div>'
+      : '<div class="sg-preview" style="color:var(--sg-tx-tertiary); font-size:13px;">이 예제는 실제 로직(반복문·아이콘 함수 호출 등)에 의존하고 있어 라이브 프리뷰로 안전하게 옮기지 못했습니다 — 아래 코드 탭의 실제 소스를 참고하세요.</div>';
 
     return (
-      '<section class="sg-section"><h2 class="sg-h2">공식 Storybook 예제</h2>' +
-        '<p class="sg-example-desc" style="margin-bottom:12px;">carbon-design-system/carbon' + (f.officialVueComponent ? ' · carbon-components-vue' : '') + ' GitHub 소스에서 그대로 가져온 예제입니다 (재구현 아님).</p>' +
-        (f.officialHtml ? liveDemo : '') +
+      '<div class="sg-example">' +
+        '<div class="sg-example-head"><div class="sg-example-title">' + escapeHtml(ex.title) + '</div></div>' +
+        (ex.html ? preview : '') +
         '<div class="sg-codepanel" data-code="' + uid + '" style="border-top:1px solid var(--sg-line)">' +
           '<div class="sg-codetabs">' + tabs + '</div>' +
           '<div class="sg-codewrap">' + blocks + '<button type="button" class="sg-copybtn" data-copy-uid="' + uid + '">복사</button></div>' +
           (links ? '<div class="sg-codebar" style="border-top:1px solid var(--sg-line);border-bottom:0;">' + links + '</div>' : '') +
         '</div>' +
+      '</div>'
+    );
+  }
+
+  function officialExamplesSection(f) {
+    var examples = f.officialExamples || [];
+    var cards = examples.map(function (ex, i) { return officialExampleCard(f, ex, i); }).join('');
+    if (!cards) return '';
+    return (
+      '<section class="sg-section"><h2 class="sg-h2">공식 Storybook 예제' +
+          (f.officialExamplesAreManual ? ' <span class="sg-pill wc" style="vertical-align:middle;">수동 검증됨</span>' : '') +
+        '</h2>' +
+        '<p class="sg-example-desc" style="margin-bottom:12px;">carbon-design-system/carbon' + (f.officialVueComponent ? ' · carbon-components-vue' : '') + ' GitHub 소스' + (f.officialExamplesAreManual ? '(공식 Storybook에서 직접 복사)' : '') + '에서 그대로 가져온 예제입니다 (재구현 아님).</p>' +
+        cards +
       '</section>'
     );
   }

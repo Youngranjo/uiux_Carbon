@@ -282,10 +282,20 @@ writeFileSync('scripts/categories.json', JSON.stringify(
 let vueManifest = [];
 let vueStoryTemplates = {};
 let officialLiveDemos = {};
+let officialLiveDemosManual = {};
 try {
   vueManifest = JSON.parse(readFileSync('scripts/vue-manifest.json', 'utf8'));
   vueStoryTemplates = JSON.parse(readFileSync('scripts/vue-story-templates.json', 'utf8'));
   officialLiveDemos = JSON.parse(readFileSync('scripts/official-live-demos.json', 'utf8'));
+} catch (e) {}
+try {
+  // Hand-curated overrides, keyed by wcFolder: { examples: [{title, html, react, vue}] }.
+  // Filled in when the user pastes real Storybook source directly (every named variant —
+  // Default, Controlled, Skeleton, ... — not just one), which is higher-fidelity than the
+  // automated lit-template resolver in extract-official-demos.mjs. Always wins over the
+  // auto-extracted version, and `npm run stories` never touches this file, so entries
+  // persist across rebuilds.
+  officialLiveDemosManual = JSON.parse(readFileSync('scripts/official-live-demos-manual.json', 'utf8'));
 } catch (e) {}
 
 const indexFamilies = families
@@ -335,6 +345,27 @@ const indexFamilies = families
       : reactExports.length
       ? `import { ${reactExports.slice(0, 4).join(', ')}${reactExports.length > 4 ? ', ...' : ''} } from './react/components/${folder}';\n\n// re-exports the real @carbon/react package (${reactExports.length} export${reactExports.length > 1 ? 's' : ''} total — see the full file)`
       : `// ${folder} is only experimental (unstable_/preview_) in @carbon/react today.\n// Stable today via the real Web Component:\nimport '@carbon/web-components/es/components/${wcFolder}/index.js';`;
+
+    // One or more named examples (Default, Controlled, Skeleton, ...) per family. Manual
+    // curation (pasted straight from the official Storybook "Show code" panels) wins when
+    // present; otherwise falls back to the single auto-extracted/generic example.
+    const manual = wcFolder ? officialLiveDemosManual[wcFolder] : null;
+    const officialExamples = manual && manual.examples
+      ? manual.examples.map((ex) => ({
+          title: ex.title,
+          html: ex.html || null,
+          liveRenderable: !!ex.html,
+          react: ex.react || null,
+          vue: ex.vue || null,
+        }))
+      : [{
+          title: '기본',
+          html: officialLiveDemo || officialHtml,
+          liveRenderable: !!officialLiveDemo,
+          react: reactSnippet,
+          vue: officialVue,
+        }];
+
     return {
       folder,
       category: categorize(folder),
@@ -350,6 +381,8 @@ const indexFamilies = families
       officialVueComponent,
       officialVueFile: vueStoryCachePath && existsSync(vueStoryCachePath) ? `vue/components/${folder}.stories.js` : null,
       officialLiveDemo,
+      officialExamples,
+      officialExamplesAreManual: !!(manual && manual.examples),
       tags: tagEntries,
     };
   })
