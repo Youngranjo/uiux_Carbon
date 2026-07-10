@@ -218,5 +218,15 @@
         "vue": null
       }
     ]
+  },
+  "ClassPrefix": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": null,
+        "react": "() => {\n  function ExampleComponent() {\n    const prefix = usePrefix();\n    return <p>The current prefix is: {prefix}</p>;\n  }\n  return <>\n      <ExampleComponent />\n      <ClassPrefix prefix=\"custom\">\n        <ExampleComponent />\n      </ClassPrefix>\n    </>;\n}",
+        "vue": null
+      }
+    ]
   }
 }

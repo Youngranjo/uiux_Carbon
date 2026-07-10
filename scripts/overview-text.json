@@ -13,9 +13,6 @@
   "Button": [
     "Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. `Button` labels express what action will occur when the user interacts with it."
   ],
-  "Checkbox": [
-    "You can also use a controlled checkbox component driven by state:"
-  ],
   "Breadcrumb": [
     "You can build a breadcrumb using a combination of the `Breadcrumb` and `BreadcrumbItem` components. The `Breadcrumb` component accepts a list of `BreadcrumbItem` components as `children` and each `BreadcrumbItem` is responsible for displaying the page links in the hierarchy."
   ],
@@ -27,14 +24,7 @@
   ],
   "ClassPrefix": [
     "The `ClassPrefix` component is used to change the prefix in the classes used by components in Carbon.",
-    "By default, the prefix used by components is `cds`. However, you can change this prefix in Sass and coordinate that change to React using the `ClassPrefix` component.",
-    "In Sass, you can customize this prefix by writing the following:",
-    "```scss @use '@carbon/react' with ( $prefix: 'custom' ); ```",
-    "Similarly, you can configure `scss/config` directly:",
-    "```scss @use '@carbon/react/scss/config' with ( $prefix: 'custom' ); ```",
-    "In React, you use `ClassPrefix` at the top-level of your project and specify the prefix with the `prefix` prop:",
-    "```jsx import { ClassPrefix } from '@carbon/react';",
-    "To _get_ the prefix, use"
+    "By default, the prefix used by components is `cds`. However, you can change this prefix in Sass and coordinate that change to React using the `ClassPrefix` component."
   ],
   "ComboButton": [
     "A `ComboButton` can be used to offer additional, secondary actions in a disclosed list next to the primary action. These additional actions must be `MenuItem`s passed as `children`. The primary action's label is passed as `props.label`."
@@ -44,13 +34,7 @@
   ],
   "ContainedList": [
     "Within the Contained List you can pass in an `ExpandableSearch` component within the `action` prop as seen below. The `ExpandableSearch` will give you the capability to expand and collapse the search bar within the title. However, we do not support passing in the `ExpandableSearch` within the title action prop while passing in the `Search` component as a child at the same time. If this happens, the `ExpandableSearch` in the title will override any other `Search` passed in as a child. To prevent this potential conflict, we have added functionality to support both designs and both use cases. Please see [Persistent Search](#persistent-search) docs below.",
-    "```js export const WithExpandableSearch = () => { const [searchTerm, setSearchTerm] = useState(''); const [searchResults, setSearchResults] = useState([]); const handleChange = (event) => { setSearchTerm(event.target.value); };",
-    "useEffect(() => { const listItems = [ 'List item 1', 'List item 2', 'List item 3', 'List item 4', ];",
-    "const results = listItems.filter((listItem) => listItem.toLowerCase().includes(searchTerm.toLowerCase()) ); setSearchResults(results); }, [searchTerm]);",
     "We have added in the capability to pass down the `Search` component as a child of `ContainedList`. The `Search` component itself is not a prop but does render with specific styling such that the `Search` bar appears below the Contained List title as opposed to rendering inline. If you would like the Search to render inline to the Contained List title, please see the [Expandable Search](#expandable-search) docs above The `Search` component will also remain persistent under the title, so that it remains visible on scroll, when there are many list items passed in.",
-    "```js export const WithPersistentSearch = () => { const [searchTerm, setSearchTerm] = useState(''); const [searchResults, setSearchResults] = useState([]); const handleChange = (event) => { setSearchTerm(event.target.value); };",
-    "useEffect(() => { const listItems = [ 'List item 1', 'List item 2', 'List item 3', 'List item 4', ];",
-    "const results = listItems.filter((listItem) => listItem.toLowerCase().includes(searchTerm.toLowerCase()) ); setSearchResults(results); }, [searchTerm]);",
     "`ContainedList.ContainedListItem` is deprecated, use `import { ContainedListItem } from '@carbon/react` import instead."
   ],
   "CopyButton": [
@@ -74,7 +58,6 @@
     "Every layout starts with the `Grid` component. You can specify a `Grid` at the top-level of your project, or at different depths provided that it can span 100% width of its container.",
     "Next, you will use a combination of `Column` and `Grid`. You can have multiple `Column` components in a `Grid`, and nest `Grid` components in a `Column`. Each `Grid` will contain all the `Column` components provided to it, as long as they don't span more columns than the total number of columns in the grid.",
     "To specify how many columns the `Column` component should span, you can use the `sm`, `md`, `lg`, `xlg`, or `max` props. These props are shorthand versions of the names given to each of the breakpoints defined by the [2x Grid](https://carbondesignsystem.com/elements/2x-grid/overview/#breakpoints). In the example below, we will use the `lg` prop for the large breakpoint and the number `4` to specify that each `Column` component should span 4 columns at that breakpoint.",
-    "```js import { Grid, Column } from '@carbon/react';",
     "_Note: by default, `@carbon/styles` ships with a 16 column grid._",
     "You can pair up multiple breakpoint props to specify how many columns the `Column` component should span at different break points. In the example below, we will use the `sm`, `md`, and `lg` prop to specify how many columns the `Column` components should span at the small, medium, and large breakpoints.",
     "It is incredibly helpful when debugging CSS Grid to use the browser developer tools' css gutter mode to view the grid definition. Depending on the browser, these typically provide a toggle for overlaying a schematic showing the column and grid gap definition. With this overlay, it's much easier to visually understand if gutter modes are configured and set properly on the grid.",
@@ -86,14 +69,11 @@
     "To help address this, the `Heading` component will automatically infer the appropriate heading level without you having to manually specify it. To do this, you use the `Section` component for each section of your page. Every `Heading` component in that `Section` will use the correct heading level."
   ],
   "IconButton": [
-    "The `IconButton` component is useful when you have a button where the content is an icon. In this situation, it's important that the button itself is labeled in a way that can be understandable by mouse, keyboard, and screen readers. As a result, this component makes it easy to create accessible icon buttons",
-    "```jsx import { IconButton } from '@carbon/react'; import { Add } from '@carbon/react/icons';"
+    "The `IconButton` component is useful when you have a button where the content is an icon. In this situation, it's important that the button itself is labeled in a way that can be understandable by mouse, keyboard, and screen readers. As a result, this component makes it easy to create accessible icon buttons"
   ],
   "IdPrefix": [
     "The `IdPrefix` component is used to change the prefix applied to the automatically generated `id` attributes placed on certain DOM elements.",
-    "This component is intended to be used in limited cases, primarily only if you have id conflicts when using v10 and v11 packages at the same time during migration.",
-    "In React, you can use `IdPrefix` anywhere in your component tree and specify the prefix with the `prefix` prop. Most often it's used in the project root wrapping the entire project:",
-    "```jsx import { IdPrefix } from '@carbon/react';"
+    "This component is intended to be used in limited cases, primarily only if you have id conflicts when using v10 and v11 packages at the same time during migration."
   ],
   "Layer": [
     "The `Layer` component is used to render components on different layers. Each layer has a specific set of token values associated with it. You can use these tokens directly, or use contextual tokens from our styles package like `$layer` or `$field`.",
@@ -107,7 +87,6 @@
   ],
   "Menu": [
     "`Menu` is a versatile component that can be used in a variety of situations. It implements the [menu design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) defined in the ARIA Authoring Practices Guide (APG).",
-    "The `Menu` component's `children` must be a collection of any of these subcomponents:",
     "- [MenuItem](#menuitem) - [MenuItemDivider](#menuitemdivider) - [MenuItemGroup](#menuitemgroup) - [MenuItemSelectable](#menuitemselectable) - [MenuItemRadioGroup](#menuitemradiogroup)"
   ],
   "Notification": [
@@ -122,9 +101,7 @@
     "The `MultiSelect` component is a variant of the `Dropdown` component that allows for multiple items to be selected. `MultiSelect` stays open while items are being selected.",
     "By passing items into the `initialSelectedItems` prop, they can be pre-selected.",
     "The MultiSelect component includes a \"Select All\" feature, allowing users to easily select or deselect all options with a single action.",
-    "To implement the \"Select All\" feature in your MultiSelect component, add a new option to your options array with these properties:",
     "- `id`: A unique identifier (e.g., 'select-all') - `text`: The label for the option - `isSelectAll`: Set to `true`",
-    "``` const options = [ { id: 'select-all', text: 'All roles', isSelectAll: true, }, // ... other options ]; ```",
     "The `FilterableMultiSelect` component allows for filtering the list of selectable items to a subset."
   ],
   "OverflowMenu": [
@@ -133,9 +110,7 @@
   ],
   "Popover": [
     "`Popover` is a primitive component used to build custom components which render over other elements on the page.",
-    "The `Popover` component accepts two items as `children`: a trigger element and a `PopoverContent` component which contains the content to be rendered inside of the `Popover`.",
-    "```jsx import { Popover, PopoverContent } from '@carbon/react'; import React from 'react';",
-    "function CustomComponent() { const [open, setOpen] = React.useState(false);"
+    "The `Popover` component accepts two items as `children`: a trigger element and a `PopoverContent` component which contains the content to be rendered inside of the `Popover`."
   ],
   "RadioButton": [
     "Radio buttons represent a group of mutually exclusive choices, compared to checkboxes that allow users to make one or more selections from a group. In use cases where only one selection from a group is allowed, use the radio button component instead of the checkbox. Though the `RadioButton` components may be rendered individually, it is recommended they be rendered as children components of the `RadioButtonGroup` parent component to maintain their proper controlled states."
@@ -147,28 +122,16 @@
     "Use tabs to allow users to navigate easily between views within the same context. Tabs are now more composable, meaning that you have more flexibility in what is in rendered inside of `Tab` and `TabPanel`.",
     "You can implement dismissable tabs in your project using Carbon's `Tabs` components. In order to put this in place, there are some events and props we'll need to forward through the component's API that have been outlined here.",
     "First, we'll want to import the components from the react package.",
-    "```js import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@carbon/react'; ```",
     "In order to be able to \"close\" or \"remove\" tabs, we'll need to access and render your tabs programmatically. For such purposes we'll need to store your tabs in an array variable and put them in the state",
     "The `Tabs` component accepts an `onTabCloseRequest` prop function that will forward us the index of the requested tab to be closed. You may use this function to open up a confirmation modal previous to deleting the tab; in our case, we'll just go ahead and remove that tab directly from the `renderedTab`s array and cover for some `selectedIndex` edge cases (i.e., when a tab is removed from the array, the selectedIndex might need to be updated to point to a new tab or index).",
     "In order to be able to modify the `selectedIndex` on our end we'll need to use the `Tabs` component in a controlled state, which means we'll also have to implement the `Tabs`' `onChange` function, which we are calling `handleTabChange`.",
-    "```js const [selectedIndex, setSelectedIndex] = useState(0);",
-    "const handleTabChange = (evt) => { setSelectedIndex(evt.selectedIndex); };",
-    "const handleCloseTabRequest = (tabIndex) => { // ignore close requests on disabled tabs if (renderedTabs[tabIndex].disabled) { return; }",
-    "const selectedTab = renderedTabs[selectedIndex];",
-    "const filteredTabs = renderedTabs.filter((_, index) => index !== tabIndex); // if the tab being deleted is the currently selected tab, we're re-setting the selectedIndex // to the first tab available that isn't disabled if (tabIndex === selectedIndex) { const defaultTabIndex = filteredTabs.findIndex((tab) => !tab.disabled); setSelectedIndex(defaultTabIndex); } else { // we're re-calculating the selectedIndex since the selected tab's index might have shifted // due to a tab element being removed from the array setSelectedIndex(filteredTabs.indexOf(selectedTab)); } setRenderedTabs(filteredTabs); }; ```",
     "Finally, we'll use a `resetTabs` function to demonstrate how you can re-render tabs after they've been removed",
-    "```js const resetTabs = () => { setRenderedTabs(tabs); }; ```",
     "Now we're ready to render our `Tabs`, remember to pass the `dismissable` prop in as well as your `handleCloseTabRequest` function",
     "And there you have it! Working dismissable tabs.",
-    "Dismissable With Icons:",
     "**Tabs With Automatic Activation**: A tabs widget where tabs are automatically activated and their panel is displayed when they receive focus.",
     "**Tabs With Manual Activation**: A tabs widget where users activate a tab and display its panel by pressing Space or Enter.",
-    "In v11, to do this, you can this by setting `activation` to `manual`:",
     "By default, a `Tab` component is only as wide as it's content. This posses difficulties when trying to align tabs to the grid. Alternatively, you may choose to use the `fullWidth` prop to allow `Tab` elements to grow as wide as their container allows.",
-    "Note that this feature is _only available_ for `contained` tabs in large and extra large screen sizes. The prop is a no-op for smaller screens and will also be ignored for `TabList`s with more than 8 tabs. `fullWidth` paired up with a wrapping `Grid` component will allow for \"grid-aware\" tabs:",
-    "Using the `fullWidth` prop alone within a `Grid` makes it so that the `Tabs` container aligns to the `Grid`, but not the individual `Tab` items; to have each individual `Tab` take up exactly one or many columns within the `Grid`, you must specify the number of columns as a multiple of the number of `Tab` items within the `TabList`.",
-    "For example, to have 5 tabs and each tab span exactly two columns:",
-    "Or, to have 5 tabs and each tab span exactly three columns:"
+    "Using the `fullWidth` prop alone within a `Grid` makes it so that the `Tabs` container aligns to the `Grid`, but not the individual `Tab` items; to have each individual `Tab` take up exactly one or many columns within the `Grid`, you must specify the number of columns as a multiple of the number of `Tab` items within the `TabList`."
   ],
   "Tag": [
     "Tags can be used to categorize items. Use short labels for easy scanning. Use two words only if necessary to describe the status and differentiate it from other tags."
@@ -180,13 +143,10 @@
   ],
   "Theme": [
     "The `GlobalTheme` and `Theme` components allow you to specify the theme for a page, or for a part of a page, respectively. `Theme` is most often used to implement inline theming where you can style a portion of your page with a particular theme.",
-    "In order for the styles of `Theme` to be correctly applied in your project, you need to make sure that you have included `@carbon/react/scss/zone` in your Sass files by writing:",
-    "```scss @use '@carbon/react/scss/zone'; ```",
     "You also get this file when you import `@carbon/react` directly in your Sass."
   ],
   "Toggletip": [
     "The `Toggletip` component provides an accessible way to render interactive content within a popover. If you do not have any interactive content inside of your `Toggletip`, consider using `Tooltip` instead. To use this component, you'll need to include a `Toggletip`, `ToggletipButton` for the trigger, and `ToggletipContent` for the content you would like to render within the popover.",
-    "```jsx import { Toggletip, ToggletipButton, ToggletipContent } from '@carbon/react'; import { Information } from '@carbon/react/icons';",
     "Toggletips and tooltips are similar visually and both contain a popover and interactive trigger element. The two components differ in the way they are invoked and dismissed and if the user must interact with the contents. A tooltip is exposed on hover or focus when you need to expose brief, supplemental information that is not interactive. A toggletip is used on click or enter when you need to expose interactive elements, such as button, that a user needs to interact with."
   ],
   "TreeView": [
@@ -194,7 +154,6 @@
   ],
   "Tooltip": [
     "You can use the `Tooltip` component as a wrapper to display a popup for an interactive element that you provide. If you are trying to place interactive content inside of the `Tooltip` itself, consider using `Toggletip` instead.",
-    "`Tooltip` accepts a single child for its `children` prop. It is important that the child is an interactive element, for example:",
     "When used with a component, props need to be spread on the child component.",
     "You can specify the contents of the popup through the `label` or `description` prop.",
     "Toggletips and tooltips are similar visually and both contain a popover and interactive trigger element. The two components differ in the way they are invoked and dismissed and if the user must interact with the contents. A tooltip is exposed on hover or focus when you need to expose brief, supplemental information that is not interactive. A toggletip is used on click or enter when you need to expose interactive elements, such as button, that a user needs to interact with.",
