@@ -1,29 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-file-uploader>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvFileUploader>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      disabled (boolean) — `true` if the file uploader should disabled.
-      label-description (string) — The description text.
-      label-title (string) — The label title.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import FileUploader from './components/FileUploader.vue' </script>
-    <FileUploader>Example</FileUploader>
+    import FileUploader from './components/FileUploader.vue';
+    <FileUploader>...</FileUploader>
 -->
-<script setup>
-import '@carbon/web-components/es/components/file-uploader/index.js';
+<script>
+import { CvFileUploader } from '@carbon/vue';
+export default CvFileUploader;
 </script>
-
-<template>
-  <cds-file-uploader v-bind="$attrs"><slot /></cds-file-uploader>
-</template>

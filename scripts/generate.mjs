@@ -279,9 +279,35 @@ writeFileSync('scripts/categories.json', JSON.stringify(
 ));
 
 // ---------- 4. assets/index-data.js — catalog data consumed by the root index.html ----------
+let vueManifest = [];
+let vueStoryTemplates = {};
+try {
+  vueManifest = JSON.parse(readFileSync('scripts/vue-manifest.json', 'utf8'));
+  vueStoryTemplates = JSON.parse(readFileSync('scripts/vue-story-templates.json', 'utf8'));
+} catch (e) {}
+
 const indexFamilies = families
   .map((family) => {
     const { folder, reactExports, wcFolder, tags } = family;
+
+    // Official example content, straight from GitHub source (not fabricated):
+    // React from carbon-design-system/carbon, Web Components from the same monorepo,
+    // Vue from carbon-design-system/carbon-components-vue (Carbon 10, "Cv" components).
+    const wcStoryPath = wcFolder ? `scripts/wc-stories-cache/${wcFolder}.txt` : null;
+    const officialHtml = wcStoryPath && existsSync(wcStoryPath)
+      ? readFileSync(wcStoryPath, 'utf8').replace(/^\/\*\*[\s\S]*?\*\/\n+/, '')
+      : null;
+    const cvMatches = vueManifest.filter((v) => v.folder === folder);
+    const officialVue = cvMatches
+      .map((v) => vueStoryTemplates[v.cvName])
+      .find((t) => t) || null;
+    const officialVueComponent = cvMatches[0]?.cvName || null;
+    const vueStoryCachePath = officialVueComponent ? `scripts/vue-stories-cache/${officialVueComponent}.txt` : null;
+
+    if (officialHtml) writeFileSync(`core/components/${folder}.stories.ts`, readFileSync(wcStoryPath, 'utf8'));
+    if (vueStoryCachePath && existsSync(vueStoryCachePath)) {
+      writeFileSync(`vue/components/${folder}.stories.js`, readFileSync(vueStoryCachePath, 'utf8'));
+    }
     const tagEntries = tags.map((tag) => {
       const pascal = tagToPascal(tag.name);
       return {
@@ -312,6 +338,11 @@ const indexFamilies = families
       reactStoryFile: hasStory ? `react/components/${folder}.stories.tsx` : null,
       reactSnippet,
       wcFolder,
+      officialHtml,
+      officialHtmlFile: officialHtml ? `core/components/${folder}.stories.ts` : null,
+      officialVue,
+      officialVueComponent,
+      officialVueFile: vueStoryCachePath && existsSync(vueStoryCachePath) ? `vue/components/${folder}.stories.js` : null,
       tags: tagEntries,
     };
   })

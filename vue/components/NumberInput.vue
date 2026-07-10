@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-number-input>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvNumberInput>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      min (string) — The minimum value allowed in the input
-      max (string) — The maximum value allowed in the input
-      step (string) — The amount the value should increase or decrease by
-      icon-description (string) — Provide a description for up/down icons that can be read by screen readers
-      increment-button-assistive-text (string) — Aria text for the button that increments the value
-      decrement-button-assistive-text (string) — Aria text for the button that decrements the value
-      hide-steppers (boolean) — Specify whether you want the steppers to be hidden
-      allow-empty (boolean) — `true` to allow empty string.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import NumberInput from './components/NumberInput.vue' </script>
-    <NumberInput>Example</NumberInput>
+    import NumberInput from './components/NumberInput.vue';
+    <NumberInput>...</NumberInput>
 -->
-<script setup>
-import '@carbon/web-components/es/components/number-input/index.js';
+<script>
+import { CvNumberInput } from '@carbon/vue';
+export default CvNumberInput;
 </script>
-
-<template>
-  <cds-number-input v-bind="$attrs"><slot /></cds-number-input>
-</template>

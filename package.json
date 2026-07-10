@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx serve .",
-    "extract": "node scripts/extract-manifest.mjs",
+    "extract": "node scripts/extract-manifest.mjs && node scripts/extract-vue-manifest.mjs",
     "bundle": "node scripts/build-wc-bundle.mjs",
-    "stories": "node scripts/fetch-stories.mjs",
-    "generate": "node scripts/generate.mjs && node scripts/generate-readmes.mjs",
+    "stories": "node scripts/fetch-stories.mjs && node scripts/fetch-wc-stories.mjs && node scripts/fetch-vue-stories.mjs && node scripts/extract-vue-templates.mjs",
+    "generate": "node scripts/generate.mjs && node scripts/apply-vue-overrides.mjs && node scripts/generate-readmes.mjs",
     "build": "npm run extract && npm run bundle && npm run generate"
   },
   "keywords": [],
@@ -20,10 +20,12 @@
     "@carbon/icons-react": "^11.83.0",
     "@carbon/react": "^1.111.0",
     "@carbon/styles": "^1.110.0",
+    "@carbon/vue": "^3.0.31",
     "@carbon/web-components": "^2.58.0",
     "lit": "^3.3.3",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "vue": "^3.5.39"
   },
   "devDependencies": {
     "esbuild": "^0.28.1"

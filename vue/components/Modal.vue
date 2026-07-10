@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-modal>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvModal>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      enable-dialog-element (boolean) — Enable the use of native dialog element instead of div with role="dialog"
-      aria-label (string | null) — Specify text for the accessibility label of the header
-      container-class (string) — The additional CSS class names for the container <div> of the element.
-      full-width (boolean) — Specify whether or not the Modal content should have any inner padding.
-      has-scrolling-content (boolean) — Specify whether the modal contains scrolling content
-      size (MODAL_SIZE) — Modal size.
-      should-submit-on-enter (boolean) — Specify if Enter key should be used as "submit" action that clicks the primary footer button
-      loading-status ("inactive" | "active" | "finished" | "error") — Specify the loading status
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import Modal from './components/Modal.vue' </script>
-    <Modal>Example</Modal>
+    import Modal from './components/Modal.vue';
+    <Modal>...</Modal>
 -->
-<script setup>
-import '@carbon/web-components/es/components/modal/index.js';
+<script>
+import { CvModal } from '@carbon/vue';
+export default CvModal;
 </script>
-
-<template>
-  <cds-modal v-bind="$attrs"><slot /></cds-modal>
-</template>

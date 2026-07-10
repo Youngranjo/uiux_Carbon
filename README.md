@@ -16,7 +16,11 @@ npx serve .
 `index.html`이 카탈로그(왼쪽 사이드바 = 116개 컴포넌트 패밀리)입니다. 컴포넌트를 선택하면:
 
 - 실제 `@carbon/web-components`를 오프라인 번들링한 라이브 데모
-- HTML / React / Vue 소스 코드 미리보기 + "소스 열기" 링크(실제 파일)
+- **공식 Storybook 예제** — [react](https://react.carbondesignsystem.com/) /
+  [web-components](https://web-components.carbondesignsystem.com/) /
+  [vue](https://vue.carbondesignsystem.com/) 세 공식 Storybook 사이트에 있는 실제 예제 소스를
+  GitHub에서 그대로 가져온 HTML/React/Vue 탭 (재구현·창작 아님)
+- "소스 열기" 링크(실제 파일)
 
 가 함께 표시됩니다.
 
@@ -27,14 +31,16 @@ Carbon/
 ├── index.html                       카탈로그 (전체 컴포넌트 탐색 + 라이브 데모)
 ├── core/
 │   ├── README.md
-│   └── components/*.html            Web Component 태그 1개당 파일 1개 (216개)
+│   ├── components/*.html            Web Component 태그 1개당 파일 1개 (216개)
+│   └── components/*.stories.ts      carbon-design-system/carbon의 실제 Storybook 예제 (99개)
 ├── react/
 │   ├── README.md
 │   ├── components/*.jsx             @carbon/react 재export 래퍼 (116개 패밀리)
 │   └── components/*.stories.tsx     carbon-design-system/carbon의 실제 Storybook 예제 (81개)
 ├── vue/
 │   ├── README.md
-│   └── components/*.vue             Web Component를 감싼 얇은 Vue SFC (216개)
+│   ├── components/*.vue             @carbon/vue(Carbon 10, 113개) 재export 또는 Web Component 래퍼
+│   └── components/*.stories.js      carbon-components-vue의 실제 Storybook 예제 (있는 경우)
 ├── assets/
 │   ├── carbon-web-components.bundle.js   @carbon/web-components 오프라인 번들 (esbuild)
 │   ├── carbon-styles.min.css             @carbon/styles 공식 컴파일 CSS
@@ -50,48 +56,62 @@ Carbon 공식 문서([carbondesignsystem.com/developing/frameworks/react](https:
 
 | 프레임워크 | 지원 상태 | 설치 |
 |---|---|---|
-| React | 공식 | `npm install --save @carbon/react @carbon/styles` |
-| Web Components (HTML) | 공식 | `npm install --save @carbon/web-components @carbon/styles` |
-| Vue | 커뮤니티 가이드 (Web Components를 네이티브 태그처럼 사용) | `npm install --save @carbon/web-components @carbon/styles` |
+| React | 공식, Carbon 11 | `npm install --save @carbon/react @carbon/styles` |
+| Web Components (HTML) | 공식, Carbon 11 | `npm install --save @carbon/web-components @carbon/styles` |
+| Vue | 공식이지만 **Carbon 10**(`bx--` 접두사, 나머지와 디자인이 다름) | `npm install --save @carbon/vue vue` |
 | Angular | 커뮤니티/별도 패키지 | `npm install --save carbon-components-angular` (이 프로젝트에는 미포함) |
+
+> Vue는 `vue.carbondesignsystem.com`의 실제 패키지인 [`@carbon/vue`](https://github.com/carbon-design-system/carbon-components-vue)를
+> 쓰지만, 이 패키지가 아직 Carbon 10을 기반으로 하고 있어(`carbon-components@^10.x`) React/HTML과
+> 시각적으로 다릅니다. `@carbon/vue`에 대응하는 컴포넌트가 없는 경우에만 Carbon 11
+> `@carbon/web-components`를 감싼 자체 래퍼로 대체합니다 — 자세한 내용은 [vue/README.md](vue/README.md) 참고.
 
 ## 이 카탈로그가 만들어진 방식
 
 Astryx(비공개 디자인 시스템)는 CSS를 `getComputedStyle`로 실측해 재구현해야 했지만, Carbon은
 100% 오픈소스라 다릅니다:
 
-1. `npm install --save @carbon/react @carbon/web-components @carbon/styles @carbon/icons` 로 공식
-   패키지를 실제 설치
-2. `scripts/extract-manifest.mjs` — 설치된 `@carbon/react/lib/index.js`와
-   `@carbon/web-components/custom-elements.json`을 **직접 파싱**해 컴포넌트 목록/속성/설명을 추출
-   (손으로 나열하지 않음 → `scripts/manifest.json`)
+1. `npm install --save @carbon/react @carbon/web-components @carbon/styles @carbon/icons @carbon/vue vue`
+   로 공식 패키지를 실제 설치
+2. `scripts/extract-manifest.mjs` / `extract-vue-manifest.mjs` — 설치된 `@carbon/react/lib/index.js`,
+   `@carbon/web-components/custom-elements.json`, `carbon-components-vue`의 실제 `src/index.js`를
+   **직접 파싱**해 컴포넌트 목록/속성/설명/Cv 컴포넌트 매핑을 추출 (손으로 나열하지 않음 →
+   `scripts/manifest.json`, `scripts/vue-manifest.json`)
 3. `scripts/build-wc-bundle.mjs` — 실제 `@carbon/web-components` 소스를 esbuild로 오프라인 단일
    파일로 번들링 (`assets/carbon-web-components.bundle.js`) → 서버/설치 없이 브라우저에서 바로 동작
-4. `scripts/generate.mjs` — manifest를 바탕으로 `core/`, `react/`, `vue/` 파일과
+4. `scripts/fetch-stories.mjs` / `fetch-wc-stories.mjs` / `fetch-vue-stories.mjs` — 세 공식 Storybook
+   (react / web-components / vue.carbondesignsystem.com)의 실제 예제 소스를 GitHub에서 가져와 캐시
+5. `scripts/generate.mjs` — manifest + 캐시를 바탕으로 `core/`, `react/`, `vue/` 파일과
    `assets/index-data.js`를 생성
-5. `scripts/generate-readmes.mjs` — 각 폴더 README의 컴포넌트 표 생성
+6. `scripts/apply-vue-overrides.mjs` — `@carbon/vue`에 대응하는 컴포넌트가 있는 곳만
+   Web Component 래퍼를 실제 `@carbon/vue` 재export로 덮어씀
+7. `scripts/generate-readmes.mjs` — 각 폴더 README의 컴포넌트 표 생성
 
 다시 생성하려면:
 
 ```bash
-node scripts/extract-manifest.mjs
-node scripts/build-wc-bundle.mjs
-node scripts/fetch-stories.mjs   # 선택: carbon-design-system/carbon GitHub에서 실제 Storybook 예제 갱신 (네트워크 필요)
-node scripts/generate.mjs
-node scripts/generate-readmes.mjs
+npm run extract   # manifest.json, vue-manifest.json
+npm run bundle     # carbon-web-components.bundle.js
+npm run stories    # 선택: 세 공식 Storybook의 실제 예제 갱신 (네트워크 필요, 캐시되면 건너뜀)
+npm run generate   # core/react/vue 파일 + index-data.js + README
 ```
 
-### 실제 Storybook 예제 (`react/components/*.stories.tsx`)
+### 공식 Storybook 예제 (`*.stories.tsx` / `*.stories.ts` / `*.stories.js`)
 
-npm에는 컴포넌트 소스만 배포되고 Storybook 예제(`*.stories.tsx`)는 포함되지 않습니다. 그래서
-`scripts/fetch-stories.mjs`가 [carbon-design-system/carbon](https://github.com/carbon-design-system/carbon)
-GitHub 저장소에서 각 컴포넌트의 실제 스토리 소스를 가져와 `scripts/stories-cache/`에 캐시하고,
-`react/components/<Folder>.stories.tsx`로 그대로 복사합니다 — "Choose your plan", "Controlled" 같은
-실제 예제 문구는 전부 이 실제 소스에서 온 것이며 직접 지어낸 것이 아닙니다. 105개 React 패밀리 중
-81개는 전용 스토리 파일을 찾아 반영했고(직접 매칭 74개 + 하위 `stories/` 폴더·다른 파일명까지 리포지토리
-전체 트리를 뒤져서 찾은 7개), 나머지 24개(PrimaryButton·SelectItem 등)는 부모 컴포넌트 스토리에 포함되어
-있어 자체 파일이 없으므로 기존 간단한 재export 스니펫을 그대로 씁니다. 캐시가 있으면 재실행 시 네트워크
-호출 없이 건너뜁니다.
+npm 패키지에는 컴포넌트 소스만 배포되고 Storybook 예제는 포함되지 않습니다. 그래서
+`npm run stories`가 세 공식 저장소에서 실제 스토리 소스를 가져와 캐시하고, 각 언어 폴더에
+`<Folder>.stories.*`로 그대로 복사합니다. "Choose your plan"(React/HTML), "Episode 1"(Vue) 같은
+예제 문구는 전부 이 실제 소스에서 온 것이며 직접 지어낸 것이 아닙니다.
+
+| 소스 | 저장소 | 매칭 |
+|---|---|---|
+| React | [carbon-design-system/carbon](https://github.com/carbon-design-system/carbon) `packages/react` | 105개 중 81개 |
+| Web Components | 같은 저장소 `packages/web-components` | 81개 중 72개 |
+| Vue | [carbon-design-system/carbon-components-vue](https://github.com/carbon-design-system/carbon-components-vue) | 113개 매핑 중 40개 |
+
+찾지 못한 나머지는 부모 컴포넌트 스토리에 포함되어 있거나(예: PrimaryButton은 Button 스토리 안에서
+`kind` variant로만 다뤄짐) 전용 예제가 아직 없는 경우이며, 이때는 기존 재export 스니펫으로 대체됩니다.
+캐시(`scripts/*-stories-cache/`)가 있으면 재실행 시 네트워크 호출 없이 건너뜁니다.
 
 ## 알아둘 점
 
@@ -99,8 +119,10 @@ GitHub 저장소에서 각 컴포넌트의 실제 스토리 소스를 가져와 
   재export합니다. 나머지 11개(Dialog, ChatButton, PageHeader 등)는 Web Component로는 안정적이지만
   `@carbon/react`에서는 아직 `unstable_`/`preview_` 접두사의 실험적 API로만 제공됩니다 — 해당 파일에
   주석으로 표시되어 있습니다.
-- `vue/components/*.vue`는 Carbon 공식 Vue 패키지가 없다는 전제하에, 공식이 권장하는 방식(Web
-  Components를 그대로 사용)을 얇은 SFC로 감싼 것입니다.
+- `vue/components/*.vue`는 대응하는 `@carbon/vue`(Carbon 10) 컴포넌트가 있으면 그것을 재export하고
+  (113개), 없으면 공식 가이드대로 Web Components(Carbon 11)를 감싼 얇은 SFC를 씁니다. 두 방식이
+  섞여 있으므로 실제 프로젝트에 쓸 때는 파일 상단 주석에서 어느 쪽인지 반드시 확인하세요 — Carbon
+  10/11이 같은 페이지에 같이 있으면 시각적으로 어긋납니다.
 - 아이콘 일부(`@carbon/web-components` 2.x가 기대하는 `16.js`/`20.js`/`24.js`)가 현재 배포된
   `@carbon/icons` 11.83.0에는 없어(패키지 간 일시적 버전 불일치), 번들링 시 같은 아이콘의 사용 가능한
   파일로 자동 대체했습니다 (`scripts/build-wc-bundle.mjs` 참고). 시각적으로는 문제없이 렌더링됩니다.

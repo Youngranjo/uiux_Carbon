@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-pagination>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvPagination>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      backward-text (string) — The assistive text for the button to go to previous page.
-      backward-text-tooltip-position (PAGINATION_TOOLTIP_POSITION) — Specify the position of the tooltip for the backward button. Can be one of: top, right, bottom, or left.
-      page (number) — The current page
-      is-last-page (boolean) — `true` to explicitly state that user is at the last page.
-      items-per-page-text (string) — The translatable text indicating the number of items per page.
-      disabled (boolean) — `true` if the pagination UI should be disabled.
-      forward-text (string) — The assistive text for the button to go to next page.
-      forward-text-tooltip-position (PAGINATION_TOOLTIP_POSITION) — Specify the position of the tooltip for the forward button. Can be one of: top, right, bottom, or left.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import Pagination from './components/Pagination.vue' </script>
-    <Pagination>Example</Pagination>
+    import Pagination from './components/Pagination.vue';
+    <Pagination>...</Pagination>
 -->
-<script setup>
-import '@carbon/web-components/es/components/pagination/index.js';
+<script>
+import { CvPagination } from '@carbon/vue';
+export default CvPagination;
 </script>
-
-<template>
-  <cds-pagination v-bind="$attrs"><slot /></cds-pagination>
-</template>

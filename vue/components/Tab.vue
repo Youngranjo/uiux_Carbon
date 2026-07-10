@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-tab>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvTab>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      type (TABS_TYPE) — Tab type.
-      vertical (boolean) — `true` if the tab is in vertical orientation.
-      icon-only (boolean) — `true` if this tab is icon-only.
-      icon-size (TABS_ICON_SIZE | undefined) — Specify the icon size used by icon-only tabs.
-      tabTitle (string) — The tab text content.
-      secondary-label (string | undefined) — An optional label to render under the primary tab label.
-      badge-indicator (boolean) — **Experimental**: Display an empty dot badge on the Tab.
-      disabled (boolean) — `true` if this content switcher item should be disabled.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import Tab from './components/Tab.vue' </script>
-    <Tab>Example</Tab>
+    import Tab from './components/Tab.vue';
+    <Tab>...</Tab>
 -->
-<script setup>
-import '@carbon/web-components/es/components/tabs/index.js';
+<script>
+import { CvTab } from '@carbon/vue';
+export default CvTab;
 </script>
-
-<template>
-  <cds-tab v-bind="$attrs"><slot /></cds-tab>
-</template>

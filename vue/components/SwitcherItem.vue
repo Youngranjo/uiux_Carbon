@@ -1,31 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-switcher-item>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvSwitcherItem>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      aria-label (string) — Required props for accessibility label
-      aria-labelledby (string) — Props for accessibility labelled by
-      href (string) — Link `href`.
-      selected (boolean) — Specify if this is a large variation of the side nav link
-      tab-index (number) — Specify if this is a large variation of the side nav link
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import SwitcherItem from './components/SwitcherItem.vue' </script>
-    <SwitcherItem>Example</SwitcherItem>
+    import SwitcherItem from './components/SwitcherItem.vue';
+    <SwitcherItem>...</SwitcherItem>
 -->
-<script setup>
-import '@carbon/web-components/es/components/ui-shell/index.js';
+<script>
+import { CvSwitcherItem } from '@carbon/vue';
+export default CvSwitcherItem;
 </script>
-
-<template>
-  <cds-switcher-item v-bind="$attrs"><slot /></cds-switcher-item>
-</template>

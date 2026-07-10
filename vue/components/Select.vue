@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-select>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvSelect>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      isFluid (boolean) — Specify whether the textarea is fluid or not
-      autofocus (boolean) — Sets the select to be focussed automatically on page load. Defaults to false
-      disabled (boolean) — Controls the disabled state of the select
-      helper-text (string) — The helper text.
-      hide-label (boolean) — Specify whether the label should be hidden, or not
-      id (string) — ID to link the `label` and `select`
-      invalid (boolean) — Specify if the currently value is invalid.
-      invalid-text (string) — Message which is displayed if the value is invalid.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import Select from './components/Select.vue' </script>
-    <Select>Example</Select>
+    import Select from './components/Select.vue';
+    <Select>...</Select>
 -->
-<script setup>
-import '@carbon/web-components/es/components/select/index.js';
+<script>
+import { CvSelect } from '@carbon/vue';
+export default CvSelect;
 </script>
-
-<template>
-  <cds-select v-bind="$attrs"><slot /></cds-select>
-</template>

@@ -1,31 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-side-nav-menu>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvSideNavMenu>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      active (boolean) — `true` if the menu has active menu item.
-      expanded (boolean) — `true` if the menu should be open.
-      large (boolean) — Specify if this is a large variation of the side nav menu
-      force-collapsed (boolean) — `true` if the menu should be forced collapsed upon side nav's expanded state.
-      title (string) — The title text.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import SideNavMenu from './components/SideNavMenu.vue' </script>
-    <SideNavMenu>Example</SideNavMenu>
+    import SideNavMenu from './components/SideNavMenu.vue';
+    <SideNavMenu>...</SideNavMenu>
 -->
-<script setup>
-import '@carbon/web-components/es/components/ui-shell/index.js';
+<script>
+import { CvSideNavMenu } from '@carbon/vue';
+export default CvSideNavMenu;
 </script>
-
-<template>
-  <cds-side-nav-menu v-bind="$attrs"><slot /></cds-side-nav-menu>
-</template>

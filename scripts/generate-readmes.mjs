@@ -106,43 +106,77 @@ ${reactRows}
 `);
 
 // ---------------- vue/README.md ----------------
+let vueManifest = [];
+try {
+  vueManifest = JSON.parse(readFileSync('scripts/vue-manifest.json', 'utf8'));
+} catch (e) {}
+const cvByFolder = new Map();
+for (const v of vueManifest) {
+  if (!cvByFolder.has(v.folder)) cvByFolder.set(v.folder, []);
+  cvByFolder.get(v.folder).push(v.cvName);
+}
+
 const vueRows = sorted
-  .filter((f) => f.tags.length)
-  .map((f) => f.tags.map((t) => `| \`${tagToPascal(t.name)}.vue\` | \`<${t.name}>\` | ${f.folder} |`).join('\n'))
+  .filter((f) => f.tags.length || cvByFolder.has(f.folder))
+  .map((f) => {
+    const cvNames = cvByFolder.get(f.folder);
+    if (cvNames) return cvNames.map((cv) => `| \`${cv.replace(/^Cv/, '')}.vue\` | @carbon/vue (실제) | \`${cv}\` | ${f.folder} |`).join('\n');
+    return f.tags.map((t) => `| \`${tagToPascal(t.name)}.vue\` | Web Component 래퍼 | \`${t.name}\` | ${f.folder} |`).join('\n');
+  })
   .join('\n');
 
 writeFileSync('vue/README.md', `# vue/
 
-Carbon은 IBM 공식 Vue 패키지가 없습니다. 공식 가이드는 "Vue는 Web Components를 네이티브 HTML 태그처럼
-그대로 쓸 수 있다"는 것이므로, 이 폴더의 각 \`.vue\` 파일은 \`@carbon/web-components\`의 실제 커스텀 엘리먼트를
-감싸는 얇은 SFC 래퍼입니다 (재구현 아님).
+Carbon 공식 Vue 패키지는 [\`@carbon/vue\`](https://github.com/carbon-design-system/carbon-components-vue)
+(\`CvXxx\` 컴포넌트)로 실제 존재합니다 — 단, **Carbon 10**(\`carbon-components\`, \`bx--\` 클래스 접두사)
+기준이라 이 프로젝트의 나머지(React/HTML)가 쓰는 **Carbon 11**(\`@carbon/react\`, \`@carbon/styles\`,
+\`@carbon/web-components\`, \`cds--\` 접두사)과 디자인이 다릅니다.
+
+그래서 이 폴더는 두 가지 방식이 섞여 있습니다:
+
+1. **\`@carbon/vue\`에 대응하는 실제 컴포넌트가 있는 경우(${vueManifest.length}개)** — 그 컴포넌트를
+   그대로 재export합니다(재구현 아님). 파일 주석에 "Carbon 10" 경고가 적혀 있습니다.
+2. **없는 경우** — 공식 가이드대로 \`@carbon/web-components\`(Carbon 11)의 커스텀 엘리먼트를 감싼
+   얇은 SFC 래퍼를 씁니다.
 
 \`\`\`
 vue/
-└── components/*.vue   Web Component 태그 1개당 파일 1개 (총 ${[...new Set(families.flatMap((f) => f.tags.map((t) => t.name)))].length}개)
+├── components/*.vue          위 두 방식 중 하나로 생성된 파일 (총 ${[...new Set(families.flatMap((f) => f.tags.map((t) => t.name)))].length}개)
+└── components/*.stories.js   carbon-components-vue의 실제 Storybook 예제 (있는 경우)
 \`\`\`
 
 ## 설치
 
 \`\`\`bash
+# 실제 @carbon/vue(Carbon 10) 컴포넌트를 쓸 경우
+npm install --save @carbon/vue vue
+
+# Web Component 래퍼(Carbon 11)를 쓸 경우
 npm install --save @carbon/web-components @carbon/styles
 \`\`\`
 
-## Vue 앱 엔트리에서 한 번만
+## @carbon/vue 앱 엔트리에서 한 번만
 
 \`\`\`js
 // main.js
+import { createApp } from 'vue';
+import CarbonVue3 from '@carbon/vue';
+import '@carbon/vue/dist/carbon-vue-3.css';
+
+const app = createApp(App);
+app.use(CarbonVue3);
+app.mount('#app');
+\`\`\`
+
+## Web Component 래퍼 앱 엔트리에서 한 번만
+
+\`\`\`js
 import { createApp } from 'vue';
 import '@carbon/web-components/es/index.js';
 
 const app = createApp(App);
 app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-');
 app.mount('#app');
-\`\`\`
-
-\`\`\`html
-<!-- index.html -->
-<link rel="stylesheet" href="node_modules/@carbon/styles/css/styles.min.css" />
 \`\`\`
 
 ## 사용
@@ -159,8 +193,8 @@ import Button from './components/Button.vue';
 
 ## 컴포넌트 목록
 
-| 파일 | 태그 | 소속 패밀리 |
-|---|---|---|
+| 파일 | 방식 | 실제 소스 | 소속 패밀리 |
+|---|---|---|---|
 ${vueRows}
 `);
 

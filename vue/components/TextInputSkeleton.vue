@@ -1,28 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-text-input-skeleton>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvTextInputSkeleton>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      hide-label (boolean) — Specify whether the label should be hidden, or not
-      size (INPUT_SIZE | undefined) — The text-input-skeleton size.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import TextInputSkeleton from './components/TextInputSkeleton.vue' </script>
-    <TextInputSkeleton>Example</TextInputSkeleton>
+    import TextInputSkeleton from './components/TextInputSkeleton.vue';
+    <TextInputSkeleton>...</TextInputSkeleton>
 -->
-<script setup>
-import '@carbon/web-components/es/components/text-input/index.js';
+<script>
+import { CvTextInputSkeleton } from '@carbon/vue';
+export default CvTextInputSkeleton;
 </script>
-
-<template>
-  <cds-text-input-skeleton v-bind="$attrs"><slot /></cds-text-input-skeleton>
-</template>

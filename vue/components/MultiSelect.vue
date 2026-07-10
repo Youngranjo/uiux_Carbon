@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-multi-select>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvMultiSelect>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      filterable (string)
-      autocomplete (string) — The native `autocomplete` attribute for the filterable input.
-      clear-selection-label (string) — The `aria-label` attribute for the icon to clear selection.
-      clear-selection-description (string) — Specify the text that should be read for screen readers that describes total items selected
-      clear-selection-text (string) — Specify the text that should be read for screen readers to clear selection.
-      locale (string) — Specify the locale of the control. Used for the default compareItems used for sorting the list of items in the control.
-      select-all (boolean) — Enables rendering of a “Select all” multi-select-item
-      selection-feedback (SELECTION_FEEDBACK_OPTION) — Specify feedback (mode) of the selection.
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import MultiSelect from './components/MultiSelect.vue' </script>
-    <MultiSelect>Example</MultiSelect>
+    import MultiSelect from './components/MultiSelect.vue';
+    <MultiSelect>...</MultiSelect>
 -->
-<script setup>
-import '@carbon/web-components/es/components/multi-select/index.js';
+<script>
+import { CvMultiSelect } from '@carbon/vue';
+export default CvMultiSelect;
 </script>
-
-<template>
-  <cds-multi-select v-bind="$attrs"><slot /></cds-multi-select>
-</template>

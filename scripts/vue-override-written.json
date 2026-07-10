@@ -1,0 +1,567 @@
+[
+  {
+    "compName": "Accordion",
+    "cvName": "CvAccordion",
+    "folder": "Accordion"
+  },
+  {
+    "compName": "AccordionItem",
+    "cvName": "CvAccordionItem",
+    "folder": "Accordion"
+  },
+  {
+    "compName": "AccordionSkeleton",
+    "cvName": "CvAccordionSkeleton",
+    "folder": "Accordion"
+  },
+  {
+    "compName": "AspectRatio",
+    "cvName": "CvAspectRatio",
+    "folder": "AspectRatio"
+  },
+  {
+    "compName": "Breadcrumb",
+    "cvName": "CvBreadcrumb",
+    "folder": "Breadcrumb"
+  },
+  {
+    "compName": "BreadcrumbItem",
+    "cvName": "CvBreadcrumbItem",
+    "folder": "Breadcrumb"
+  },
+  {
+    "compName": "BreadcrumbSkeleton",
+    "cvName": "CvBreadcrumbSkeleton",
+    "folder": "Breadcrumb"
+  },
+  {
+    "compName": "BreadcrumbSkeletonItem",
+    "cvName": "CvBreadcrumbSkeletonItem",
+    "folder": "Breadcrumb"
+  },
+  {
+    "compName": "Button",
+    "cvName": "CvButton",
+    "folder": "Button"
+  },
+  {
+    "compName": "ButtonSet",
+    "cvName": "CvButtonSet",
+    "folder": "ButtonSet"
+  },
+  {
+    "compName": "ButtonSkeleton",
+    "cvName": "CvButtonSkeleton",
+    "folder": "Button"
+  },
+  {
+    "compName": "IconButton",
+    "cvName": "CvIconButton",
+    "folder": "IconButton"
+  },
+  {
+    "compName": "Checkbox",
+    "cvName": "CvCheckbox",
+    "folder": "Checkbox"
+  },
+  {
+    "compName": "CheckboxSkeleton",
+    "cvName": "CvCheckboxSkeleton",
+    "folder": "Checkbox"
+  },
+  {
+    "compName": "CodeSnippet",
+    "cvName": "CvCodeSnippet",
+    "folder": "CodeSnippet"
+  },
+  {
+    "compName": "CodeSnippetSkeleton",
+    "cvName": "CvCodeSnippetSkeleton",
+    "folder": "CodeSnippet"
+  },
+  {
+    "compName": "ComboBox",
+    "cvName": "CvComboBox",
+    "folder": "ComboBox"
+  },
+  {
+    "compName": "ContentSwitcher",
+    "cvName": "CvContentSwitcher",
+    "folder": "ContentSwitcher"
+  },
+  {
+    "compName": "ContentSwitcherButton",
+    "cvName": "CvContentSwitcherButton",
+    "folder": "ContentSwitcher"
+  },
+  {
+    "compName": "ContentSwitcherContent",
+    "cvName": "CvContentSwitcherContent",
+    "folder": "ContentSwitcher"
+  },
+  {
+    "compName": "CopyButton",
+    "cvName": "CvCopyButton",
+    "folder": "CopyButton"
+  },
+  {
+    "compName": "DataTable",
+    "cvName": "CvDataTable",
+    "folder": "DataTable"
+  },
+  {
+    "compName": "DataTableAction",
+    "cvName": "CvDataTableAction",
+    "folder": "DataTable"
+  },
+  {
+    "compName": "DataTableCell",
+    "cvName": "CvDataTableCell",
+    "folder": "DataTable"
+  },
+  {
+    "compName": "DataTableHeading",
+    "cvName": "CvDataTableHeading",
+    "folder": "DataTable"
+  },
+  {
+    "compName": "DataTableRow",
+    "cvName": "CvDataTableRow",
+    "folder": "DataTable"
+  },
+  {
+    "compName": "DataTableSkeleton",
+    "cvName": "CvDataTableSkeleton",
+    "folder": "DataTableSkeleton"
+  },
+  {
+    "compName": "DatePicker",
+    "cvName": "CvDatePicker",
+    "folder": "DatePicker"
+  },
+  {
+    "compName": "DatePickerSkeleton",
+    "cvName": "CvDatePickerSkeleton",
+    "folder": "DatePicker"
+  },
+  {
+    "compName": "Dropdown",
+    "cvName": "CvDropdown",
+    "folder": "Dropdown"
+  },
+  {
+    "compName": "DropdownItem",
+    "cvName": "CvDropdownItem",
+    "folder": "Dropdown"
+  },
+  {
+    "compName": "DropdownSkeleton",
+    "cvName": "CvDropdownSkeleton",
+    "folder": "Dropdown"
+  },
+  {
+    "compName": "FileUploader",
+    "cvName": "CvFileUploader",
+    "folder": "FileUploader"
+  },
+  {
+    "compName": "FileUploaderItem",
+    "cvName": "CvFileUploaderItem",
+    "folder": "FileUploader"
+  },
+  {
+    "compName": "FileUploaderSkeleton",
+    "cvName": "CvFileUploaderSkeleton",
+    "folder": "FileUploader"
+  },
+  {
+    "compName": "Form",
+    "cvName": "CvForm",
+    "folder": "Form"
+  },
+  {
+    "compName": "FormGroup",
+    "cvName": "CvFormGroup",
+    "folder": "FormGroup"
+  },
+  {
+    "compName": "FormItem",
+    "cvName": "CvFormItem",
+    "folder": "FormItem"
+  },
+  {
+    "compName": "Column",
+    "cvName": "CvColumn",
+    "folder": "Grid"
+  },
+  {
+    "compName": "Grid",
+    "cvName": "CvGrid",
+    "folder": "Grid"
+  },
+  {
+    "compName": "Row",
+    "cvName": "CvRow",
+    "folder": "Grid"
+  },
+  {
+    "compName": "InlineLoading",
+    "cvName": "CvInlineLoading",
+    "folder": "InlineLoading"
+  },
+  {
+    "compName": "Link",
+    "cvName": "CvLink",
+    "folder": "Link"
+  },
+  {
+    "compName": "List",
+    "cvName": "CvList",
+    "folder": "OrderedList"
+  },
+  {
+    "compName": "ListItem",
+    "cvName": "CvListItem",
+    "folder": "ListItem"
+  },
+  {
+    "compName": "Loading",
+    "cvName": "CvLoading",
+    "folder": "Loading"
+  },
+  {
+    "compName": "Modal",
+    "cvName": "CvModal",
+    "folder": "Modal"
+  },
+  {
+    "compName": "MultiSelect",
+    "cvName": "CvMultiSelect",
+    "folder": "MultiSelect"
+  },
+  {
+    "compName": "InlineNotification",
+    "cvName": "CvInlineNotification",
+    "folder": "Notification"
+  },
+  {
+    "compName": "ToastNotification",
+    "cvName": "CvToastNotification",
+    "folder": "Notification"
+  },
+  {
+    "compName": "NumberInput",
+    "cvName": "CvNumberInput",
+    "folder": "NumberInput"
+  },
+  {
+    "compName": "NumberInputSkeleton",
+    "cvName": "CvNumberInputSkeleton",
+    "folder": "NumberInput"
+  },
+  {
+    "compName": "OverflowMenu",
+    "cvName": "CvOverflowMenu",
+    "folder": "OverflowMenu"
+  },
+  {
+    "compName": "OverflowMenuItem",
+    "cvName": "CvOverflowMenuItem",
+    "folder": "OverflowMenuItem"
+  },
+  {
+    "compName": "Pagination",
+    "cvName": "CvPagination",
+    "folder": "Pagination"
+  },
+  {
+    "compName": "Progress",
+    "cvName": "CvProgress",
+    "folder": "ProgressIndicator"
+  },
+  {
+    "compName": "ProgressSkeleton",
+    "cvName": "CvProgressSkeleton",
+    "folder": "ProgressIndicator"
+  },
+  {
+    "compName": "ProgressStep",
+    "cvName": "CvProgressStep",
+    "folder": "ProgressIndicator"
+  },
+  {
+    "compName": "RadioButton",
+    "cvName": "CvRadioButton",
+    "folder": "RadioButton"
+  },
+  {
+    "compName": "RadioGroup",
+    "cvName": "CvRadioGroup",
+    "folder": "RadioButtonGroup"
+  },
+  {
+    "compName": "Search",
+    "cvName": "CvSearch",
+    "folder": "Search"
+  },
+  {
+    "compName": "Select",
+    "cvName": "CvSelect",
+    "folder": "Select"
+  },
+  {
+    "compName": "SelectOptgroup",
+    "cvName": "CvSelectOptgroup",
+    "folder": "SelectItemGroup"
+  },
+  {
+    "compName": "SelectOption",
+    "cvName": "CvSelectOption",
+    "folder": "SelectItem"
+  },
+  {
+    "compName": "SkeletonText",
+    "cvName": "CvSkeletonText",
+    "folder": "SkeletonText"
+  },
+  {
+    "compName": "Slider",
+    "cvName": "CvSlider",
+    "folder": "Slider"
+  },
+  {
+    "compName": "SliderSkeleton",
+    "cvName": "CvSliderSkeleton",
+    "folder": "Slider"
+  },
+  {
+    "compName": "StructuredList",
+    "cvName": "CvStructuredList",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "StructuredListData",
+    "cvName": "CvStructuredListData",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "StructuredListHeading",
+    "cvName": "CvStructuredListHeading",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "StructuredListItem",
+    "cvName": "CvStructuredListItem",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "StructuredListItemSelectable",
+    "cvName": "CvStructuredListItemSelectable",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "StructuredListItemStandard",
+    "cvName": "CvStructuredListItemStandard",
+    "folder": "StructuredList"
+  },
+  {
+    "compName": "Tab",
+    "cvName": "CvTab",
+    "folder": "Tabs"
+  },
+  {
+    "compName": "Tabs",
+    "cvName": "CvTabs",
+    "folder": "Tabs"
+  },
+  {
+    "compName": "TabsSkeleton",
+    "cvName": "CvTabsSkeleton",
+    "folder": "Tabs"
+  },
+  {
+    "compName": "Tag",
+    "cvName": "CvTag",
+    "folder": "Tag"
+  },
+  {
+    "compName": "TagSkeleton",
+    "cvName": "CvTagSkeleton",
+    "folder": "Tag"
+  },
+  {
+    "compName": "TextArea",
+    "cvName": "CvTextArea",
+    "folder": "TextArea"
+  },
+  {
+    "compName": "TextAreaSkeleton",
+    "cvName": "CvTextAreaSkeleton",
+    "folder": "TextArea"
+  },
+  {
+    "compName": "TextInput",
+    "cvName": "CvTextInput",
+    "folder": "TextInput"
+  },
+  {
+    "compName": "TextInputSkeleton",
+    "cvName": "CvTextInputSkeleton",
+    "folder": "TextInput"
+  },
+  {
+    "compName": "Tile",
+    "cvName": "CvTile",
+    "folder": "Tile"
+  },
+  {
+    "compName": "TileClickable",
+    "cvName": "CvTileClickable",
+    "folder": "Tile"
+  },
+  {
+    "compName": "TileExpandable",
+    "cvName": "CvTileExpandable",
+    "folder": "Tile"
+  },
+  {
+    "compName": "TileSelectable",
+    "cvName": "CvTileSelectable",
+    "folder": "Tile"
+  },
+  {
+    "compName": "TileStandard",
+    "cvName": "CvTileStandard",
+    "folder": "Tile"
+  },
+  {
+    "compName": "TimePicker",
+    "cvName": "CvTimePicker",
+    "folder": "TimePicker"
+  },
+  {
+    "compName": "ToggleSkeleton",
+    "cvName": "CvToggleSkeleton",
+    "folder": "Toggle"
+  },
+  {
+    "compName": "Toggle",
+    "cvName": "CvToggle",
+    "folder": "Toggle"
+  },
+  {
+    "compName": "DefinitionTooltip",
+    "cvName": "CvDefinitionTooltip",
+    "folder": "Tooltip"
+  },
+  {
+    "compName": "InteractiveTooltip",
+    "cvName": "CvInteractiveTooltip",
+    "folder": "Tooltip"
+  },
+  {
+    "compName": "Tooltip",
+    "cvName": "CvTooltip",
+    "folder": "Tooltip"
+  },
+  {
+    "compName": "Content",
+    "cvName": "CvContent",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "Header",
+    "cvName": "CvHeader",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderGlobalAction",
+    "cvName": "CvHeaderGlobalAction",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderMenu",
+    "cvName": "CvHeaderMenu",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderMenuButton",
+    "cvName": "CvHeaderMenuButton",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderMenuItem",
+    "cvName": "CvHeaderMenuItem",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderName",
+    "cvName": "CvHeaderName",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderNav",
+    "cvName": "CvHeaderNav",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "HeaderPanel",
+    "cvName": "CvHeaderPanel",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNav",
+    "cvName": "CvSideNav",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavIcon",
+    "cvName": "CvSideNavIcon",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavItems",
+    "cvName": "CvSideNavItems",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavLink",
+    "cvName": "CvSideNavLink",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavMenu",
+    "cvName": "CvSideNavMenu",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavMenuDivider",
+    "cvName": "CvSideNavMenuDivider",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SideNavMenuItem",
+    "cvName": "CvSideNavMenuItem",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SkipToContent",
+    "cvName": "CvSkipToContent",
+    "folder": "SkipToContent"
+  },
+  {
+    "compName": "Switcher",
+    "cvName": "CvSwitcher",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SwitcherItem",
+    "cvName": "CvSwitcherItem",
+    "folder": "UIShell"
+  },
+  {
+    "compName": "SwitcherItemLink",
+    "cvName": "CvSwitcherItemLink",
+    "folder": "UIShell"
+  }
+]

@@ -1,34 +1,24 @@
 <!--
-  Vue wrapper for Carbon's official Web Component <cds-toggle>.
-  Carbon has no separate IBM-maintained Vue package: the official guidance is that Vue
-  can use Web Components directly, the same as native HTML tags. This file is a thin
-  convenience wrapper around the real, installed @carbon/web-components source so it can
-  be imported like any other Vue component.
+  Vue wrapper for the REAL, official @carbon/vue component <CvToggle>.
 
-  Setup once in your Vue app entry (vite.config or main.js):
-    app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('cds-')
+  Note: @carbon/vue targets Carbon 10 (the "carbon-components" package, "bx--" class
+  prefix) — one major version behind the Carbon 11 design (@carbon/react, @carbon/styles,
+  @carbon/web-components) used everywhere else in this project. It is genuinely IBM's
+  official Vue package, but it will render with older colors/spacing/typography.
 
   Install:
-    npm install --save @carbon/web-components @carbon/styles
+    npm install --save @carbon/vue vue
 
-  Attributes (see custom-elements.json for the full list):
-      toggled (boolean) — Specify whether the control is toggled
-      aria-labelledby (string | undefined) — Specify another element's id to be used as the label for this toggle
-      label-a (string) — Specify the label for the "on" position
-      read-only (boolean) — Read only boolean.
-      size (TOGGLE_SIZE) — Toggle size.
-      label-b (string) — Specify the label for the "off" position
-      checked (boolean) — 
-      data-table (boolean) — Specify if checkbox is being used in a data table
+  Global setup (main.js):
+    import CarbonVue3 from '@carbon/vue';
+    import '@carbon/vue/dist/carbon-vue-3.css';
+    app.use(CarbonVue3);
 
   Usage:
-    <script setup> import Toggle from './components/Toggle.vue' </script>
-    <Toggle>Example</Toggle>
+    import Toggle from './components/Toggle.vue';
+    <Toggle>...</Toggle>
 -->
-<script setup>
-import '@carbon/web-components/es/components/toggle/index.js';
+<script>
+import { CvToggle } from '@carbon/vue';
+export default CvToggle;
 </script>
-
-<template>
-  <cds-toggle v-bind="$attrs"><slot /></cds-toggle>
-</template>

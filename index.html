@@ -289,6 +289,47 @@
   /* ───────── 컴포넌트 상세 페이지 ───────── */
   var LANG_LABEL = { html: 'HTML', react: 'React', vue: 'Vue' };
 
+  /* 공식 Storybook 예제 — react.carbondesignsystem.com / web-components.carbondesignsystem.com /
+     vue.carbondesignsystem.com 의 실제 소스(GitHub에서 가져옴)를 HTML/React/Vue 탭으로 보여준다.
+     하나도 없으면 섹션 자체를 렌더링하지 않는다. */
+  function officialExamplesSection(f) {
+    var htmlSrc = f.officialHtml || ('// ' + f.folder + '의 공식 Web Component Storybook 예제를 찾지 못했습니다.\n// 위 라이브 데모 섹션의 실제 태그/속성을 참고하세요.');
+    var reactSrc = f.reactSnippet;
+    var vueSrc = f.officialVue
+      ? f.officialVue + (f.officialVueComponent ? '\n\n<!-- @carbon/vue 컴포넌트: ' + f.officialVueComponent + ' (Carbon 10) -->' : '')
+      : (f.officialVueComponent
+          ? '<' + f.officialVueComponent.replace(/^Cv/, '').replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase() + ' />\n\n<!-- @carbon/vue의 ' + f.officialVueComponent + '는 실제 존재하지만, 공식 예제 소스를 찾지 못해 스니펫을 생략합니다. -->'
+          : '<!-- ' + f.folder + '에 대응하는 @carbon/vue(Carbon 10) 컴포넌트를 찾지 못했습니다. -->');
+
+    var langs = [
+      { key: 'html', src: htmlSrc, file: f.officialHtmlFile, label: 'web-components.carbondesignsystem.com' },
+      { key: 'react', src: reactSrc, file: f.reactStoryFile || f.reactFile, label: 'react.carbondesignsystem.com' },
+      { key: 'vue', src: vueSrc, file: f.officialVueFile, label: 'vue.carbondesignsystem.com (Carbon 10)' },
+    ];
+    var uid = 'official-' + f.folder;
+    var tabs = langs.map(function (l, li) {
+      return '<button type="button" class="sg-codetab' + (li === 0 ? ' is-active' : '') + '" data-uid="' + uid + '" data-lang="' + l.key + '">' + LANG_LABEL[l.key] + '</button>';
+    }).join('');
+    var blocks = langs.map(function (l, li) {
+      return '<pre class="sg-code" data-uid="' + uid + '" data-lang="' + l.key + '"' + (li === 0 ? '' : ' hidden') + '><code>' + escapeHtml(l.src) + '</code></pre>';
+    }).join('');
+    var links = langs
+      .filter(function (l) { return l.file; })
+      .map(function (l) { return '<a class="sg-standalone-link" href="' + l.file + '" target="_blank" rel="noopener">' + l.file + ' 열기 →</a>'; })
+      .join('');
+
+    return (
+      '<section class="sg-section"><h2 class="sg-h2">공식 Storybook 예제</h2>' +
+        '<p class="sg-example-desc" style="margin-bottom:12px;">carbon-design-system/carbon' + (f.officialVueComponent ? ' · carbon-components-vue' : '') + ' GitHub 소스에서 그대로 가져온 예제입니다 (재구현 아님).</p>' +
+        '<div class="sg-codepanel" data-code="' + uid + '" style="border-top:1px solid var(--sg-line)">' +
+          '<div class="sg-codetabs">' + tabs + '</div>' +
+          '<div class="sg-codewrap">' + blocks + '<button type="button" class="sg-copybtn" data-copy-uid="' + uid + '">복사</button></div>' +
+          (links ? '<div class="sg-codebar" style="border-top:1px solid var(--sg-line);border-bottom:0;">' + links + '</div>' : '') +
+        '</div>' +
+      '</section>'
+    );
+  }
+
   function renderComponent(f, focusTag) {
     document.title = f.folder + ' — Carbon Style Guide';
 
@@ -334,20 +375,7 @@
       '<div class="sg-badges">' + badges + '</div>' +
       '<p class="sg-summary">' + escapeHtml(f.description || '') + '</p>' +
       (f.tags.length ? '<section class="sg-section"><h2 class="sg-h2">Web Component 라이브 데모</h2>' + examples + '</section>' : '') +
-      '<section class="sg-section"><h2 class="sg-h2">React' +
-          (f.reactStoryFile ? ' <span class="sg-pill wc" style="vertical-align:middle;">carbon-design-system/carbon 실제 Storybook 예제</span>' : '') +
-        '</h2>' +
-        '<div class="sg-codepanel" data-code="react-only" style="border-top:1px solid var(--sg-line)">' +
-          '<div class="sg-codewrap">' +
-            '<pre class="sg-code" data-uid="react-only" data-lang="react"><code>' + escapeHtml(f.reactSnippet) + '</code></pre>' +
-            '<button type="button" class="sg-copybtn" data-copy-uid="react-only">복사</button>' +
-          '</div>' +
-          '<div class="sg-codebar" style="border-top:1px solid var(--sg-line);border-bottom:0;">' +
-            (f.reactStoryFile ? '<a class="sg-standalone-link" href="' + f.reactStoryFile + '" target="_blank" rel="noopener">' + f.folder + '.stories.tsx 열기 →</a>' : '') +
-            (f.reactFile ? '<a class="sg-standalone-link" href="' + f.reactFile + '" target="_blank" rel="noopener">react/components/' + f.folder + '.jsx 열기 →</a>' : '') +
-          '</div>' +
-        '</div>' +
-      '</section>' +
+      officialExamplesSection(f) +
       (!f.tags.length && !f.reactExports.length ? '<div class="sg-empty-note">이 항목은 React 컨텍스트/유틸리티(ErrorBoundary, FeatureFlags 등)로, 시각적 컴포넌트가 아닙니다.</div>' : '');
 
     // 코드 패널 토글(보기/숨기기)
