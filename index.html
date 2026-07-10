@@ -334,13 +334,18 @@
       '<div class="sg-badges">' + badges + '</div>' +
       '<p class="sg-summary">' + escapeHtml(f.description || '') + '</p>' +
       (f.tags.length ? '<section class="sg-section"><h2 class="sg-h2">Web Component 라이브 데모</h2>' + examples + '</section>' : '') +
-      '<section class="sg-section"><h2 class="sg-h2">React</h2>' +
+      '<section class="sg-section"><h2 class="sg-h2">React' +
+          (f.reactStoryFile ? ' <span class="sg-pill wc" style="vertical-align:middle;">carbon-design-system/carbon 실제 Storybook 예제</span>' : '') +
+        '</h2>' +
         '<div class="sg-codepanel" data-code="react-only" style="border-top:1px solid var(--sg-line)">' +
           '<div class="sg-codewrap">' +
             '<pre class="sg-code" data-uid="react-only" data-lang="react"><code>' + escapeHtml(f.reactSnippet) + '</code></pre>' +
             '<button type="button" class="sg-copybtn" data-copy-uid="react-only">복사</button>' +
           '</div>' +
-          (f.reactFile ? '<div class="sg-codebar" style="border-top:1px solid var(--sg-line);border-bottom:0;"><a class="sg-standalone-link" href="' + f.reactFile + '" target="_blank" rel="noopener">react/components/' + f.folder + '.jsx 열기 →</a></div>' : '') +
+          '<div class="sg-codebar" style="border-top:1px solid var(--sg-line);border-bottom:0;">' +
+            (f.reactStoryFile ? '<a class="sg-standalone-link" href="' + f.reactStoryFile + '" target="_blank" rel="noopener">' + f.folder + '.stories.tsx 열기 →</a>' : '') +
+            (f.reactFile ? '<a class="sg-standalone-link" href="' + f.reactFile + '" target="_blank" rel="noopener">react/components/' + f.folder + '.jsx 열기 →</a>' : '') +
+          '</div>' +
         '</div>' +
       '</section>' +
       (!f.tags.length && !f.reactExports.length ? '<div class="sg-empty-note">이 항목은 React 컨텍스트/유틸리티(ErrorBoundary, FeatureFlags 등)로, 시각적 컴포넌트가 아닙니다.</div>' : '');

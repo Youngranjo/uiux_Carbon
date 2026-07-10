@@ -1,13 +1,17 @@
 // Generates the whole style guide (core/react/vue component files + index.html) from
 // scripts/manifest.json, which was extracted from the REAL installed @carbon/react and
 // @carbon/web-components source in node_modules (see extract-manifest.mjs).
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from 'node:fs';
 
 const families = JSON.parse(readFileSync('scripts/manifest.json', 'utf8'));
 
-mkdirSync('core/components', { recursive: true });
-mkdirSync('react/components', { recursive: true });
-mkdirSync('vue/components', { recursive: true });
+// Clean slate each run — otherwise a tag/family removed from the manifest (e.g. the
+// 'tabs-story-wrapper' internal Storybook helper filtered out in extract-manifest.mjs)
+// leaves its old generated file behind forever, silently drifting from the manifest.
+for (const dir of ['core/components', 'react/components', 'vue/components']) {
+  rmSync(dir, { recursive: true, force: true });
+  mkdirSync(dir, { recursive: true });
+}
 
 // ---------- helpers ----------
 function tagToPascal(tagName) {
@@ -252,6 +256,16 @@ export function ${folder}(props) {
 `;
   }
   writeFileSync(`react/components/${folder}.jsx`, jsx);
+
+  // Real Storybook example source, fetched from carbon-design-system/carbon on GitHub
+  // (scripts/fetch-stories.mjs) — not published to npm, so this is the only way to get
+  // Carbon's own realistic multi-variant examples (Default/Controlled/...) instead of a
+  // generic one-liner. Kept as a sibling file so it's inspectable like any other source.
+  const storyCachePath = `scripts/stories-cache/${folder}.txt`;
+  if (existsSync(storyCachePath)) {
+    const storySrc = readFileSync(storyCachePath, 'utf8');
+    writeFileSync(`react/components/${folder}.stories.tsx`, storySrc);
+  }
 }
 
 console.log(`core html files: ${uniqueTags.length}`);
@@ -281,7 +295,12 @@ const indexFamilies = families
       };
     });
     const description = tagEntries[0]?.description || (reactExports.length ? `React: ${reactExports.slice(0, 3).join(', ')}` : '');
-    const reactSnippet = reactExports.length
+
+    const storyCachePath = `scripts/stories-cache/${folder}.txt`;
+    const hasStory = reactExports.length > 0 && existsSync(storyCachePath);
+    const reactSnippet = hasStory
+      ? readFileSync(storyCachePath, 'utf8').replace(/^\/\*\*[\s\S]*?\*\/\n+/, '') // strip license header
+      : reactExports.length
       ? `import { ${reactExports.slice(0, 4).join(', ')}${reactExports.length > 4 ? ', ...' : ''} } from './react/components/${folder}';\n\n// re-exports the real @carbon/react package (${reactExports.length} export${reactExports.length > 1 ? 's' : ''} total — see the full file)`
       : `// ${folder} is only experimental (unstable_/preview_) in @carbon/react today.\n// Stable today via the real Web Component:\nimport '@carbon/web-components/es/components/${wcFolder}/index.js';`;
     return {
@@ -290,6 +309,7 @@ const indexFamilies = families
       description,
       reactExports,
       reactFile: reactExports.length || tags.length ? `react/components/${folder}.jsx` : null,
+      reactStoryFile: hasStory ? `react/components/${folder}.stories.tsx` : null,
       reactSnippet,
       wcFolder,
       tags: tagEntries,

@@ -27,13 +27,14 @@ Carbon/
 ├── index.html                       카탈로그 (전체 컴포넌트 탐색 + 라이브 데모)
 ├── core/
 │   ├── README.md
-│   └── components/*.html            Web Component 태그 1개당 파일 1개 (217개)
+│   └── components/*.html            Web Component 태그 1개당 파일 1개 (216개)
 ├── react/
 │   ├── README.md
-│   └── components/*.jsx             @carbon/react 재export 래퍼 (116개 패밀리)
+│   ├── components/*.jsx             @carbon/react 재export 래퍼 (116개 패밀리)
+│   └── components/*.stories.tsx     carbon-design-system/carbon의 실제 Storybook 예제 (81개)
 ├── vue/
 │   ├── README.md
-│   └── components/*.vue             Web Component를 감싼 얇은 Vue SFC (217개)
+│   └── components/*.vue             Web Component를 감싼 얇은 Vue SFC (216개)
 ├── assets/
 │   ├── carbon-web-components.bundle.js   @carbon/web-components 오프라인 번들 (esbuild)
 │   ├── carbon-styles.min.css             @carbon/styles 공식 컴파일 CSS
@@ -75,9 +76,22 @@ Astryx(비공개 디자인 시스템)는 CSS를 `getComputedStyle`로 실측해 
 ```bash
 node scripts/extract-manifest.mjs
 node scripts/build-wc-bundle.mjs
+node scripts/fetch-stories.mjs   # 선택: carbon-design-system/carbon GitHub에서 실제 Storybook 예제 갱신 (네트워크 필요)
 node scripts/generate.mjs
 node scripts/generate-readmes.mjs
 ```
+
+### 실제 Storybook 예제 (`react/components/*.stories.tsx`)
+
+npm에는 컴포넌트 소스만 배포되고 Storybook 예제(`*.stories.tsx`)는 포함되지 않습니다. 그래서
+`scripts/fetch-stories.mjs`가 [carbon-design-system/carbon](https://github.com/carbon-design-system/carbon)
+GitHub 저장소에서 각 컴포넌트의 실제 스토리 소스를 가져와 `scripts/stories-cache/`에 캐시하고,
+`react/components/<Folder>.stories.tsx`로 그대로 복사합니다 — "Choose your plan", "Controlled" 같은
+실제 예제 문구는 전부 이 실제 소스에서 온 것이며 직접 지어낸 것이 아닙니다. 105개 React 패밀리 중
+81개는 전용 스토리 파일을 찾아 반영했고(직접 매칭 74개 + 하위 `stories/` 폴더·다른 파일명까지 리포지토리
+전체 트리를 뒤져서 찾은 7개), 나머지 24개(PrimaryButton·SelectItem 등)는 부모 컴포넌트 스토리에 포함되어
+있어 자체 파일이 없으므로 기존 간단한 재export 스니펫을 그대로 씁니다. 캐시가 있으면 재실행 시 네트워크
+호출 없이 건너뜁니다.
 
 ## 알아둘 점
 

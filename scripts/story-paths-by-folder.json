@@ -1,0 +1,318 @@
+{
+  "AILabel": [
+    "packages/react/src/components/AILabel/AILabel.stories.js"
+  ],
+  "AISkeleton": [
+    "packages/react/src/components/AISkeleton/AISkeletonIcon.stories.js",
+    "packages/react/src/components/AISkeleton/AISkeletonPlaceholder.stories.js",
+    "packages/react/src/components/AISkeleton/AISkeletonText.stories.js"
+  ],
+  "Accordion": [
+    "packages/react/src/components/Accordion/Accordion.stories.tsx"
+  ],
+  "AspectRatio": [
+    "packages/react/src/components/AspectRatio/AspectRatio.stories.js"
+  ],
+  "Breadcrumb": [
+    "packages/react/src/components/Breadcrumb/Breadcrumb.stories.js"
+  ],
+  "Button": [
+    "packages/react/src/components/Button/Button.stories.js"
+  ],
+  "ButtonSet": [
+    "packages/react/src/components/ButtonSet/ButtonSet.stories.js"
+  ],
+  "ChatButton": [
+    "packages/react/src/components/ChatButton/ChatButton.stories.js"
+  ],
+  "Checkbox": [
+    "packages/react/src/components/Checkbox/Checkbox.stories.js"
+  ],
+  "ClassPrefix": [
+    "packages/react/src/components/ClassPrefix/ClassPrefix.stories.js"
+  ],
+  "CodeSnippet": [
+    "packages/react/src/components/CodeSnippet/CodeSnippet.stories.js"
+  ],
+  "ComboBox": [
+    "packages/react/src/components/ComboBox/ComboBox.featureflag.stories.js",
+    "packages/react/src/components/ComboBox/ComboBox.stories.js"
+  ],
+  "ComboButton": [
+    "packages/react/src/components/ComboButton/ComboButton.featureflag.stories.js",
+    "packages/react/src/components/ComboButton/ComboButton.stories.js"
+  ],
+  "ComposedModal": [
+    "packages/react/src/components/ComposedModal/ComposedModal.featureflag.stories.js",
+    "packages/react/src/components/ComposedModal/ComposedModal.stories.js",
+    "packages/react/src/components/ComposedModal/ComposedModalPresence.featureflag.stories.js"
+  ],
+  "ContainedList": [
+    "packages/react/src/components/ContainedList/ContainedList.stories.js"
+  ],
+  "ContentSwitcher": [
+    "packages/react/src/components/ContentSwitcher/ContentSwitcher.stories.js"
+  ],
+  "ContextMenu": [
+    "packages/react/src/components/ContextMenu/useContextMenu.stories.js"
+  ],
+  "CopyButton": [
+    "packages/react/src/components/CopyButton/CopyButton.stories.js"
+  ],
+  "DataTable": [
+    "packages/react/src/components/DataTable/stories/DataTable-ai-label.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-basic.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-batch-actions.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-filtering.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-pagination.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-selection.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-sorting.stories.js",
+    "packages/react/src/components/DataTable/stories/DataTable-toolbar.stories.js",
+    "packages/react/src/components/DataTable/stories/dynamic-content/DataTable-dynamic-content.stories.js",
+    "packages/react/src/components/DataTable/stories/expansion/DataTable-expansion.stories.js"
+  ],
+  "DataTableSkeleton": [
+    "packages/react/src/components/DataTableSkeleton/DataTableSkeleton.stories.js"
+  ],
+  "DatePicker": [
+    "packages/react/src/components/DatePicker/DatePicker.stories.js"
+  ],
+  "Dialog": [
+    "packages/react/src/components/Dialog/Dialog.stories.js"
+  ],
+  "Dropdown": [
+    "packages/react/src/components/Dropdown/Dropdown.featureflag.stories.js",
+    "packages/react/src/components/Dropdown/Dropdown.stories.js"
+  ],
+  "ErrorBoundary": [
+    "packages/react/src/components/ErrorBoundary/ErrorBoundary.stories.js"
+  ],
+  "FileUploader": [
+    "packages/react/src/components/FileUploader/FileUploader.featureflag.stories.js",
+    "packages/react/src/components/FileUploader/FileUploader.stories.js"
+  ],
+  "FluidComboBox": [
+    "packages/react/src/components/FluidComboBox/FluidComboBox.stories.js"
+  ],
+  "FluidDatePicker": [
+    "packages/react/src/components/FluidDatePicker/FluidDatePicker.stories.js"
+  ],
+  "FluidDropdown": [
+    "packages/react/src/components/FluidDropdown/FluidDropdown.stories.js"
+  ],
+  "FluidForm": [
+    "packages/react/src/components/FluidForm/FluidForm.stories.js"
+  ],
+  "FluidMultiSelect": [
+    "packages/react/src/components/FluidMultiSelect/FluidMultiSelect.stories.js"
+  ],
+  "FluidNumberInput": [
+    "packages/react/src/components/FluidNumberInput/FluidNumberInput.stories.js"
+  ],
+  "FluidSearch": [
+    "packages/react/src/components/FluidSearch/FluidSearch.stories.js"
+  ],
+  "FluidSelect": [
+    "packages/react/src/components/FluidSelect/FluidSelect.stories.js"
+  ],
+  "FluidTextArea": [
+    "packages/react/src/components/FluidTextArea/FluidTextArea.stories.js"
+  ],
+  "FluidTextInput": [
+    "packages/react/src/components/FluidTextInput/FluidPasswordInput.stories.js",
+    "packages/react/src/components/FluidTextInput/FluidTextInput.stories.js"
+  ],
+  "FluidTimePicker": [
+    "packages/react/src/components/FluidTimePicker/FluidTimePicker.stories.js"
+  ],
+  "Form": [
+    "packages/react/src/components/Form/Form.stories.js"
+  ],
+  "FormGroup": [
+    "packages/react/src/components/FormGroup/FormGroup.stories.js"
+  ],
+  "FormLabel": [
+    "packages/react/src/components/FormLabel/FormLabel.stories.js"
+  ],
+  "Grid": [
+    "packages/react/src/components/Grid/FlexGrid.stories.js",
+    "packages/react/src/components/Grid/Grid.stories.js"
+  ],
+  "Heading": [
+    "packages/react/src/components/Heading/Heading.stories.js"
+  ],
+  "HideAtBreakpoint": [
+    "packages/react/src/components/HideAtBreakpoint/HideAtBreakpoint.stories.js"
+  ],
+  "IconButton": [
+    "packages/react/src/components/IconButton/IconButton.stories.js"
+  ],
+  "IconIndicator": [
+    "packages/react/src/components/IconIndicator/IconIndicator.stories.js"
+  ],
+  "Icons": [
+    "packages/react/src/components/Icons/Icons.stories.js"
+  ],
+  "IdPrefix": [
+    "packages/react/src/components/IdPrefix/IdPrefix.stories.js"
+  ],
+  "InlineLoading": [
+    "packages/react/src/components/InlineLoading/InlineLoading.stories.js"
+  ],
+  "Layer": [
+    "packages/react/src/components/Layer/Layer.stories.js"
+  ],
+  "Layout": [
+    "packages/react/src/components/Layout/Layout.stories.js"
+  ],
+  "Link": [
+    "packages/react/src/components/Link/Link.stories.js"
+  ],
+  "Loading": [
+    "packages/react/src/components/Loading/Loading.stories.js"
+  ],
+  "Menu": [
+    "packages/react/src/components/Menu/Menu.stories.js"
+  ],
+  "MenuButton": [
+    "packages/react/src/components/MenuButton/MenuButton.featureflag.stories.js",
+    "packages/react/src/components/MenuButton/MenuButton.stories.js"
+  ],
+  "Modal": [
+    "packages/react/src/components/Modal/Modal.featureflag.stories.js",
+    "packages/react/src/components/Modal/Modal.stories.js",
+    "packages/react/src/components/Modal/ModalPresence.featureflag.stories.js"
+  ],
+  "ModalWrapper": [
+    "packages/react/src/components/ModalWrapper/ ModalWrapper.stories.js"
+  ],
+  "MultiSelect": [
+    "packages/react/src/components/MultiSelect/MultiSelect.featureflag.stories.js",
+    "packages/react/src/components/MultiSelect/MultiSelect.stories.js"
+  ],
+  "Notification": [
+    "packages/react/src/components/Notification/stories/ActionableNotification.featureflag.stories.js",
+    "packages/react/src/components/Notification/stories/ActionableNotification.stories.js",
+    "packages/react/src/components/Notification/stories/Callout.stories.js",
+    "packages/react/src/components/Notification/stories/InlineNotification.stories.js",
+    "packages/react/src/components/Notification/stories/StaticNotification.stories.js",
+    "packages/react/src/components/Notification/stories/ToastNotification.stories.js"
+  ],
+  "NumberInput": [
+    "packages/react/src/components/NumberInput/NumberInput.stories.js"
+  ],
+  "OrderedList": [
+    "packages/react/src/components/OrderedList/OrderedList.stories.js"
+  ],
+  "OverflowMenu": [
+    "packages/react/src/components/OverflowMenu/OverflowMenu.featureflag.stories.js",
+    "packages/react/src/components/OverflowMenu/OverflowMenu.stories.js"
+  ],
+  "OverflowMenuV2": [
+    "packages/react/src/components/OverflowMenuV2/OverflowMenuv2.stories.js"
+  ],
+  "PageHeader": [
+    "packages/react/src/components/PageHeader/PageHeader.stories.js"
+  ],
+  "Pagination": [
+    "packages/react/src/components/Pagination/Pagination.stories.js"
+  ],
+  "PaginationNav": [
+    "packages/react/src/components/PaginationNav/PaginationNav.stories.js"
+  ],
+  "Plex": [
+    "packages/react/src/components/Plex/Plex.stories.js"
+  ],
+  "Popover": [
+    "packages/react/src/components/Popover/Popover.featureflag.stories.js",
+    "packages/react/src/components/Popover/Popover.stories.js"
+  ],
+  "ProgressBar": [
+    "packages/react/src/components/ProgressBar/ProgressBar.stories.js"
+  ],
+  "ProgressIndicator": [
+    "packages/react/src/components/ProgressIndicator/ProgressIndicator.stories.js"
+  ],
+  "RadioButton": [
+    "packages/react/src/components/RadioButton/RadioButton.stories.js"
+  ],
+  "Search": [
+    "packages/react/src/components/Search/Search.stories.js"
+  ],
+  "Select": [
+    "packages/react/src/components/Select/Select.stories.js"
+  ],
+  "ShapeIndicator": [
+    "packages/react/src/components/ShapeIndicator/ShapeIndicator.stories.js"
+  ],
+  "SkeletonIcon": [
+    "packages/react/src/components/SkeletonIcon/SkeletonIcon.stories.js"
+  ],
+  "SkeletonPlaceholder": [
+    "packages/react/src/components/SkeletonPlaceholder/SkeletonPlaceholder.stories.js"
+  ],
+  "SkeletonText": [
+    "packages/react/src/components/SkeletonText/SkeletonText.stories.js"
+  ],
+  "Slider": [
+    "packages/react/src/components/Slider/Slider.stories.js"
+  ],
+  "Stack": [
+    "packages/react/src/components/Stack/Stack.stories.js"
+  ],
+  "StructuredList": [
+    "packages/react/src/components/StructuredList/StructuredList.featureflag.stories.js",
+    "packages/react/src/components/StructuredList/StructuredList.stories.js"
+  ],
+  "Tabs": [
+    "packages/react/src/components/Tabs/Tabs.stories.js"
+  ],
+  "Tag": [
+    "packages/react/src/components/Tag/InteractiveTag.stories.js",
+    "packages/react/src/components/Tag/Tag.stories.js"
+  ],
+  "Text": [
+    "packages/react/src/components/Text/Text.stories.js"
+  ],
+  "TextArea": [
+    "packages/react/src/components/TextArea/TextArea.stories.js"
+  ],
+  "TextInput": [
+    "packages/react/src/components/TextInput/PasswordInput.stories.js",
+    "packages/react/src/components/TextInput/TextInput.stories.js"
+  ],
+  "Theme": [
+    "packages/react/src/components/Theme/Theme.stories.js"
+  ],
+  "Tile": [
+    "packages/react/src/components/Tile/Tile.featureflag.stories.js",
+    "packages/react/src/components/Tile/Tile.stories.js"
+  ],
+  "TimePicker": [
+    "packages/react/src/components/TimePicker/TimePicker.stories.js"
+  ],
+  "Toggle": [
+    "packages/react/src/components/Toggle/Toggle.featureflag.stories.js",
+    "packages/react/src/components/Toggle/Toggle.stories.js"
+  ],
+  "Toggletip": [
+    "packages/react/src/components/Toggletip/Toggletip.featureflag.stories.js",
+    "packages/react/src/components/Toggletip/Toggletip.stories.js"
+  ],
+  "Tooltip": [
+    "packages/react/src/components/Tooltip/DefinitionTooltip.stories.js",
+    "packages/react/src/components/Tooltip/Tooltip.featureflag.stories.js",
+    "packages/react/src/components/Tooltip/Tooltip.stories.js"
+  ],
+  "TreeView": [
+    "packages/react/src/components/TreeView/TreeView.featureflag.stories.js",
+    "packages/react/src/components/TreeView/Treeview.stories.js"
+  ],
+  "UIShell": [
+    "packages/react/src/components/UIShell/UIShell.HeaderBase.stories.js",
+    "packages/react/src/components/UIShell/UIShell.SideNav.stories.js"
+  ],
+  "UnorderedList": [
+    "packages/react/src/components/UnorderedList/UnorderedList.stories.js"
+  ]
+}
