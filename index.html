@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Carbon Design System 스타일가이드</title>
 <link rel="stylesheet" href="assets/carbon-styles.min.css" />
+<link rel="stylesheet" href="assets/fonts.css" />
 <style>
   :root {
     --sg-aside-w: 280px;
@@ -22,7 +23,7 @@
   body {
     background: var(--cds-background, #fff);
     color: var(--sg-tx-default);
-    font-family: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, 'Pretendard', 'Segoe UI', sans-serif;
     font-size: 14px;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
@@ -394,6 +395,18 @@
         var uid = btn.dataset.copyUid;
         var visible = $main.querySelector('.sg-code[data-uid="' + uid + '"]:not([hidden])');
         if (visible) copy(visible.textContent);
+      });
+    });
+    // "Controlled" 예제의 전체 열기/닫기 버튼 — 실제 accordion-item의 open을 토글해 진짜로 동작시킴
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview'), function (preview) {
+      var buttons = preview.querySelectorAll('cds-button-set cds-button');
+      var items = preview.querySelectorAll('cds-accordion-item');
+      if (buttons.length !== 2 || !items.length) return;
+      buttons[0].addEventListener('click', function () {
+        Array.prototype.forEach.call(items, function (it) { it.open = true; });
+      });
+      buttons[1].addEventListener('click', function () {
+        Array.prototype.forEach.call(items, function (it) { it.open = false; });
       });
     });
 

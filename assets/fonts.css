@@ -1,0 +1,11 @@
+/* 한글 폴백용 — IBM Plex Sans/-apple-system/Segoe UI엔 한글 글리프가 없거나(Plex Sans) OS마다
+   렌더링이 들쭉날쭉해서(Segoe UI→맑은 고딕 자동대체), 세 번째 우선순위로 Pretendard를 직접 임베드.
+   실제 npm 패키지(pretendard)의 가변 폰트 원본 그대로, 오프라인에서도 로드됨.
+   라이선스: SIL Open Font License 1.1 — assets/fonts/PRETENDARD-LICENSE.txt 참고. */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('fonts/PretendardVariable.ttf') format('truetype-variations');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}

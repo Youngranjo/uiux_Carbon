@@ -150,3 +150,9 @@ Web Component 공식 스토리는 lit-html 템플릿(`html\`<cds-accordion align
   `@carbon/icons/metadata.json`(사이즈별 원본 path 데이터를 갖고 있음)에서 정확한 사이즈의 아이콘을
   다시 만들어 채워 넣어 해결했습니다 — 실제 웹 컴포넌트가 쓰는 64개 아이콘 중 62개를 이렇게 복구했고,
   `npm run bundle`을 실행할 때마다 자동으로 갱신됩니다.
+- 전체 UI 폰트는 `'IBM Plex Sans', -apple-system, 'Pretendard', 'Segoe UI', sans-serif` 순서입니다.
+  IBM Plex Sans엔 한글 글리프가 없고, `-apple-system`/`Segoe UI`는 OS마다 실제 렌더링되는 한글 글꼴이
+  들쭉날쭉하기 때문에, 세 번째 우선순위로 [Pretendard](https://github.com/orioncactus/pretendard)
+  가변 폰트(npm `pretendard` 패키지에서 그대로 복사한 `assets/fonts/PretendardVariable.ttf`, OFL
+  라이선스)를 직접 임베드해 일관된 한글 타이포그래피를 보장합니다. `assets/fonts.css`(index.html과
+  모든 `core/components/*.html`이 공유)에 `@font-face`로 선언되어 있습니다.
