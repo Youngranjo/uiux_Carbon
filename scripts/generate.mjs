@@ -349,8 +349,10 @@ const indexFamilies = families
 
     // One or more named examples (Default, Controlled, Skeleton, ...) per family. Manual
     // curation (pasted straight from the official Storybook "Show code" panels) wins when
-    // present; otherwise falls back to the single auto-extracted/generic example.
-    const manual = wcFolder ? officialLiveDemosManual[wcFolder] : null;
+    // present; otherwise falls back to the single auto-extracted/generic example. Keyed by
+    // the React family name (always unique) — NOT wcFolder, which several families can
+    // share (e.g. AspectRatio, Column and Row all alias to the "grid" web component).
+    const manual = officialLiveDemosManual[folder];
     const officialExamples = manual && manual.examples
       ? manual.examples.map((ex) => ({
           title: ex.title,
