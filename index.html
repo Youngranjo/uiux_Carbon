@@ -78,6 +78,10 @@
   .sg-title { margin: 0 0 12px; font-size: 30px; font-weight: 600; line-height: 1.3; }
   .sg-title-en { font-size: 18px; font-weight: 400; color: var(--sg-tx-secondary); }
   .sg-summary { margin: 0 0 24px; font-size: 16px; color: var(--sg-tx-secondary); max-width: 720px; line-height: 1.5; }
+  .sg-overview { max-width: 720px; margin-bottom: 32px; }
+  .sg-overview p { margin: 0 0 14px; font-size: 14px; color: var(--sg-tx-default); line-height: 1.6; }
+  .sg-overview code { font-family: 'IBM Plex Mono', monospace; font-size: 13px; background: var(--sg-bg-soft); padding: 1px 5px; }
+  .sg-overview-source { font-size: 12px; color: var(--sg-tx-tertiary); }
   .sg-badges { margin-bottom: 32px; }
   .sg-pill { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 10px; margin-right: 6px; font-weight: 500; }
   .sg-pill.react { background: #e8f0fe; color: #0043ce; }
@@ -183,6 +187,10 @@
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
+  }
+  // 마크다운 원문 그대로(재구성 아님)의 백틱 인라인 코드(`Foo`)만 <code>로 바꿔 표시.
+  function mdText(s) {
+    return escapeHtml(s).replace(/`([^`]+)`/g, '<code>$1</code>');
   }
   function parseHash() {
     var raw = decodeURIComponent(location.hash.replace(/^#/, ''));
@@ -367,6 +375,7 @@
       '<h1 class="sg-title">' + f.folder + '</h1>' +
       '<div class="sg-badges">' + badges + '</div>' +
       '<p class="sg-summary">' + escapeHtml(f.description || '') + '</p>' +
+      (f.overview ? '<div class="sg-overview">' + f.overview.map(function (p) { return '<p>' + mdText(p) + '</p>'; }).join('') + '<p class="sg-overview-source">carbondesignsystem.com 공식 문서(.mdx)에서 그대로 가져온 설명입니다.</p></div>' : '') +
       officialExamplesSection(f) +
       (f.tags.length ? '<section class="sg-section"><h2 class="sg-h2">Web Component 태그</h2><div style="display:flex; flex-direction:column; gap:4px;">' + tagLinks + '</div></section>' : '') +
       (!f.tags.length && !f.reactExports.length ? '<div class="sg-empty-note">이 항목은 React 컨텍스트/유틸리티(ErrorBoundary, FeatureFlags 등)로, 시각적 컴포넌트가 아닙니다.</div>' : '');

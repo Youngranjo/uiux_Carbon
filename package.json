@@ -7,7 +7,7 @@
     "serve": "npx serve .",
     "extract": "node scripts/extract-manifest.mjs && node scripts/extract-vue-manifest.mjs",
     "bundle": "node scripts/build-icon-overrides.mjs && node scripts/build-wc-bundle.mjs",
-    "stories": "node scripts/fetch-stories.mjs && node scripts/fetch-wc-stories.mjs && node scripts/fetch-vue-stories.mjs && node scripts/extract-vue-templates.mjs && node scripts/extract-official-demos.mjs",
+    "stories": "node scripts/fetch-stories.mjs && node scripts/fetch-wc-stories.mjs && node scripts/fetch-vue-stories.mjs && node scripts/fetch-mdx-docs.mjs && node scripts/extract-vue-templates.mjs && node scripts/extract-official-demos.mjs && node scripts/extract-overview.mjs",
     "generate": "node scripts/generate.mjs && node scripts/apply-vue-overrides.mjs && node scripts/generate-readmes.mjs",
     "build": "npm run extract && npm run bundle && npm run generate"
   },

@@ -284,10 +284,12 @@ let vueManifest = [];
 let vueStoryTemplates = {};
 let officialLiveDemos = {};
 let officialLiveDemosManual = {};
+let overviewText = {};
 try {
   vueManifest = JSON.parse(readFileSync('scripts/vue-manifest.json', 'utf8'));
   vueStoryTemplates = JSON.parse(readFileSync('scripts/vue-story-templates.json', 'utf8'));
   officialLiveDemos = JSON.parse(readFileSync('scripts/official-live-demos.json', 'utf8'));
+  overviewText = JSON.parse(readFileSync('scripts/overview-text.json', 'utf8'));
 } catch (e) {}
 try {
   // Hand-curated overrides, keyed by wcFolder: { examples: [{title, html, react, vue}] }.
@@ -373,6 +375,10 @@ const indexFamilies = families
       folder,
       category: categorize(folder),
       description,
+      // Real "## Overview" prose from Carbon's own react.carbondesignsystem.com docs
+      // (carbon-design-system/carbon's *.mdx files, fetched via fetch-mdx-docs.mjs) — not
+      // a generated summary. null when no .mdx was found/cached for this family.
+      overview: overviewText[folder] || null,
       reactExports,
       reactFile: reactExports.length || tags.length ? `react/components/${folder}.jsx` : null,
       reactStoryFile: hasStory ? `react/components/${folder}.stories.tsx` : null,
