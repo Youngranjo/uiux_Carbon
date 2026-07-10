@@ -80,5 +80,93 @@
         "vue": "<cv-breadcrumb>\n  <cv-breadcrumb-item>Breadcrumb 1</cv-breadcrumb-item>\n  <cv-breadcrumb-item>Breadcrumb 2</cv-breadcrumb-item>\n  <cv-breadcrumb-item>Breadcrumb 3</cv-breadcrumb-item>\n</cv-breadcrumb>"
       }
     ]
+  },
+  "Button": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-button>\n  Button \n</cds-button>",
+        "react": "<Button onClick={function Kbe(){}}>\n  Button\n</Button>",
+        "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" default=\"Field size\" size=\"field\">{{slotArgs.default}}</cv-button>"
+      },
+      {
+        "title": "Primary",
+        "html": null,
+        "react": null,
+        "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" kind=\"primary\" default=\"Primary\">{{slotArgs.default}}</cv-button>"
+      },
+      {
+        "title": "Secondary",
+        "html": "<cds-button kind=\"secondary\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"secondary\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" kind=\"secondary\" default=\"Secondary\">{{slotArgs.default}}</cv-button>"
+      },
+      {
+        "title": "Tertiary",
+        "html": "<cds-button kind=\"tertiary\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"tertiary\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Ghost",
+        "html": "<cds-button kind=\"ghost\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"ghost\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Danger",
+        "html": "<cds-button kind=\"danger\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"danger\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Danger Tertiary",
+        "html": "<cds-button kind=\"danger-tertiary\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"danger--tertiary\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Danger Ghost",
+        "html": "<cds-button kind=\"danger-ghost\">\n  Button \n</cds-button>",
+        "react": "<Button\n  kind=\"danger--ghost\"\n  onClick={function Kbe(){}}\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Icon Button",
+        "html": "<cds-button kind=\"primary\" tooltip-text=\"Icon Description\">\n  <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M17 15 17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z\"></path></svg>\n</cds-button>",
+        "react": "<Button\n  hasIconOnly\n  iconDescription=\"Icon Description\"\n  onClick={function Kbe(){}}\n  renderIcon={function Kbe(){}}\n/>",
+        "vue": null
+      },
+      {
+        "title": "Icon Button With Badge",
+        "html": "<cds-button kind=\"ghost\" size=\"lg\" tooltip-text=\"Notification\">\n  <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M14.4,10.1L13,8.8V6.5c0-2.6-1.9-4.7-4.5-5v-1h-1v1C5,1.8,3,3.9,3,6.5v2.3l-1.4,1.3c-0.1,0.1-0.2,0.2-0.1,0.4V12\tc0,0.3,0.2,0.5,0.4,0.5c0,0,0,0,0.1,0h3.5C5.5,13.9,6.6,15,8,15s2.5-1.1,2.5-2.5H14c0.3,0,0.5-0.2,0.5-0.4c0,0,0,0,0-0.1v-1.5\tC14.5,10.4,14.4,10.2,14.4,10.1z M8,14c-0.8,0-1.5-0.7-1.5-1.5h3C9.5,13.3,8.8,14,8,14z M13.5,11.5h-11v-0.8l1.3-1.4\tC3.9,9.3,4,9.1,4,9V6.5c0-2.2,1.8-4,4-4s4,1.8,4,4V9c0,0.1,0.1,0.3,0.1,0.4l1.4,1.3V11.5z\"></path></svg>\n  <cds-badge-indicator count=\"4\"></cds-badge-indicator>\n</cds-button>",
+        "react": "<Button\n  badgeCount={4}\n  hasIconOnly\n  iconDescription=\"Notification\"\n  kind=\"ghost\"\n  onClick={function Kbe(){}}\n  renderIcon={function Kbe(){}}\n  size=\"lg\"\n>\n  Button\n</Button>",
+        "vue": null
+      },
+      {
+        "title": "Set Of Buttons",
+        "html": "<cds-button-set>\n  <cds-button kind=\"secondary\">Secondary</cds-button>\n  <cds-button kind=\"primary\">Primary</cds-button>\n</cds-button-set>",
+        "react": null,
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<cds-button-skeleton>\n</cds-button-skeleton>",
+        "react": "<ButtonSkeleton />",
+        "vue": null
+      },
+      {
+        "title": "Large",
+        "html": null,
+        "react": null,
+        "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" default=\"Large size\" size=\"lg\">{{slotArgs.default}}</cv-button>"
+      },
+      {
+        "title": "Small",
+        "html": null,
+        "react": null,
+        "vue": "<cv-button @click=\"onClick\" aria-label=\"button story\" default=\"sm\" size=\"sm\">{{slotArgs.default}}</cv-button>"
+      }
+    ]
   }
 }
