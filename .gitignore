@@ -1,6 +1,7 @@
 # 의존성 / 빌드 산출물
 node_modules/
 dist/
+scripts/.wc-full-entry.mjs
 
 # OS / 에디터
 .DS_Store

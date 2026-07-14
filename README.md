@@ -158,6 +158,13 @@ Web Component 공식 스토리는 lit-html 템플릿(`html\`<cds-accordion align
   `@carbon/icons/metadata.json`(사이즈별 원본 path 데이터를 갖고 있음)에서 정확한 사이즈의 아이콘을
   다시 만들어 채워 넣어 해결했습니다 — 실제 웹 컴포넌트가 쓰는 64개 아이콘 중 62개를 이렇게 복구했고,
   `npm run bundle`을 실행할 때마다 자동으로 갱신됩니다.
+- `@carbon/web-components`의 `es/index.js`(전체 컴포넌트를 한 번에 등록하는 배럴 파일)가 실제로는
+  ContainedList, Grid, Copy, Menu, PageHeader, Fluid* 계열 등 85개 중 24개를 빠뜨리고 있습니다 —
+  소스 파일도 완전하고 `custom-elements.json`에도 정식으로 등록돼 있는데, 배럴에서만 빠져 있어서
+  그 컴포넌트들은 커스텀 엘리먼트로 아예 업그레이드되지 않고(스타일 없는 평문으로 렌더링) 조용히
+  깨져 있었습니다. `scripts/build-wc-bundle.mjs`가 빌드할 때마다 실제 `es/components/` 폴더를 스캔해서
+  배럴이 빠뜨린 폴더를 찾아 별도로 import하는 합성 엔트리 파일을 만들어 번들링합니다 — 결과적으로
+  85개 컴포넌트 폴더 전부가 실제로 등록됩니다.
 - 전체 UI 폰트는 `'IBM Plex Sans', -apple-system, 'Pretendard', 'Segoe UI', sans-serif` 순서입니다.
   IBM Plex Sans엔 한글 글리프가 없고, `-apple-system`/`Segoe UI`는 OS마다 실제 렌더링되는 한글 글꼴이
   들쭉날쭉하기 때문에, 세 번째 우선순위로 [Pretendard](https://github.com/orioncactus/pretendard)
