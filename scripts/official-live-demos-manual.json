@@ -726,5 +726,39 @@
         "vue": null
       }
     ]
+  },
+  "FileUploader": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-file-uploader label-title=\"Upload files\" label-description=\"Max file size is 500kb. Only .jpg files are supported.\" input-state=\"uploading\" icon-description=\"Delete file\" input-name=\"\">\n  <cds-file-uploader-button accept=\"image/jpeg\" name=\"default-file-uploader-button\" button-kind=\"primary\" size=\"md\">\n    Add file\n  </cds-file-uploader-button>\n</cds-file-uploader>",
+        "react": "<div className=\"cds--file__container\">\n  <FileUploader\n    accept={[\n      '.jpg',\n      '.png'\n    ]}\n    buttonKind=\"primary\"\n    buttonLabel=\"Add file\"\n    filenameStatus=\"edit\"\n    iconDescription=\"Delete file\"\n    labelDescription=\"Max file size is 1 MB. Only .jpg files are supported.\"\n    labelTitle=\"Upload files\"\n    maxFileSize={1048576}\n    multiple\n    name=\"\"\n    onChange={function Kbe(){}}\n    onClick={function Kbe(){}}\n    onDelete={function Kbe(){}}\n    size=\"md\"\n  />\n</div>",
+        "vue": "<div style=\"display: inline-flex; align-items: flex-start;\">\n    <cv-file-uploader v-bind=\"args\" ref=\"fileUploader\" v-model=\"files\" />\n  </div>"
+      },
+      {
+        "title": "Drag And Drop",
+        "html": "<cds-file-uploader label-title=\"Upload files\" label-description=\"Max file size is 1 MB. Supported file types are .jpg and .png.\" multiple=\"\">\n  <cds-file-uploader-drop-container accept=\"image/jpeg image/png\">\n    Drag and drop files here or click to upload\n  </cds-file-uploader-drop-container>\n</cds-file-uploader>",
+        "react": "<FormItem>\n  <p className=\"cds--file--label\">\n    Upload files\n  </p>\n  <p className=\"cds--label-description\">\n    Max file size is 1 MB. Supported file types are .jpg and .png.\n  </p>\n  <FileUploaderDropContainer\n    accept={[\n      'image/jpeg',\n      'image/png'\n    ]}\n    innerRef={{\n      current: '[Circular]'\n    }}\n    labelText=\"Drag and drop files here or click to upload\"\n    maxFileSize={1048576}\n    multiple\n    name=\"\"\n    onAddFiles={function Kbe(){}}\n    onChange={function Kbe(){}}\n    tabIndex={0}\n  />\n  <div className=\"cds--file-container cds--file-container--drop\" />\n</FormItem>",
+        "vue": null
+      },
+      {
+        "title": "File Uploader Item",
+        "html": "<cds-file-uploader-item state=\"edit\">\n  README.md\n</cds-file-uploader-item>",
+        "react": "<FileUploaderItem\n  errorBody=\"1 MB max file size. Select a new file and try again.\"\n  errorSubject=\"File size exceeds limit\"\n  iconDescription=\"Delete file\"\n  name=\"THIS IS A VERY LONG FILENAME WHICH WILL BE TRUNCATED\"\n  onDelete={function Kbe(){}}\n  size=\"md\"\n  status=\"edit\"\n/>",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<cds-file-uploader-skeleton></cds-file-uploader-skeleton>",
+        "react": "() => {\n  return <div style={{\n    width: '500px'\n  }}>\n      <FileUploaderSkeleton />\n    </div>;\n}",
+        "vue": "<div style=\"display: inline-flex; align-items: flex-start;\">\n    <cv-file-uploader-skeleton />\n  </div>"
+      },
+      {
+        "title": "FileUploader Slotted",
+        "html": null,
+        "react": null,
+        "vue": "<div style=\"display: inline-flex; align-items: flex-start;\">\n    <cv-file-uploader v-bind=\"args\">\n      <template v-slot:drop-target>\n        <Add16 />\n        <span>File Drop</span>\n        <Add16 />\n      </template>\n    </cv-file-uploader>\n  </div>"
+      }
+    ]
   }
 }
