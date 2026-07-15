@@ -552,5 +552,15 @@
         "vue": "<div>\n  <cv-content-switcher aria-label='Choose content'  @selected=\"onSelected\" id=\"star-wars\">\n    <cv-content-switcher-button parent-switcher=\"star-wars\" owner-id=\"episode-1\" :selected=\"selectedIndex === 0\">Episode 1</cv-content-switcher-button>\n    <cv-content-switcher-button parent-switcher=\"star-wars\" owner-id=\"episode-2\" :selected=\"selectedIndex === 1\">Episode 2</cv-content-switcher-button>\n    <cv-content-switcher-button parent-switcher=\"star-wars\" :icon=\"iconSample\" owner-id=\"episode-3\" :selected=\"selectedIndex === 2\">Episode 3</cv-content-switcher-button>\n  </cv-content-switcher>\n  <section style=\"margin: 10px 0;\">\n    <cv-content-switcher-content parent-switcher=\"star-wars\" owner-id=\"episode-1\">\n      <p>Padme</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"star-wars\" owner-id=\"episode-2\">\n      <p>Anakin</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"star-wars\" owner-id=\"episode-2\" >\n      <p>Zam</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"star-wars\" owner-id=\"episode-3\">\n      <p>Yoda</p>\n    </cv-content-switcher-content>\n  </section>\n  <cv-content-switcher aria-label='Choose content' v-bind='args' @selected=\"onSelected\" id=\"LotR\">\n    <cv-content-switcher-button parent-switcher=\"LotR\" owner-id=\"book-1\" :selected=\"selectedIndex === 0\">Book 1</cv-content-switcher-button>\n    <cv-content-switcher-button parent-switcher=\"LotR\" owner-id=\"book-2\" :selected=\"selectedIndex === 1\">Book 2</cv-content-switcher-button>\n    <cv-content-switcher-button parent-switcher=\"LotR\" :icon=\"iconSample\" owner-id=\"book-3\" :selected=\"selectedIndex === 2\">Book 3</cv-content-switcher-button>\n  </cv-content-switcher>\n  <section style=\"margin: 10px 0;\">\n    <cv-content-switcher-content parent-switcher=\"LotR\" owner-id=\"book-1\">\n      <p>Bilbo</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"LotR\" owner-id=\"book-2\">\n      <p>Frodo</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"LotR\" owner-id=\"book-2\" >\n      <p>Sauron</p>\n    </cv-content-switcher-content>\n    <cv-content-switcher-content parent-switcher=\"LotR\" owner-id=\"book-3\">\n      <p>Gandalf</p>\n    </cv-content-switcher-content>\n  </section>\n</div>"
       }
     ]
+  },
+  "CopyButton": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-copy-button align=\"bottom\" feedback-timeout=\"2000\">\n  Copy to clipboard\n</cds-copy-button>",
+        "react": "<CopyButton\n  autoAlign\n  onClick={function Kbe(){}}\n/>",
+        "vue": "<cv-copy-button @copy=\"copy\" />"
+      }
+    ]
   }
 }
