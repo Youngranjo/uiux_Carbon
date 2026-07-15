@@ -455,14 +455,36 @@
   window.addEventListener('hashchange', route);
   route();
 
-  // DatePicker 캘린더는 flatpickr에 scroll 리스너가 없어 열린 채로 스크롤하면 위치가 어긋남 → 스크롤 시 자동으로 닫음(flatpickr 자체 documentClick 로직 이용)
-  window.addEventListener('scroll', function () {
-    var hasOpenCalendar = false;
+  // DatePicker 캘린더는 shadow DOM 내부에서 열리는데 flatpickr의 위치 계산이 offsetParent 좌표를
+  // 문서 원점(0,0) 기준으로 오인해 처음부터 input과 어긋나고, scroll 리스너도 없어 따라가지 않음.
+  // → input의 실제 위치를 기준으로 직접 재계산해 붙여준다(공식 사이트처럼 스크롤해도 input 아래에 고정).
+  function repositionOpenDatePickerCalendars() {
     Array.prototype.forEach.call(document.querySelectorAll('.sg-preview cds-date-picker'), function (dp) {
-      if (dp.shadowRoot && dp.shadowRoot.querySelector('.flatpickr-calendar.open')) hasOpenCalendar = true;
+      if (!dp.shadowRoot) return;
+      var cal = dp.shadowRoot.querySelector('.flatpickr-calendar.open');
+      if (!cal) return;
+      var active = dp.shadowRoot.activeElement;
+      var native = active && active.shadowRoot ? active.shadowRoot.querySelector('input') : null;
+      if (!native) {
+        var firstInput = dp.querySelector('cds-date-picker-input');
+        native = firstInput && firstInput.shadowRoot && firstInput.shadowRoot.querySelector('input');
+      }
+      var parent = cal.offsetParent;
+      if (!native || !parent) return;
+      var inputRect = native.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+      cal.style.top = (inputRect.bottom - parentRect.top + 2) + 'px';
+      cal.style.left = (inputRect.left - parentRect.left) + 'px';
     });
-    if (hasOpenCalendar) document.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, composed: true }));
-  }, { passive: true, capture: true });
+  }
+  window.addEventListener('scroll', repositionOpenDatePickerCalendars, { passive: true, capture: true });
+  window.addEventListener('resize', repositionOpenDatePickerCalendars, { passive: true });
+  document.addEventListener('click', function (e) {
+    var path = e.composedPath ? e.composedPath() : [];
+    for (var i = 0; i < path.length; i++) {
+      if (path[i] && path[i].tagName === 'CDS-DATE-PICKER-INPUT') { setTimeout(repositionOpenDatePickerCalendars, 0); break; }
+    }
+  }, true);
 
   $navSearch.addEventListener('input', function (e) {
     navFilter = e.target.value;
