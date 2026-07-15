@@ -128,8 +128,6 @@ import Button from './components/Button.vue';
 | `DataTableSkeleton.vue` | @carbon/vue (실제) | `CvDataTableSkeleton` | DataTableSkeleton |
 | `DatePicker.vue` | @carbon/vue (실제) | `CvDatePicker` | DatePicker |
 | `DatePickerSkeleton.vue` | @carbon/vue (실제) | `CvDatePickerSkeleton` | DatePicker |
-| `DatePickerInput.vue` | Web Component 래퍼 | `cds-date-picker-input` | DatePickerInput |
-| `DatePicker.vue` | Web Component 래퍼 | `cds-date-picker` | DatePickerInput |
 | `DialogBody.vue` | Web Component 래퍼 | `cds-dialog-body` | Dialog |
 | `DialogCloseButton.vue` | Web Component 래퍼 | `cds-dialog-close-button` | Dialog |
 | `DialogControls.vue` | Web Component 래퍼 | `cds-dialog-controls` | Dialog |

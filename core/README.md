@@ -125,8 +125,6 @@ npm install --save @carbon/web-components @carbon/styles
 | `Table.html` | `<cds-table>` | DataTableSkeleton | Data table. |
 | `DatePickerInput.html` | `<cds-date-picker-input>` | DatePicker | The input box for date picker. |
 | `DatePicker.html` | `<cds-date-picker>` | DatePicker | Date picker. |
-| `DatePickerInput.html` | `<cds-date-picker-input>` | DatePickerInput | The input box for date picker. |
-| `DatePicker.html` | `<cds-date-picker>` | DatePickerInput | Date picker. |
 | `DialogBody.html` | `<cds-dialog-body>` | Dialog | Dialog body. |
 | `DialogCloseButton.html` | `<cds-dialog-close-button>` | Dialog | Dialog close button. |
 | `DialogControls.html` | `<cds-dialog-controls>` | Dialog | Dialog header controls. |

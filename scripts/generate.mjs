@@ -28,7 +28,8 @@ function escapeHtml(s) {
 
 const CATEGORY_RULES = [
   [/^(Button|IconButton|PrimaryButton|SecondaryButton|DangerButton|ButtonSet|ComboButton|CopyButton|ChatButton)$/, 'Buttons'],
-  [/^(TextInput|TextArea|NumberInput|PasswordInput|Search|ExpandableSearch|Slider|Toggle|ToggleSmall|Checkbox|CheckboxGroup|InlineCheckbox|RadioButton|RadioButtonGroup|Select|SelectItem|SelectItemGroup|Dropdown|MultiSelect|ComboBox|ComboBox|FileUploader|Form|FormGroup|FormItem|FormLabel|FluidForm|Fluid.*|DatePicker.*|TimePicker.*)$/, 'Forms & inputs'],
+  [/^DatePicker$/, 'Date & time'],
+  [/^(TextInput|TextArea|NumberInput|PasswordInput|Search|ExpandableSearch|Slider|Toggle|ToggleSmall|Checkbox|CheckboxGroup|InlineCheckbox|RadioButton|RadioButtonGroup|Select|SelectItem|SelectItemGroup|Dropdown|MultiSelect|ComboBox|ComboBox|FileUploader|Form|FormGroup|FormItem|FormLabel|FluidForm|Fluid.*|TimePicker.*)$/, 'Forms & inputs'],
   [/^(DataTable|DataTableSkeleton|StructuredList|Table)$/, 'Data display'],
   [/^(Accordion|Tabs|TabContent|Tile|TileGroup|ContentSwitcher|TreeView|OverflowMenu|OverflowMenuItem|Menu|MenuButton|ContextMenu|ContainedList)$/, 'Content layout'],
   [/^(UIShell|SideNav.*|Header.*|Switcher.*|Breadcrumb|BreadcrumbItem|Pagination|PaginationNav|SkipToContent|PageHeader)$/, 'Navigation & shell'],

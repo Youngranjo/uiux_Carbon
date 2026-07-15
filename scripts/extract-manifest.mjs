@@ -285,6 +285,14 @@ for (const wcFolder of WC_ONLY_FOLDERS) {
   });
 }
 
+// DatePickerInput lives in its own @carbon/react source folder so it would otherwise get
+// its own page, but it's not meant to be used standalone (always composed inside
+// DatePicker) — drop it, same as sub-parts like TableRow that never get their own page.
+const EXCLUDED_FOLDERS = new Set(['DatePickerInput']);
+for (let i = families.length - 1; i >= 0; i--) {
+  if (EXCLUDED_FOLDERS.has(families[i].folder)) families.splice(i, 1);
+}
+
 families.sort((a, b) => a.folder.localeCompare(b.folder));
 
 writeFileSync('scripts/manifest.json', JSON.stringify(families, null, 2));
