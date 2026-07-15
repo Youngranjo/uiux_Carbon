@@ -455,6 +455,15 @@
   window.addEventListener('hashchange', route);
   route();
 
+  // DatePicker 캘린더는 flatpickr에 scroll 리스너가 없어 열린 채로 스크롤하면 위치가 어긋남 → 스크롤 시 자동으로 닫음(flatpickr 자체 documentClick 로직 이용)
+  window.addEventListener('scroll', function () {
+    var hasOpenCalendar = false;
+    Array.prototype.forEach.call(document.querySelectorAll('.sg-preview cds-date-picker'), function (dp) {
+      if (dp.shadowRoot && dp.shadowRoot.querySelector('.flatpickr-calendar.open')) hasOpenCalendar = true;
+    });
+    if (hasOpenCalendar) document.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, composed: true }));
+  }, { passive: true, capture: true });
+
   $navSearch.addEventListener('input', function (e) {
     navFilter = e.target.value;
     renderNav();
