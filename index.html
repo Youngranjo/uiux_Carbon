@@ -97,6 +97,10 @@
   .sg-example-title { font-size: 13px; font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
   .sg-example-desc { font-size: 12px; color: var(--sg-tx-secondary); }
   .sg-preview { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 32px; background: var(--cds-background, #fff); min-height: 48px; }
+  /* 리스트류(ContainedList, StructuredList, Ordered/UnorderedList...) 예시는 가로로 나란히
+     늘어놓기보다 세로로 쌓고 목록 자체는 프리뷰 폭 전체를 쓰는 게 실제 사용법에 가깝다. */
+  .sg-preview.sg-preview-list { flex-direction: column; align-items: stretch; gap: 24px; }
+  .sg-preview.sg-preview-list > * { width: 100%; }
   .sg-codebar { display: flex; justify-content: flex-end; align-items: center; border-top: 1px solid var(--sg-line); background: var(--cds-background, #fff); }
   .sg-standalone-link { padding: 8px 16px; border-right: 1px solid var(--sg-line); font-size: 12px; font-weight: 500; color: var(--sg-tx-secondary); text-decoration: none; }
   .sg-standalone-link:hover { color: var(--sg-accent); }
@@ -324,8 +328,12 @@
       .map(function (l) { return '<a class="sg-standalone-link" href="' + l.file + '" target="_blank" rel="noopener">' + l.file + ' 열기 →</a>'; })
       .join('');
 
+    // "List title"이 들어간(ContainedList/StructuredList 등 리스트류) 예시는 가로 나열보다
+    // 세로로 쌓고 전체 폭을 쓰는 sg-preview-list 레이아웃을 쓴다.
+    var isListPreview = ex.html && ex.html.indexOf('List title') !== -1;
+    var previewClass = 'sg-preview' + (isListPreview ? ' sg-preview-list' : '');
     var preview = ex.liveRenderable
-      ? '<div class="sg-preview">' + ex.html + '</div>'
+      ? '<div class="' + previewClass + '">' + ex.html + '</div>'
       : '<div class="sg-preview" style="color:var(--sg-tx-tertiary); font-size:13px;">이 예제는 실제 로직(반복문·아이콘 함수 호출 등)에 의존하고 있어 라이브 프리뷰로 안전하게 옮기지 못했습니다 — 아래 코드 탭의 실제 소스를 참고하세요.</div>';
 
     return (
