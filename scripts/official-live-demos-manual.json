@@ -716,5 +716,15 @@
         "vue": null
       }
     ]
+  },
+  "ErrorBoundary": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": null,
+        "react": "() => {\n  function DemoComponent() {\n    const [shouldThrowError, setShouldThrowError] = React.useState(false);\n    function onClick() {\n      setShouldThrowError(!shouldThrowError);\n    }\n    return <>\n        <Button onClick={onClick}>Toggle throwing error</Button>\n        <div>\n          <ErrorBoundary fallback={<Fallback />}>\n            <ThrowError shouldThrowError={shouldThrowError} />\n          </ErrorBoundary>\n        </div>\n      </>;\n  }\n  function Fallback() {\n    return 'Whoops';\n  }\n  function ThrowError({\n    shouldThrowError\n  }) {\n    if (shouldThrowError) {\n      throw new Error('Component threw error');\n    }\n    return 'Successfully rendered';\n  }\n  return <DemoComponent />;\n}",
+        "vue": null
+      }
+    ]
   }
 }
