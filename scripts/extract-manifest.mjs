@@ -293,6 +293,24 @@ for (let i = families.length - 1; i >= 0; i--) {
   if (EXCLUDED_FOLDERS.has(families[i].folder)) families.splice(i, 1);
 }
 
+// DefinitionTooltip shares its @carbon/react source folder (and so its family) with plain
+// Tooltip, but it's a distinct, commonly-used component in its own right — split it into
+// its own page. Its <cds-definition-tooltip> tag moves with it so it isn't listed twice.
+{
+  const host = families.find((f) => f.folder === 'Tooltip');
+  if (host && host.reactExports.includes('DefinitionTooltip')) {
+    host.reactExports = host.reactExports.filter((e) => e !== 'DefinitionTooltip');
+    const defTag = host.tags.find((t) => t.name === 'cds-definition-tooltip');
+    host.tags = host.tags.filter((t) => t.name !== 'cds-definition-tooltip');
+    families.push({
+      folder: 'DefinitionTooltip',
+      reactExports: ['DefinitionTooltip'],
+      wcFolder: host.wcFolder,
+      tags: defTag ? [defTag] : [],
+    });
+  }
+}
+
 families.sort((a, b) => a.folder.localeCompare(b.folder));
 
 writeFileSync('scripts/manifest.json', JSON.stringify(families, null, 2));

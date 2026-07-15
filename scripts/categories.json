@@ -24,6 +24,7 @@
   "DataTable": "Data display",
   "DataTableSkeleton": "Data display",
   "DatePicker": "Date & time",
+  "DefinitionTooltip": "Overlays",
   "Dialog": "Overlays",
   "Dropdown": "Forms & inputs",
   "ErrorBoundary": "Utilities",

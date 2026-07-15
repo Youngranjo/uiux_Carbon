@@ -4627,6 +4627,50 @@
     ]
   },
   {
+    "folder": "DefinitionTooltip",
+    "reactExports": [
+      "DefinitionTooltip"
+    ],
+    "wcFolder": "tooltip",
+    "tags": [
+      {
+        "name": "cds-definition-tooltip",
+        "description": "Definition tooltip.",
+        "attributes": [
+          {
+            "name": "align",
+            "type": "string",
+            "default": "\"bottom\"",
+            "description": "Specify how the trigger should align with the tooltip"
+          },
+          {
+            "name": "autoalign",
+            "type": "boolean",
+            "default": "false",
+            "description": "Will auto-align Definition Tooltip. This prop is currently experimental and is subject to future changes."
+          },
+          {
+            "name": "default-open",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify whether the tooltip should be open when it first renders"
+          },
+          {
+            "name": "open-on-hover",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specifies whether the `DefinitionTooltip` should open on hover or not"
+          }
+        ],
+        "events": [],
+        "slots": [
+          "definition"
+        ],
+        "hasDefaultSlot": true
+      }
+    ]
+  },
+  {
     "folder": "Dialog",
     "reactExports": [],
     "wcFolder": "dialog",
@@ -17963,46 +18007,10 @@
   {
     "folder": "Tooltip",
     "reactExports": [
-      "DefinitionTooltip",
       "Tooltip"
     ],
     "wcFolder": "tooltip",
     "tags": [
-      {
-        "name": "cds-definition-tooltip",
-        "description": "Definition tooltip.",
-        "attributes": [
-          {
-            "name": "align",
-            "type": "string",
-            "default": "\"bottom\"",
-            "description": "Specify how the trigger should align with the tooltip"
-          },
-          {
-            "name": "autoalign",
-            "type": "boolean",
-            "default": "false",
-            "description": "Will auto-align Definition Tooltip. This prop is currently experimental and is subject to future changes."
-          },
-          {
-            "name": "default-open",
-            "type": "boolean",
-            "default": "false",
-            "description": "Specify whether the tooltip should be open when it first renders"
-          },
-          {
-            "name": "open-on-hover",
-            "type": "boolean",
-            "default": "false",
-            "description": "Specifies whether the `DefinitionTooltip` should open on hover or not"
-          }
-        ],
-        "events": [],
-        "slots": [
-          "definition"
-        ],
-        "hasDefaultSlot": true
-      },
       {
         "name": "cds-tooltip-content",
         "description": "Tooltip content.",

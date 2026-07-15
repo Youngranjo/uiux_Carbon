@@ -672,5 +672,15 @@
         "vue": "<div>\n  <cv-date-picker  :value=\"now\" @change=\"onChange\"/>\n</div>"
       }
     ]
+  },
+  "DefinitionTooltip": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<p>\n  Custom domains direct requests for your apps in this Cloud Foundry\n  organization to a\n  <span style=\"display: inline-block;\">\n    <cds-definition-tooltip align=\"bottom-left\" open-on-hover=\"\">\n      <span slot=\"definition\">Example definition</span>\n      URL\n    </cds-definition-tooltip>\n  </span>\n  that you own. A custom domain can be a shared domain, a shared subdomain,\n  or a shared domain and host.\n</p>",
+        "react": "<p>\n  Custom domains direct requests for your apps in this Cloud Foundry organization to a{' '}\n  <DefinitionTooltip\n    align=\"bottom-left\"\n    definition=\"Example definition\"\n    openOnHover\n  >\n    URL\n  </DefinitionTooltip>\n  {' '}that you own. A custom domain can be a shared domain, a shared subdomain, or a shared domain and host.\n</p>",
+        "vue": "<cv-definition-tooltip term=\"A term needing definition\" definition=\"Brief description of the dotted, underlined term\" />"
+      }
+    ]
   }
 }

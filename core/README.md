@@ -125,6 +125,7 @@ npm install --save @carbon/web-components @carbon/styles
 | `Table.html` | `<cds-table>` | DataTableSkeleton | Data table. |
 | `DatePickerInput.html` | `<cds-date-picker-input>` | DatePicker | The input box for date picker. |
 | `DatePicker.html` | `<cds-date-picker>` | DatePicker | Date picker. |
+| `DefinitionTooltip.html` | `<cds-definition-tooltip>` | DefinitionTooltip | Definition tooltip. |
 | `DialogBody.html` | `<cds-dialog-body>` | Dialog | Dialog body. |
 | `DialogCloseButton.html` | `<cds-dialog-close-button>` | Dialog | Dialog close button. |
 | `DialogControls.html` | `<cds-dialog-controls>` | Dialog | Dialog header controls. |
@@ -335,7 +336,6 @@ npm install --save @carbon/web-components @carbon/styles
 | `ToggleSkeleton.html` | `<cds-toggle-skeleton>` | ToggleSmall |  |
 | `Toggle.html` | `<cds-toggle>` | ToggleSmall | Basic toggle. |
 | `Toggletip.html` | `<cds-toggletip>` | Toggletip | Definition tooltip. |
-| `DefinitionTooltip.html` | `<cds-definition-tooltip>` | Tooltip | Definition tooltip. |
 | `TooltipContent.html` | `<cds-tooltip-content>` | Tooltip | Tooltip content. |
 | `Tooltip.html` | `<cds-tooltip>` | Tooltip | Trigger button of tooltip. |
 | `TreeNode.html` | `<cds-tree-node>` | TreeView | Tree node. |

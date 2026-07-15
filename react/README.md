@@ -5,7 +5,7 @@ Carbon은 React를 공식 지원하므로, Astryx의 react/ 폴더와 동일한 
 
 ```
 react/
-└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 115개)
+└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 116개)
 ```
 
 ## 설치
@@ -62,6 +62,7 @@ import { Button } from './components/Button';
 | `DataTable.jsx` | ready | DataTable, Table, TableActionList, TableBatchAction, TableBatchActions, TableBody, TableCell, TableContainer, TableDecoratorRow, TableExpandHeader, TableExpandRow, TableExpandedRow, TableHead, TableHeader, TableRow, TableSelectAll, TableSelectRow, TableSlugRow, TableToolbar, TableToolbarAction, TableToolbarContent, TableToolbarMenu, TableToolbarSearch |
 | `DataTableSkeleton.jsx` | ready | DataTableSkeleton |
 | `DatePicker.jsx` | ready | DatePicker, DatePickerSkeleton |
+| `DefinitionTooltip.jsx` | ready | DefinitionTooltip |
 | `Dialog.jsx` | preview only | (experimental: unstable_Dialog) |
 | `Dropdown.jsx` | ready | Dropdown, DropdownSkeleton |
 | `ErrorBoundary.jsx` | ready | ErrorBoundary, ErrorBoundaryContext |
@@ -148,7 +149,7 @@ import { Button } from './components/Button';
 | `Toggle.jsx` | ready | Toggle, ToggleSkeleton |
 | `ToggleSmall.jsx` | ready | ToggleSmallSkeleton |
 | `Toggletip.jsx` | ready | Toggletip, ToggletipActions, ToggletipButton, ToggletipContent, ToggletipLabel |
-| `Tooltip.jsx` | ready | DefinitionTooltip, Tooltip |
+| `Tooltip.jsx` | ready | Tooltip |
 | `TreeView.jsx` | ready | TreeNode, TreeView |
 | `UIShell.jsx` | ready | Content, Header, HeaderContainer, HeaderGlobalAction, HeaderGlobalBar, HeaderMenu, HeaderMenuButton, HeaderMenuItem, HeaderName, HeaderNavigation, HeaderPanel, HeaderSideNavItems, SideNav, SideNavDetails, SideNavDivider, SideNavFooter, SideNavHeader, SideNavIcon, SideNavItem, SideNavItems, SideNavLink, SideNavLinkText, SideNavMenu, SideNavMenuItem, SideNavSwitcher, SkipToContent, Switcher, SwitcherDivider, SwitcherItem |
 | `UnorderedList.jsx` | ready | UnorderedList |

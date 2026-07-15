@@ -33,7 +33,7 @@ const CATEGORY_RULES = [
   [/^(DataTable|DataTableSkeleton|StructuredList|Table)$/, 'Data display'],
   [/^(Accordion|Tabs|TabContent|Tile|TileGroup|ContentSwitcher|TreeView|OverflowMenu|OverflowMenuItem|Menu|MenuButton|ContextMenu|ContainedList)$/, 'Content layout'],
   [/^(UIShell|SideNav.*|Header.*|Switcher.*|Breadcrumb|BreadcrumbItem|Pagination|PaginationNav|SkipToContent|PageHeader)$/, 'Navigation & shell'],
-  [/^(Modal|ComposedModal|ModalWrapper|Dialog|Popover|Tooltip|Toggletip|Overlay|SidePanel|Tearsheet)$/, 'Overlays'],
+  [/^(Modal|ComposedModal|ModalWrapper|Dialog|Popover|Tooltip|DefinitionTooltip|Toggletip|Overlay|SidePanel|Tearsheet)$/, 'Overlays'],
   [/^(Notification|ActionableNotification|StaticNotification|InlineLoading|Loading|ProgressBar|ProgressIndicator|BadgeIndicator|ShapeIndicator|IconIndicator)$/, 'Feedback & status'],
   [/^(Grid|FlexGrid|Row|Column|Stack|Layer|AspectRatio|Layout)$/, 'Layout'],
   [/^(Heading|Text|Link|CodeSnippet|Copy|Icon|Tag|OperationalTag|SelectableTag|DismissibleTag)$/, 'Typography & content'],

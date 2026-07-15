@@ -1,4 +1,4 @@
-// react/components/Tooltip.jsx
+// react/components/DefinitionTooltip.jsx
 //
 // @carbon/react re-export — Carbon officially supports React, so this file does not
 // reimplement anything: it re-exports the real, installed package source as-is.
@@ -10,8 +10,8 @@
 //   import '@carbon/react/index.scss';  // or the precompiled ../../assets/carbon-styles.min.css
 //
 // Usage:
-//   import { Tooltip } from './components/Tooltip';
+//   import { DefinitionTooltip } from './components/DefinitionTooltip';
 
 export {
-  Tooltip,
+  DefinitionTooltip,
 } from '@carbon/react';

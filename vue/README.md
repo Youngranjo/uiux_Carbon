@@ -128,6 +128,7 @@ import Button from './components/Button.vue';
 | `DataTableSkeleton.vue` | @carbon/vue (실제) | `CvDataTableSkeleton` | DataTableSkeleton |
 | `DatePicker.vue` | @carbon/vue (실제) | `CvDatePicker` | DatePicker |
 | `DatePickerSkeleton.vue` | @carbon/vue (실제) | `CvDatePickerSkeleton` | DatePicker |
+| `DefinitionTooltip.vue` | Web Component 래퍼 | `cds-definition-tooltip` | DefinitionTooltip |
 | `DialogBody.vue` | Web Component 래퍼 | `cds-dialog-body` | Dialog |
 | `DialogCloseButton.vue` | Web Component 래퍼 | `cds-dialog-close-button` | Dialog |
 | `DialogControls.vue` | Web Component 래퍼 | `cds-dialog-controls` | Dialog |
