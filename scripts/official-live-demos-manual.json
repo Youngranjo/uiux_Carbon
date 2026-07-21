@@ -926,5 +926,21 @@
         "vue": null
       }
     ]
+  },
+  "FluidSearch": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<div style=\"width:400px;\">\n  <cds-fluid-search autocomplete=\"\" close-button-label-text=\"Clear search input\" label-text=\"Search\" placeholder=\"Prompt text\" role=\"\">\n  </cds-fluid-search>\n</div>",
+        "react": "<div\n  style={{\n    width: 400\n  }}\n>\n  <FluidSearch\n    closeButtonLabelText=\"Clear search input\"\n    labelText=\"Search\"\n    placeholder=\"Prompt text\"\n  />\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<div style=\"width: 400px;\">\n  <cds-fluid-search-skeleton></cds-fluid-search-skeleton>\n</div>",
+        "react": "() => <div style={{\n  width: '400px'\n}}>\n    <FluidSearchSkeleton />\n  </div>",
+        "vue": null
+      }
+    ]
   }
 }
