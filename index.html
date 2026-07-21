@@ -435,6 +435,22 @@
     Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-menu[open]'), function (menu) {
       menu.style.position = 'absolute';
     });
+    // cds-modal도 마찬가지로 자기 자신이 position:fixed + width/height를 100vw/100vh로 박아둬서
+    // 뷰포트 전체를 덮는다. 한 페이지에 open 예제가 여러 개 있으면(Modal 컴포넌트처럼) 전부
+    // 겹쳐서 사이드바/스크롤을 통째로 막아버린다 — absolute + 명시적 100% 크기로 바꿔 프리뷰
+    // 카드 영역 안에서만 덮이게 한다(position만 바꾸면 vw/vh 단위라 크기는 그대로 뷰포트 기준).
+    // 카드는 보통 버튼 높이(~48px)만큼만 있으므로 모달이 다 눌릴 공간이 나오도록 최소 높이도 준다.
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-modal[open]'), function (modal) {
+      modal.style.position = 'absolute';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.right = 'auto';
+      modal.style.bottom = 'auto';
+      modal.style.width = '100%';
+      modal.style.height = '100%';
+      var preview = modal.closest('.sg-preview');
+      if (preview) preview.style.minHeight = '600px';
+    });
 
     if (focusTag) {
       var target = document.getElementById('ex-' + encodeURIComponent(focusTag));
