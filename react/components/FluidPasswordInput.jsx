@@ -1,4 +1,4 @@
-// react/components/FluidTextInput.jsx
+// react/components/FluidPasswordInput.jsx
 //
 // @carbon/react re-export — Carbon officially supports React, so this file does not
 // reimplement anything: it re-exports the real, installed package source as-is.
@@ -10,9 +10,8 @@
 //   import '@carbon/react/index.scss';  // or the precompiled ../../assets/carbon-styles.min.css
 //
 // Usage:
-//   import { FluidTextInput } from './components/FluidTextInput';
+//   import { FluidPasswordInput } from './components/FluidPasswordInput';
 
 export {
-  FluidTextInput,
-  FluidTextInputSkeleton,
+  FluidPasswordInput,
 } from '@carbon/react';

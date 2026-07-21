@@ -293,22 +293,33 @@ for (let i = families.length - 1; i >= 0; i--) {
   if (EXCLUDED_FOLDERS.has(families[i].folder)) families.splice(i, 1);
 }
 
-// DefinitionTooltip shares its @carbon/react source folder (and so its family) with plain
-// Tooltip, but it's a distinct, commonly-used component in its own right — split it into
-// its own page. Its <cds-definition-tooltip> tag moves with it so it isn't listed twice.
-{
-  const host = families.find((f) => f.folder === 'Tooltip');
-  if (host && host.reactExports.includes('DefinitionTooltip')) {
-    host.reactExports = host.reactExports.filter((e) => e !== 'DefinitionTooltip');
-    const defTag = host.tags.find((t) => t.name === 'cds-definition-tooltip');
-    host.tags = host.tags.filter((t) => t.name !== 'cds-definition-tooltip');
-    families.push({
-      folder: 'DefinitionTooltip',
-      reactExports: ['DefinitionTooltip'],
-      wcFolder: host.wcFolder,
-      tags: defTag ? [defTag] : [],
-    });
+// A handful of React exports share their @carbon/react source folder (and so their
+// family) with an unrelated "primary" component, but are distinct, commonly-used
+// components in their own right — split each into its own page.
+const SPLIT_EXPORTS = [
+  // DefinitionTooltip lives in Tooltip's source folder; its <cds-definition-tooltip>
+  // tag is part of the same 'tooltip' wcFolder as Tooltip's own tags, so it moves
+  // with the export (removed from the host's tag list so it isn't listed twice).
+  { export: 'DefinitionTooltip', host: 'Tooltip', wcFolder: null, tagName: 'cds-definition-tooltip' },
+  // FluidPasswordInput lives in FluidTextInput's source folder, but it's a real,
+  // separately-tagged Web Component (<cds-fluid-password-input>, its own wcFolder) —
+  // nothing to remove from the host's tags since they never overlapped.
+  { export: 'FluidPasswordInput', host: 'FluidTextInput', wcFolder: 'fluid-password-input', tagName: null },
+];
+for (const { export: exportName, host: hostFolder, wcFolder: explicitWcFolder, tagName } of SPLIT_EXPORTS) {
+  const host = families.find((f) => f.folder === hostFolder);
+  if (!host || !host.reactExports.includes(exportName)) continue;
+  host.reactExports = host.reactExports.filter((e) => e !== exportName);
+  const wcFolder = explicitWcFolder || host.wcFolder;
+  let tags;
+  if (explicitWcFolder) {
+    tags = wcFolderToTags.has(explicitWcFolder) ? wcFolderToTags.get(explicitWcFolder) : [];
+  } else {
+    const tag = host.tags.find((t) => t.name === tagName);
+    host.tags = host.tags.filter((t) => t.name !== tagName);
+    tags = tag ? [tag] : [];
   }
+  families.push({ folder: exportName, reactExports: [exportName], wcFolder, tags });
 }
 
 families.sort((a, b) => a.folder.localeCompare(b.folder));

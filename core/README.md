@@ -6,7 +6,7 @@
 
 ```
 core/
-└── components/*.html   Web Component 태그 1개당 파일 1개 (총 216개)
+└── components/*.html   Web Component 태그 1개당 파일 1개 (총 217개)
 ```
 
 ## 설치
@@ -156,6 +156,7 @@ npm install --save @carbon/web-components @carbon/styles
 | `FluidMultiSelect.html` | `<cds-fluid-multi-select>` | FluidMultiSelect | Fluid multi select. |
 | `FluidNumberInputSkeleton.html` | `<cds-fluid-number-input-skeleton>` | FluidNumberInput | Fluid number input. |
 | `FluidNumberInput.html` | `<cds-fluid-number-input>` | FluidNumberInput | Fluid number input. |
+| `FluidPasswordInput.html` | `<cds-fluid-password-input>` | FluidPasswordInput | Fluid password input. |
 | `FluidSearchSkeleton.html` | `<cds-fluid-search-skeleton>` | FluidSearch | Fluid Search. |
 | `FluidSearch.html` | `<cds-fluid-search>` | FluidSearch | Fluid text input. |
 | `FluidSelectSkeleton.html` | `<cds-fluid-select-skeleton>` | FluidSelect | Fluid text area input. |

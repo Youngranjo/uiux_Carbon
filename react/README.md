@@ -5,7 +5,7 @@ Carbon은 React를 공식 지원하므로, Astryx의 react/ 폴더와 동일한 
 
 ```
 react/
-└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 116개)
+└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 117개)
 ```
 
 ## 설치
@@ -76,10 +76,11 @@ import { Button } from './components/Button';
 | `FluidForm.jsx` | ready | FluidForm, FormContext |
 | `FluidMultiSelect.jsx` | ready | FluidMultiSelect, FluidMultiSelectSkeleton |
 | `FluidNumberInput.jsx` | ready | FluidNumberInput, FluidNumberInputSkeleton |
+| `FluidPasswordInput.jsx` | ready | FluidPasswordInput |
 | `FluidSearch.jsx` | ready | FluidSearch, FluidSearchSkeleton |
 | `FluidSelect.jsx` | ready | FluidSelect, FluidSelectSkeleton |
 | `FluidTextArea.jsx` | ready | FluidTextArea, FluidTextAreaSkeleton |
-| `FluidTextInput.jsx` | ready | FluidPasswordInput, FluidTextInput, FluidTextInputSkeleton |
+| `FluidTextInput.jsx` | ready | FluidTextInput, FluidTextInputSkeleton |
 | `FluidTimePicker.jsx` | ready | FluidTimePicker, FluidTimePickerSkeleton |
 | `FluidTimePickerSelect.jsx` | ready | FluidTimePickerSelect |
 | `Form.jsx` | ready | Form |
