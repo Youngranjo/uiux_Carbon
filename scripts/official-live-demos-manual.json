@@ -1052,5 +1052,15 @@
         "vue": null
       }
     ]
+  },
+  "FormGroup": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-form-group legend-text=\"FormGroup Legend\">\n  <cds-stack gap=\"7\">\n    <cds-text-input label=\"First Name\"> </cds-text-input>\n    <cds-text-input label=\"Last Name\"> </cds-text-input>\n    <cds-radio-button-group legend-text=\"Radio button heading\" name=\"radio-button-group\" value=\"radio-1\">\n      <cds-radio-button label-text=\"Option 1\" value=\"radio-1\" id=\"radio-1\"></cds-radio-button>\n      <cds-radio-button label-text=\"Option 2\" value=\"radio-2\" id=\"radio-2\"></cds-radio-button>\n      <cds-radio-button label-text=\"Option 3\" value=\"radio-3\" id=\"radio-3\"></cds-radio-button>\n    </cds-radio-button-group>\n    <cds-form-item> <cds-button>Submit</cds-button></cds-form-item>\n  </cds-stack>\n</cds-form-group>",
+        "react": "<FormGroup\n  legendId=\"form-group-1\"\n  legendText=\"FormGroup Legend\"\n  style={{\n    maxWidth: '400px'\n  }}\n>\n  <Stack gap={7}>\n    <TextInput\n      id=\"one\"\n      labelText=\"First Name\"\n    />\n    <TextInput\n      id=\"two\"\n      labelText=\"Last Name\"\n    />\n    <RadioButtonGroup\n      defaultSelected=\"radio-1\"\n      legendText=\"Radio button heading\"\n      name=\"formgroup-default-radio-button-group\"\n    >\n      <RadioButton\n        id=\"radio-1\"\n        labelText=\"Option 1\"\n        value=\"radio-1\"\n      />\n      <RadioButton\n        id=\"radio-2\"\n        labelText=\"Option 2\"\n        value=\"radio-2\"\n      />\n      <RadioButton\n        id=\"radio-3\"\n        labelText=\"Option 3\"\n        value=\"radio-3\"\n      />\n    </RadioButtonGroup>\n    <Button>\n      Submit\n    </Button>\n  </Stack>\n</FormGroup>",
+        "vue": null
+      }
+    ]
   }
 }
