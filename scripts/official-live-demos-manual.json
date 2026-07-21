@@ -1062,5 +1062,15 @@
         "vue": null
       }
     ]
+  },
+  "Heading": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-heading>h1</cds-heading>\n<cds-section>\n  <cds-heading>h2</cds-heading>\n  <cds-section>\n    <cds-heading>h3</cds-heading>\n  </cds-section>\n</cds-section>",
+        "react": "() => {\n  return <>\n      <Heading>h1</Heading>\n      <Section>\n        <Heading>h2</Heading>\n        <Section>\n          <Heading>h3</Heading>\n        </Section>\n      </Section>\n    </>;\n}",
+        "vue": null
+      }
+    ]
   }
 }
