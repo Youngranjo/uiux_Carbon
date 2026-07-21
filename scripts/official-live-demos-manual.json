@@ -1130,5 +1130,15 @@
         "vue": "<cv-link href='#' v-bind='args'>{{ args.default }}</cv-link>"
       }
     ]
+  },
+  "Loading": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-loading active=\"\" description=\"Loading\" assistive-text=\"Loading\"></cds-loading>",
+        "react": "<Loading\n  active\n  className=\"some-class\"\n  description=\"Loading\"\n/>",
+        "vue": "<div>\n<div class=\"loading-story\">\n<cv-loading @loading-end=\"onLoadingEnd\"  :active=\"isActive\"/>\n</div>\n<button @click=\"makeActive\" :disabled=\"isActive\" style=\"margin-top: 2rem;\">{{buttonLabel}}</button>\n</div>"
+      }
+    ]
   }
 }
