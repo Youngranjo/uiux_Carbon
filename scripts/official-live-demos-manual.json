@@ -1092,5 +1092,15 @@
         "vue": "<cv-inline-loading\n  :description=\"description\"\n  :ending-text=\"endingText\"\n  :error-text=\"errorText\"\n  :loading-text=\"loadingText\"\n  :loaded-text=\"loadedText\"\n  :state=\"state\" />"
       }
     ]
+  },
+  "Layer": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-layer>\n  <div class=\"example-layer-test-component\">Test component</div>\n  <cds-layer>\n    <div class=\"example-layer-test-component\">Test component</div>\n    <cds-layer>\n      <div class=\"example-layer-test-component\">Test component</div>\n    </cds-layer>\n  </cds-layer>\n</cds-layer>\n<style>\n  .example-layer-test-component{padding:1rem;background:var(--cds-layer);color:var(--cds-text-primary, #161616)}.example-layer-test-component-no-background{padding:1rem;color:var(--cds-text-primary, #161616)}\n</style>",
+        "react": "() => {\n  function TestComponent() {\n    return <div className=\"example-layer-test-component\">Test component</div>;\n  }\n  return <>\n      <TestComponent />\n      <Layer>\n        <TestComponent />\n        <Layer>\n          <TestComponent />\n        </Layer>\n      </Layer>\n    </>;\n}",
+        "vue": null
+      }
+    ]
   }
 }
