@@ -429,22 +429,26 @@
         Array.prototype.forEach.call(items, function (it) { it.open = false; });
       });
     });
-    // cds-menu는 실제 트리거(우클릭 등) 없이 open 속성만으로 정적으로 띄우면 자기 자신이
-    // position:fixed라서 뷰포트 좌상단(8,8)에 고정되어 사이드바 위로 넘쳐 보인다.
-    // → 프리뷰 카드 안에 담기도록 absolute로 바꿔서 카드 기준 좌표로 붙인다. 카드 자체는
-    // 메뉴 콘텐츠 높이를 모르는 채로 원래 크기(버튼 높이 정도)를 유지하므로, absolute로 빠진
-    // 메뉴가 카드 바깥(아래 코드 패널)까지 넘쳐 가려버린다 — 실제 렌더링된 메뉴 높이를 재서
-    // 카드에 그만큼 최소 높이를 줘 완전히 담기게 한다.
+    // cds-menu는 호스트 자신은 물론, shadow DOM 안의 실제 보이는 <ul class="cds--menu">도
+    // 별도로 position:fixed를 갖는다 — 호스트만 absolute로 바꾸면 호스트(크기 0인 앵커일 뿐)는
+    // 카드를 따라 스크롤되지만, 진짜 보이는 메뉴(ul)는 여전히 뷰포트에 고정된 채로 남아 페이지만
+    // 스크롤되고 메뉴는 화면에 붙박여 있는 것처럼 보인다("스크롤 시 따라옴"의 원인).
+    // → 호스트와 ul 둘 다 위치를 바꿔야 카드 안에 제대로 담기고 스크롤과 함께 자연스럽게 움직인다.
     Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-menu[open]'), function (menu) {
       menu.style.position = 'absolute';
       var preview = menu.closest('.sg-preview');
       if (!preview) return;
-      setTimeout(function () {
+      // setTimeout(매크로태스크)은 첫 페인트 이후에 실행돼 카드가 잠깐 원래 크기로 그려졌다가
+      // 커지는 순간적인 "튐"이 보일 수 있다 — 마이크로태스크로 Lit의 최초 렌더 직후, 첫 페인트
+      // 전에 반영되게 한다(Lit의 shadow DOM 최초 렌더 자체가 마이크로태스크로 끝나기 때문에
+      // 동기 측정은 불가능하지만 마이크로태스크면 이미 끝나 있다).
+      queueMicrotask(function () {
         var list = menu.shadowRoot && menu.shadowRoot.querySelector('ul');
+        if (list) list.style.position = 'static';
         var offsetTop = menu.getBoundingClientRect().top - preview.getBoundingClientRect().top;
         var contentHeight = list ? list.getBoundingClientRect().height : menu.getBoundingClientRect().height;
         preview.style.minHeight = (offsetTop + contentHeight + 16) + 'px';
-      }, 0);
+      });
     });
     // cds-modal도 마찬가지로 자기 자신이 position:fixed + width/height를 100vw/100vh로 박아둬서
     // 뷰포트 전체를 덮는다. 한 페이지에 open 예제가 여러 개 있으면(Modal 컴포넌트처럼) 전부
