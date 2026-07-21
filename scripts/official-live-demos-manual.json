@@ -970,5 +970,33 @@
         "vue": null
       }
     ]
+  },
+  "FluidTextArea": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<div style=\"width:300px;\">\n  <cds-fluid-textarea enable-counter=\"\" counter-mode=\"\" invalid-text=\"Error message that is really long can wrap to more lines but should not be excessively long.\" label=\"Text Area label\" value=\"\" warn-text=\"This is a warning message.\" max-count=\"500\" placeholder=\"Placeholder text\" rows=\"4\" cols=\"0\">\n  </cds-fluid-textarea>\n</div>",
+        "react": "<div\n  style={{\n    width: 300\n  }}\n>\n  <FluidTextArea\n    className=\"test-class\"\n    invalidText=\"Error message that is really long can wrap to more lines but should not be excessively long.\"\n    labelText=\"Text Area label\"\n    maxCount={500}\n    placeholder=\"Placeholder text\"\n    warnText=\"This is a warning message.\"\n  />\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<div style=\"width:300px;\">\n  <cds-fluid-textarea-skeleton></cds-fluid-textarea-skeleton>\n</div>",
+        "react": "() => <div style={{\n  width: '300px'\n}}>\n    <FluidTextAreaSkeleton />\n  </div>",
+        "vue": null
+      },
+      {
+        "title": "Default With Toggletip",
+        "html": "<div style=\"width:300px;\">\n  <cds-fluid-textarea placeholder=\"Placeholder text\">\n    <cds-toggletip slot=\"label-text\" alignment=\"top-left\" autoalign=\"true\">\n      Toggletip label\n      <p slot=\"body-text\">Additional field information here.</p>\n    </cds-toggletip>\n  </cds-fluid-textarea>\n</div>",
+        "react": "() => <FluidTextArea labelText={ToggleTip} placeholder=\"Placeholder text\" />",
+        "vue": null
+      },
+      {
+        "title": "Default With Layers",
+        "html": null,
+        "react": "() => <WithLayer>\n    {layer => <FluidTextArea labelText=\"Text Area label\" placeholder=\"Placeholder text\" id={`text-area-${layer}`} />}\n  </WithLayer>",
+        "vue": null
+      }
+    ]
   }
 }
