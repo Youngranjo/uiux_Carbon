@@ -462,6 +462,19 @@
       var preview = modal.closest('.sg-preview');
       if (preview) preview.style.minHeight = '600px';
     });
+    // "Launch modal" 버튼은 원래 실제 앱에서 상태 관리로 모달을 열지만, 여기서는 정적 예제라
+    // 아무 동작도 안 함 — X/Cancel로 닫은 뒤 다시 열 수 있도록 같은 프리뷰 카드 안의
+    // cds-modal을 열어주는 클릭 핸들러를 붙인다(cds-modal 자체의 close 버튼은 이미 동작함).
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview'), function (preview) {
+      var modal = preview.querySelector('cds-modal');
+      if (!modal) return;
+      var launchButtons = Array.prototype.filter.call(preview.querySelectorAll('cds-button'), function (btn) {
+        return !btn.closest('cds-modal');
+      });
+      Array.prototype.forEach.call(launchButtons, function (btn) {
+        btn.addEventListener('click', function () { modal.open = true; });
+      });
+    });
 
     if (focusTag) {
       var target = document.getElementById('ex-' + encodeURIComponent(focusTag));
