@@ -1288,5 +1288,33 @@
         "vue": "<div :style=\"{width: '19rem'}\">\n  <cv-multi-select\n  :label=\"label\"\n  :options=\"options\"\n  :title=\"title\"\n  @change=\"onChange\"\n  @filter=\"onFilter\"\n  >\n    <template v-if=\"slotInvalidText\" v-slot:invalid-message>That is <span style=\"font-weight:900\">NOT</span> a replicant</template>\n    <template v-if=\"slotWarningText\" v-slot:warning-message>Are you sure that is a <span style=\"font-variant-caps: petite-caps;\">Replicant</span></template>\n    <template v-if=\"slotHelperText\" v-slot:helper-text>Help Rick Deckard <span style=\"font-variant: small-caps;\">\"retire\"</span> rogue androids</template>\n  </cv-multi-select>\n  </div>"
       }
     ]
+  },
+  "Notification": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-actionable-notification title=\"Notification title\" subtitle=\"Subtitle text goes here\" kind=\"error\">\n  <cds-actionable-notification-button slot=\"action\">Action</cds-actionable-notification-button>\n</cds-actionable-notification>",
+        "react": "<ActionableNotification\n  actionButtonLabel=\"Action\"\n  aria-label=\"close notification\"\n  closeOnEscape\n  kind=\"error\"\n  onActionButtonClick={function Kbe(){}}\n  onClose={function Kbe(){}}\n  onCloseButtonClick={function Kbe(){}}\n  statusIconDescription=\"notification\"\n  subtitle=\"Subtitle text goes here\"\n  title=\"Notification title\"\n/>",
+        "vue": null
+      },
+      {
+        "title": "Callout",
+        "html": "<cds-callout-notification kind=\"info\" title=\"Notification title\" subtitle=\"Subtitle text goes here\" status-icon-description=\"notification\" title-id=\"\">\n</cds-callout-notification>",
+        "react": "<Callout\n  kind=\"info\"\n  statusIconDescription=\"notification\"\n  subtitle=\"Subtitle text goes here\"\n  title=\"Notification title\"\n/>",
+        "vue": null
+      },
+      {
+        "title": "Inline",
+        "html": "<cds-inline-notification title=\"Notification title\" subtitle=\"Subtitle text goes here\" kind=\"error\">\n</cds-inline-notification>",
+        "react": "<InlineNotification\n  aria-label=\"closes notification\"\n  kind=\"error\"\n  onClose={function Kbe(){}}\n  onCloseButtonClick={function Kbe(){}}\n  statusIconDescription=\"notification\"\n  subtitle=\"Subtitle text goes here\"\n  title=\"Notification title\"\n/>",
+        "vue": null
+      },
+      {
+        "title": "Toast",
+        "html": "<cds-toast-notification title=\"Notification title\" subtitle=\"Subtitle text goes here\" caption=\"00:00:00 AM\" role=\"status\" timeout=\"0\" kind=\"error\">\n</cds-toast-notification>",
+        "react": "<ToastNotification\n  aria-label=\"closes notification\"\n  caption=\"00:00:00 AM\"\n  kind=\"error\"\n  onClose={function Kbe(){}}\n  onCloseButtonClick={function Kbe(){}}\n  role=\"status\"\n  statusIconDescription=\"notification\"\n  subtitle=\"Subtitle text goes here\"\n  timeout={0}\n  title=\"Notification title\"\n/>",
+        "vue": null
+      }
+    ]
   }
 }
