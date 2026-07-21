@@ -1082,5 +1082,15 @@
         "vue": "<cv-icon-button @click=\"onClick\" label=\"Field size\" size=\"field\" icon=\"Bee20\" />"
       }
     ]
+  },
+  "InlineLoading": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-inline-loading }=\"\" status=\"active\" success-delay=\"2000\" icon-description=\"Loading\">\n  Loading data...\n</cds-inline-loading>",
+        "react": "<InlineLoading\n  aria-live=\"assertive\"\n  description=\"Loading\"\n  iconDescription=\"Loading data...\"\n  onSuccess={function Kbe(){}}\n  status=\"active\"\n/>",
+        "vue": "<cv-inline-loading\n  :description=\"description\"\n  :ending-text=\"endingText\"\n  :error-text=\"errorText\"\n  :loading-text=\"loadingText\"\n  :loaded-text=\"loadedText\"\n  :state=\"state\" />"
+      }
+    ]
   }
 }
