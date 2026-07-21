@@ -34,6 +34,29 @@ const extraImports = missingFolders.map((f) => {
   const entry = hasIndex ? 'index.js' : `${f}.js`;
   return `import '@carbon/web-components/es/components/${f}/${entry}';`;
 });
+
+// The check above is folder-granularity: a folder counts as "barreled" the moment ANY
+// one file inside it is imported by the real index.js. But some folders (form/, tag/,
+// tabs/, toggle/, tooltip/, notification/) ship several sibling custom elements and the
+// barrel only imports SOME of them — e.g. tooltip/definition-tooltip.js (DefinitionTooltip)
+// is left out even though tooltip/tooltip.js (plain Tooltip) is barreled, so
+// <cds-definition-tooltip> silently rendered as unstyled plain text. Re-check at file
+// granularity for every folder the step above didn't already fully cover.
+const barreledFiles = new Set([...barrelSrc.matchAll(/from ['"]\.\/components\/([^'"]+\.js)['"]/g)].map((m) => m[1]));
+const missingFiles = [];
+for (const folder of allFolders) {
+  if (missingFolders.includes(folder)) continue; // already covered via its index.js above
+  const dir = path.join(componentsDir, folder);
+  const files = readdirSync(dir).filter((f) => f.endsWith('.js') && !f.endsWith('.scss.js') && !f.endsWith('.js.map') && !f.startsWith('demo-'));
+  for (const f of files) {
+    const rel = `${folder}/${f}`;
+    if (barreledFiles.has(rel)) continue;
+    const src = readFileSync(path.join(dir, f), 'utf8');
+    if (/carbonElement\(/.test(src)) missingFiles.push(rel);
+  }
+}
+extraImports.push(...missingFiles.map((rel) => `import '@carbon/web-components/es/components/${rel}';`));
+
 const syntheticEntryPath = path.resolve('scripts/.wc-full-entry.mjs');
 writeFileSync(
   syntheticEntryPath,
@@ -42,6 +65,7 @@ writeFileSync(
     extraImports.join('\n') + '\n'
 );
 console.log(`including ${missingFolders.length} component(s) missing from the upstream barrel: ${missingFolders.join(', ')}`);
+console.log(`including ${missingFiles.length} individual file(s) missing from partially-barreled folders: ${missingFiles.join(', ')}`);
 
 const iconSizeRedirect = {
   name: 'carbon-icon-size-redirect',
