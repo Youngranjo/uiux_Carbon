@@ -894,5 +894,27 @@
         "vue": null
       }
     ]
+  },
+  "FluidNumberInput": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<div style=\"width: 400px;\">\n  <cds-fluid-number-input invalid-text=\"Error message that is really long can wrap to more lines but should not be excessively long.\" label=\"Label\" value=\"50\" warn-text=\"Warning message that is really long can wrap to more lines but should not be excessively long.\" min=\"0\" max=\"100\" step=\"1\">\n  </cds-fluid-number-input>\n</div>",
+        "react": "<div\n  style={{\n    width: 400\n  }}\n>\n  <FluidNumberInput\n    defaultValue={50}\n    id=\"input-default\"\n    invalidText=\"Error message that is really long can wrap to more lines but should not be excessively long.\"\n    label={<><ToggletipLabel>Label</ToggletipLabel><Toggletip align=\"top-left\"><ToggletipButton label=\"Show information\"><React.ForwardRef /></ToggletipButton><ToggletipContent><p>Additional field information here.</p></ToggletipContent></Toggletip></>}\n    max={100}\n    min={0}\n    placeholder=\"Placeholder text\"\n    step={10}\n    warnText=\"Warning message that is really long can wrap to more lines but should not be excessively long.\"\n  />\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<div style=\"width: 300px;\">\n  <cds-fluid-number-input-skeleton></cds-fluid-number-input-skeleton>\n</div>",
+        "react": "() => <div style={{\n  width: '400px'\n}}>\n    <FluidNumberInputSkeleton label=\"Label\" placeholder=\"Placeholder text\" id=\"input-skeleton\" />\n  </div>",
+        "vue": null
+      },
+      {
+        "title": "Default With Toggletip",
+        "html": "<div style=\"width: 400px;\">\n  <cds-fluid-number-input invalid-text=\"Error message that is really long can wrap to more lines but should not be excessively long.\" label=\"Label\" value=\"50\" warn-text=\"Warning message that is really long can wrap to more lines but should not be excessively long.\" min=\"0\" max=\"100\" step=\"1\">\n    <cds-toggletip autoalign=\"true\" slot=\"label-text\">\n      Label\n      <p slot=\"body-text\">Additional field information here.</p>\n    </cds-toggletip>\n  </cds-fluid-number-input>\n</div>",
+        "react": null,
+        "vue": null
+      }
+    ]
   }
 }
