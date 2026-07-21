@@ -1102,5 +1102,33 @@
         "vue": null
       }
     ]
+  },
+  "Link": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-link>\n  Link\n</cds-link>",
+        "react": "<Link\n  href=\"#\"\n>\n  Link\n</Link>",
+        "vue": "<cv-link href='#' v-bind='args'>{{ args.default }}</cv-link>"
+      },
+      {
+        "title": "Inline",
+        "html": "<cds-link inline=\"\">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</cds-link>\n<p>\n  Ut facilisis semper lorem in aliquet. Aliquam accumsan ante justo, vitae\n  fringilla eros vehicula id. Ut at enim quis libero pharetra ullamcorper.\n  Maecenas feugiat sodales arcu ut porttitor. In blandit ultricies est.\n  Vivamus risus massa, cursus eu tellus sed, sagittis commodo nunc.\n  <cds-link inline=\"\">Maecenas nunc mauris, consequat quis mauris sit amet,</cds-link>\n  finibus suscipit nunc. Phasellus ex quam, placerat quis tempus sit amet,\n  pretium nec sem. Etiam dictum scelerisque mauris, blandit ultrices erat\n  pellentesque id. Quisque venenatis purus sit amet sodales condimentum.\n  Duis at tincidunt orci. Ut velit ipsum, lacinia at ex quis, aliquet\n  rhoncus purus. Praesent et scelerisque ligula.\n</p>",
+        "react": "<>\n  <Link\n    inline\n  >\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n  </Link>\n  <p>\n    Ut facilisis semper lorem in aliquet. Aliquam accumsan ante justo, vitae fringilla eros vehicula id. Ut at enim quis libero pharetra ullamcorper. Maecenas feugiat sodales arcu ut porttitor. In blandit ultricies est. Vivamus risus massa, cursus eu tellus sed, sagittis commodo nunc.{' '}\n    <Link\n      inline\n    >\n      Maecenas nunc mauris, consequat quis mauris sit amet\n    </Link>\n    , finibus suscipit nunc. Phasellus ex quam, placerat quis tempus sit amet, pretium nec sem. Etiam dictum scelerisque mauris, blandit ultrices erat pellentesque id. Quisque venenatis purus sit amet sodales condimentum. Duis at tincidunt orci. Ut velit ipsum, lacinia at ex quis, aliquet rhoncus purus. Praesent et scelerisque ligula.\n  </p>\n</>",
+        "vue": "<p>\n  Ut facilisis semper lorem in aliquet. Aliquam accumsan ante justo, vitae\n  fringilla eros vehicula id. Ut at enim quis libero pharetra ullamcorper.\n  Maecenas feugiat sodales arcu ut porttitor. In blandit ultricies est.\n  Vivamus risus massa, cursus eu tellus sed, sagittis commodo nunc.\n  <cv-link href=\"#\" v-bind='args'>{{ args.default }}</cv-link>,\n  finibus suscipit nunc. Phasellus ex quam, placerat quis tempus sit amet,\n  pretium nec sem. Etiam dictum scelerisque mauris, blandit ultrices erat\n  pellentesque id. Quisque venenatis purus sit amet sodales condimentum.\n  Duis at tincidunt orci. Ut velit ipsum, lacinia at ex quis, aliquet\n  rhoncus purus. Praesent et scelerisque ligula.\n</p>"
+      },
+      {
+        "title": "Accessible Link with Icon",
+        "html": "<cds-link>\n  Carbon Docs <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M9.3 3.7 13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z\"></path></svg>\n</cds-link>",
+        "react": "<Link\n  href=\"#\"\n  renderIcon={function Kbe(){}}\n>\n  Carbon Docs\n</Link>",
+        "vue": null
+      },
+      {
+        "title": "Paried With Icon",
+        "html": null,
+        "react": null,
+        "vue": "<cv-link href='#' v-bind='args'>{{ args.default }}</cv-link>"
+      }
+    ]
   }
 }
