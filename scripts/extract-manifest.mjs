@@ -305,6 +305,9 @@ const SPLIT_EXPORTS = [
   // separately-tagged Web Component (<cds-fluid-password-input>, its own wcFolder) —
   // nothing to remove from the host's tags since they never overlapped.
   { export: 'FluidPasswordInput', host: 'FluidTextInput', wcFolder: 'fluid-password-input', tagName: null },
+  // Same story for plain PasswordInput, bundled into TextInput's source folder but
+  // with its own dedicated <cds-password-input> / 'password-input' wcFolder.
+  { export: 'PasswordInput', host: 'TextInput', wcFolder: 'password-input', tagName: null },
 ];
 for (const { export: exportName, host: hostFolder, wcFolder: explicitWcFolder, tagName } of SPLIT_EXPORTS) {
   const host = families.find((f) => f.folder === hostFolder);

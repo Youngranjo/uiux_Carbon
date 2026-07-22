@@ -14,7 +14,7 @@ Carbon 공식 Vue 패키지는 [`@carbon/vue`](https://github.com/carbon-design-
 
 ```
 vue/
-├── components/*.vue          위 두 방식 중 하나로 생성된 파일 (총 217개)
+├── components/*.vue          위 두 방식 중 하나로 생성된 파일 (총 219개)
 └── components/*.stories.js   carbon-components-vue의 실제 Storybook 예제 (있는 경우)
 ```
 
@@ -226,6 +226,8 @@ import Button from './components/Button.vue';
 | `PageHeader.vue` | Web Component 래퍼 | `cds-page-header` | PageHeader |
 | `Pagination.vue` | @carbon/vue (실제) | `CvPagination` | Pagination |
 | `PaginationNav.vue` | Web Component 래퍼 | `cds-pagination-nav` | PaginationNav |
+| `PasswordInputSkeleton.vue` | Web Component 래퍼 | `cds-password-input-skeleton` | PasswordInput |
+| `PasswordInput.vue` | Web Component 래퍼 | `cds-password-input` | PasswordInput |
 | `PopoverContent.vue` | Web Component 래퍼 | `cds-popover-content` | Popover |
 | `Popover.vue` | Web Component 래퍼 | `cds-popover` | Popover |
 | `ButtonSetBase.vue` | Web Component 래퍼 | `cds-button-set-base` | PrimaryButton |

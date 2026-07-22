@@ -6,7 +6,7 @@
 
 ```
 core/
-└── components/*.html   Web Component 태그 1개당 파일 1개 (총 217개)
+└── components/*.html   Web Component 태그 1개당 파일 1개 (총 219개)
 ```
 
 ## 설치
@@ -245,6 +245,8 @@ npm install --save @carbon/web-components @carbon/styles
 | `PageHeader.html` | `<cds-page-header>` | PageHeader | Page header. |
 | `Pagination.html` | `<cds-pagination>` | Pagination | Pagination UI. |
 | `PaginationNav.html` | `<cds-pagination-nav>` | PaginationNav | Pagination Navigation. |
+| `PasswordInputSkeleton.html` | `<cds-password-input-skeleton>` | PasswordInput |  |
+| `PasswordInput.html` | `<cds-password-input>` | PasswordInput | Password Input element. Supports all the usual attributes for textual input types |
 | `PopoverContent.html` | `<cds-popover-content>` | Popover | Popover. |
 | `Popover.html` | `<cds-popover>` | Popover | Popover. |
 | `ButtonSetBase.html` | `<cds-button-set-base>` | PrimaryButton | Button set without button checks |

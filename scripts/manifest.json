@@ -12383,6 +12383,214 @@
     ]
   },
   {
+    "folder": "PasswordInput",
+    "reactExports": [
+      "PasswordInput"
+    ],
+    "wcFolder": "password-input",
+    "tags": [
+      {
+        "name": "cds-password-input-skeleton",
+        "description": "",
+        "attributes": [
+          {
+            "name": "hide-label",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify whether the label should be hidden, or not"
+          }
+        ],
+        "events": [],
+        "slots": [],
+        "hasDefaultSlot": false
+      },
+      {
+        "name": "cds-password-input",
+        "description": "Password Input element. Supports all the usual attributes for textual input types",
+        "attributes": [
+          {
+            "name": "autocomplete",
+            "type": "string",
+            "default": "\"\"",
+            "description": "May be any of the standard HTML autocomplete options"
+          },
+          {
+            "name": "autofocus",
+            "type": "boolean",
+            "default": "false",
+            "description": "Sets the input to be focussed automatically on page load. Defaults to false"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Controls the disabled state of the input"
+          },
+          {
+            "name": "enable-counter",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify whether to display the character counter"
+          },
+          {
+            "name": "helper-text",
+            "type": "string",
+            "default": "\"\"",
+            "description": "The helper text."
+          },
+          {
+            "name": "invalid-text",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Message which is displayed if the value is invalid."
+          },
+          {
+            "name": "max-count",
+            "description": "Max character count allowed for input. This is needed in order for enableCounter to display"
+          },
+          {
+            "name": "warn",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify whether the control is currently in warning state"
+          },
+          {
+            "name": "warn-text",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Provide the text that is displayed when the control is in warning state"
+          },
+          {
+            "name": "hide-label",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify whether you want the underlying label to be visually hidden"
+          },
+          {
+            "name": "label",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Generic label that will be used as the textual representation of what this field is for"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Name for the input in the `FormData`"
+          },
+          {
+            "name": "pattern",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Pattern to validate the input against for HTML validity checking"
+          },
+          {
+            "name": "placeholder",
+            "type": "string",
+            "default": "\"\"",
+            "description": "Value to display when the input has an empty `value`"
+          },
+          {
+            "name": "readonly",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify if the component should be read-only"
+          },
+          {
+            "name": "hide-password-label",
+            "type": "string",
+            "default": "\"Hide password\"",
+            "description": "\"Hide password\" tooltip text on password visibility toggle"
+          },
+          {
+            "name": "show-password-label",
+            "type": "string",
+            "default": "\"Show password\"",
+            "description": "\"Show password\" tooltip text on password visibility toggle"
+          },
+          {
+            "name": "show-password-visibility-toggle",
+            "type": "boolean",
+            "default": "false",
+            "description": "Boolean property to render password visibility toggle"
+          },
+          {
+            "name": "size",
+            "type": "INPUT_SIZE | undefined",
+            "description": "The input box size."
+          },
+          {
+            "name": "isFluid",
+            "type": "boolean",
+            "default": "false",
+            "description": "Set to true to use the fluid version."
+          },
+          {
+            "name": "inline",
+            "type": "boolean",
+            "default": "false",
+            "description": "true to use the inline version."
+          },
+          {
+            "name": "tooltip-alignment",
+            "type": "INPUT_TOOLTIP_ALIGNMENT",
+            "default": "\"end\"",
+            "description": "Specify the alignment of the tooltip to the icon-only button.\nCan be one of: start, center, or end."
+          },
+          {
+            "name": "tooltip-position",
+            "type": "INPUT_TOOLTIP_DIRECTION",
+            "default": "\"bottom\"",
+            "description": "Specify the direction of the tooltip for icon-only buttons.\nCan be either top, right, bottom, or left."
+          },
+          {
+            "name": "type",
+            "type": "INPUT_TYPE",
+            "default": "\"password\"",
+            "description": "The native `<input>` type. Defaults to “password”."
+          },
+          {
+            "name": "invalid",
+            "type": "boolean",
+            "default": "false",
+            "description": "Specify if the currently value is invalid."
+          },
+          {
+            "name": "required",
+            "type": "boolean",
+            "default": "false",
+            "description": "Boolean property to set the required status"
+          },
+          {
+            "name": "required-validity-message",
+            "type": "string",
+            "default": "\"Please fill out this field.\"",
+            "description": "The special validity message for `required`."
+          },
+          {
+            "name": "validity-message",
+            "type": "string",
+            "default": "\"\"",
+            "description": "The validity message. If present and non-empty, this input shows the UI of its invalid state."
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "description": "The value of the input."
+          }
+        ],
+        "events": [
+          "invalid"
+        ],
+        "slots": [
+          "helper-text",
+          "slug"
+        ],
+        "hasDefaultSlot": false
+      }
+    ]
+  },
+  {
     "folder": "Popover",
     "reactExports": [
       "Popover",
@@ -16559,7 +16767,6 @@
     "folder": "TextInput",
     "reactExports": [
       "ControlledPasswordInput",
-      "PasswordInput",
       "TextInput",
       "TextInputSkeleton"
     ],

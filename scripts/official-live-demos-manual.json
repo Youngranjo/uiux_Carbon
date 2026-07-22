@@ -1414,5 +1414,15 @@
         "vue": null
       }
     ]
+  },
+  "PasswordInput": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<div style=\"width: 300px;\">\n  <cds-password-input helper-text=\"Optional help text\" hide-password-label=\"Hide password\" invalid-text=\"Error message goes here\" label=\"Text input label\" placeholder=\"Placeholder text\" show-password-label=\"Show password\" size=\"md\" tooltip-alignment=\"end\" tooltip-position=\"bottom\" type=\"password\" value=\"\" warn-text=\"Warning message that is really long can wrap to more lines but should not be excessively long.\">\n  </cds-password-input>\n</div>",
+        "react": "<div\n  style={{\n    width: 300\n  }}\n>\n  <PasswordInput\n    autoComplete=\"true\"\n    className=\"input-test-class\"\n    helperText=\"Optional help text\"\n    id=\"text-input-1\"\n    invalidText=\"Error message goes here\"\n    labelText=\"Text input label\"\n    onChange={function Kbe(){}}\n    onClick={function Kbe(){}}\n    placeholder=\"Placeholder text\"\n    size=\"md\"\n    warnText=\"Warning message that is really long can wrap to more lines but should not be excessively long.\"\n  />\n</div>",
+        "vue": null
+      }
+    ]
   }
 }

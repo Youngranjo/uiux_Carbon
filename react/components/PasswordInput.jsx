@@ -1,4 +1,4 @@
-// react/components/TextInput.jsx
+// react/components/PasswordInput.jsx
 //
 // @carbon/react re-export — Carbon officially supports React, so this file does not
 // reimplement anything: it re-exports the real, installed package source as-is.
@@ -10,10 +10,8 @@
 //   import '@carbon/react/index.scss';  // or the precompiled ../../assets/carbon-styles.min.css
 //
 // Usage:
-//   import { ControlledPasswordInput } from './components/TextInput';
+//   import { PasswordInput } from './components/PasswordInput';
 
 export {
-  ControlledPasswordInput,
-  TextInput,
-  TextInputSkeleton,
+  PasswordInput,
 } from '@carbon/react';

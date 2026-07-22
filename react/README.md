@@ -5,7 +5,7 @@ Carbon은 React를 공식 지원하므로, Astryx의 react/ 폴더와 동일한 
 
 ```
 react/
-└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 117개)
+└── components/*.jsx   React 패밀리(폴더) 1개당 파일 1개 (총 118개)
 ```
 
 ## 설치
@@ -113,6 +113,7 @@ import { Button } from './components/Button';
 | `PageHeader.jsx` | preview only | (experimental: unstable_PageHeader) |
 | `Pagination.jsx` | ready | Pagination, PaginationSkeleton |
 | `PaginationNav.jsx` | ready | PaginationNav |
+| `PasswordInput.jsx` | ready | PasswordInput |
 | `Popover.jsx` | ready | Popover, PopoverContent |
 | `PrimaryButton.jsx` | ready | PrimaryButton |
 | `ProgressBar.jsx` | ready | ProgressBar |
@@ -141,7 +142,7 @@ import { Button } from './components/Button';
 | `Tag.jsx` | ready | DismissibleTag, OperationalTag, SelectableTag, Tag, TagSkeleton |
 | `Tearsheet.jsx` | preview only | (experimental: unstable_Tearsheet) |
 | `TextArea.jsx` | ready | TextArea, TextAreaSkeleton |
-| `TextInput.jsx` | ready | ControlledPasswordInput, PasswordInput, TextInput, TextInputSkeleton |
+| `TextInput.jsx` | ready | ControlledPasswordInput, TextInput, TextInputSkeleton |
 | `Theme.jsx` | ready | GlobalTheme, Theme, ThemeContext, usePrefersDarkScheme, useTheme |
 | `Tile.jsx` | ready | ClickableTile, ExpandableTile, SelectableTile, Tile, TileAboveTheFoldContent, TileBelowTheFoldContent |
 | `TileGroup.jsx` | ready | TileGroup |
