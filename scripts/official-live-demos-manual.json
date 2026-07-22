@@ -1376,5 +1376,33 @@
         "vue": null
       }
     ]
+  },
+  "Pagination": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-pagination backward-text=\"Previous\" backward-text-tooltip-position=\"top\" forward-text=\"Next\" forward-text-tooltip-position=\"top\" items-per-page-text=\"Items per page:\" page=\"1\" page-size=\"10\" size=\"md\" total-items=\"103\">\n    <cds-select-item value=\"10\">10</cds-select-item>\n    <cds-select-item value=\"20\">20</cds-select-item>\n    <cds-select-item value=\"30\">30</cds-select-item>\n    <cds-select-item value=\"40\">40</cds-select-item>\n    <cds-select-item value=\"50\">50</cds-select-item>\n  </cds-pagination>",
+        "react": "<Pagination\n  backwardText=\"Previous\"\n  backwardTextTooltipPosition=\"top\"\n  forwardText=\"Next\"\n  forwardTextTooltipPosition=\"top\"\n  itemsPerPageText=\"Items per page:\"\n  page={1}\n  pageNumberText=\"Page Number\"\n  pageSize={10}\n  pageSizes={[\n      10,\n      20,\n      30,\n      40,\n      50\n    ]}\n  size=\"md\"\n  totalItems={103}\n/>",
+        "vue": "<cv-pagination\n  @change=\"onChange\"\n  :backward-text=\"backwardText\"\n  :forward-text=\"forwardText\"\n  :page-number-label=\"pageNumberLabel\"\n  :page-sizes-label=\"pageSizesLabel\"\n  :number-of-items=\"numberOfItems\"\n  :actual-items-on-page=\"actualItemsOnPage\"\n  :page=\"page\"\n  :page-sizes=\"pageSizes\"\n  :backwards-button-disabled=\"backwardsButtonDisabled\"\n  :forwards-button-disabled=\"forwardsButtonDisabled\">\n  <template v-slot:range-text=\"{scope}\">\n    <span v-if=\"locale === 'en'\">From {{scope.start}} to {{scope.end}} out of {{scope.items}}</span>\n    <span v-else>Del {{scope.start}} al {{scope.end}} de {{scope.items}}</span>\n  </template>\n  <template v-slot:of-n-pages=\"{scope}\">\n    <span v-if=\"locale === 'en'\"> out of {{scope.pages}} pages</span>\n    <span v-else> von {{scope.pages}} Seiten</span>\n  </template>\n  </cv-pagination>"
+      },
+      {
+        "title": "Multiple pagination components",
+        "html": "<cds-pagination backward-text=\"Previous\" backward-text-tooltip-position=\"top\" forward-text=\"Next\" forward-text-tooltip-position=\"top\" items-per-page-text=\"Items per page:\" page=\"1\" page-size=\"10\" size=\"md\" total-items=\"103\">\n    <cds-select-item value=\"10\">10</cds-select-item>\n    <cds-select-item value=\"20\">20</cds-select-item>\n    <cds-select-item value=\"30\">30</cds-select-item>\n    <cds-select-item value=\"40\">40</cds-select-item>\n    <cds-select-item value=\"50\">50</cds-select-item>\n  </cds-pagination>\n<cds-pagination backward-text=\"Previous\" backward-text-tooltip-position=\"top\" forward-text=\"Next\" forward-text-tooltip-position=\"top\" items-per-page-text=\"Items per page:\" page=\"1\" page-size=\"10\" size=\"md\" total-items=\"103\">\n    <cds-select-item value=\"10\">10</cds-select-item>\n    <cds-select-item value=\"20\">20</cds-select-item>\n    <cds-select-item value=\"30\">30</cds-select-item>\n    <cds-select-item value=\"40\">40</cds-select-item>\n    <cds-select-item value=\"50\">50</cds-select-item>\n  </cds-pagination>",
+        "react": "<div>\n  <Pagination\n    backwardText=\"Previous\"\n    backwardTextTooltipPosition=\"top\"\n    forwardText=\"Next\"\n    forwardTextTooltipPosition=\"top\"\n    itemsPerPageText=\"Items per page:\"\n    onChange={function Kbe(){}}\n    page={1}\n    pageSize={10}\n    pageSizes={[\n      10,\n      20,\n      30,\n      40,\n      50\n    ]}\n    size=\"md\"\n    totalItems={103}\n  />\n  <Pagination\n    backwardText=\"Previous\"\n    backwardTextTooltipPosition=\"top\"\n    forwardText=\"Next\"\n    forwardTextTooltipPosition=\"top\"\n    itemsPerPageText=\"Items per page:\"\n    onChange={function Kbe(){}}\n    page={1}\n    pageSize={10}\n    pageSizes={[\n      10,\n      20,\n      30,\n      40,\n      50\n    ]}\n    size=\"md\"\n    totalItems={103}\n  />\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Pagination unknown pages",
+        "html": "<cds-pagination backward-text=\"Previous\" backward-text-tooltip-position=\"top\" forward-text=\"Next\" forward-text-tooltip-position=\"top\" items-per-page-text=\"Items per page:\" page=\"1\" page-size=\"10\" size=\"md\" pages-unknown=\"\">\n    <cds-select-item value=\"10\">10</cds-select-item>\n    <cds-select-item value=\"20\">20</cds-select-item>\n    <cds-select-item value=\"30\">30</cds-select-item>\n    <cds-select-item value=\"40\">40</cds-select-item>\n    <cds-select-item value=\"50\">50</cds-select-item>\n  </cds-pagination>",
+        "react": "<div>\n  <Pagination\n    backwardText=\"Previous\"\n    backwardTextTooltipPosition=\"top\"\n    forwardText=\"Next\"\n    forwardTextTooltipPosition=\"top\"\n    itemsPerPageText=\"Items per page:\"\n    onChange={function Kbe(){}}\n    page={1}\n    pageSize={10}\n    pageSizes={[\n      10,\n      20,\n      30,\n      40,\n      50\n    ]}\n    pagesUnknown\n    size=\"md\"\n  />\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Pagination with custom page sizes label",
+        "html": "<cds-pagination backward-text=\"Previous\" backward-text-tooltip-position=\"top\" forward-text=\"Next\" forward-text-tooltip-position=\"top\" items-per-page-text=\"Items per page:\" page=\"1\" page-size=\"10\" size=\"md\" total-items=\"103\">\n    <cds-select-item value=\"10\">Ten</cds-select-item>\n    <cds-select-item value=\"20\">Twenty</cds-select-item>\n    <cds-select-item value=\"30\">Thirty</cds-select-item>\n    <cds-select-item value=\"40\">Forty</cds-select-item>\n    <cds-select-item value=\"50\">Fifty</cds-select-item>\n  </cds-pagination>",
+        "react": "<div>\n  <Pagination\n    backwardText=\"Previous\"\n    backwardTextTooltipPosition=\"top\"\n    forwardText=\"Next\"\n    forwardTextTooltipPosition=\"top\"\n    itemsPerPageText=\"Items per page:\"\n    onChange={function Kbe(){}}\n    page={1}\n    pageSize={10}\n    pageSizes={[\n      { text: 'Ten', value: 10 },\n      { text: 'Twenty', value: 20 },\n      { text: 'Thirty', value: 30 },\n      { text: 'Forty', value: 40 },\n      { text: 'Fifty', value: 50 }\n    ]}\n    size=\"md\"\n    totalItems={103}\n  />\n</div>",
+        "vue": null
+      }
+    ]
   }
 }
