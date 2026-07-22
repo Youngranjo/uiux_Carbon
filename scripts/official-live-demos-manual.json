@@ -1329,7 +1329,7 @@
         "title": "Skeleton",
         "html": "<cds-number-input-skeleton size=\"md\">\n</cds-number-input-skeleton>",
         "react": "<NumberInputSkeleton size=\"md\" />",
-        "vue": null
+        "vue": "<cv-number-input-skeleton></cv-number-input-skeleton>"
       },
       {
         "title": "AI Label",
