@@ -479,6 +479,25 @@
         btn.addEventListener('click', function () { modal.open = true; });
       });
     });
+    // cds-popover의 트리거 버튼은 순수 <button>이라 자체적으로 토글 동작이 없다(공식 데모의
+    // onClick={...}은 실제 앱이 open state를 뒤집어주는 부분 — 정적 예제엔 없음) — 클릭할 때마다
+    // open을 뒤집어서 진짜로 열리고 닫히게 한다.
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-popover'), function (popover) {
+      var trigger = Array.prototype.find.call(popover.children, function (c) { return c.tagName !== 'CDS-POPOVER-CONTENT'; });
+      if (!trigger) return;
+      trigger.addEventListener('click', function () { popover.open = !popover.open; });
+    });
+    // cds-progress-bar는 value가 바뀔 때만 transform transition으로 애니메이션되는데, 정적
+    // 예제는 처음부터 최종값으로 박혀 있어서 게이지가 전혀 움직이지 않는 것처럼 보인다 —
+    // 0에서 시작해 한 프레임 뒤 원래 값으로 되돌려 실제로 채워지는 모습을 보여준다.
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-progress-bar[value]'), function (bar) {
+      var target = bar.getAttribute('value');
+      if (!target || target === '0') return;
+      bar.setAttribute('value', '0');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { bar.setAttribute('value', target); });
+      });
+    });
 
     if (focusTag) {
       var target = document.getElementById('ex-' + encodeURIComponent(focusTag));
