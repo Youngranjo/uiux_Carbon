@@ -1457,7 +1457,7 @@
     "examples": [
       {
         "title": "기본",
-        "html": "<cds-progress-bar max=\"100\" label=\"Progress bar label\" helper-text=\"Optional helper text\" size=\"big\" status=\"active\" type=\"default\" value=\"75\">\n</cds-progress-bar>",
+        "html": "<cds-progress-bar max=\"100\" label=\"Progress bar label\" helper-text=\"Optional helper text\" size=\"big\" status=\"active\" type=\"default\">\n</cds-progress-bar>",
         "react": "<ProgressBar\n  helperText=\"Optional helper text\"\n  label=\"Progress bar label\"\n/>",
         "vue": null
       }

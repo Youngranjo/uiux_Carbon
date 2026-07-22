@@ -487,18 +487,6 @@
       if (!trigger) return;
       trigger.addEventListener('click', function () { popover.open = !popover.open; });
     });
-    // cds-progress-bar는 value가 바뀔 때만 transform transition으로 애니메이션되는데, 정적
-    // 예제는 처음부터 최종값으로 박혀 있어서 게이지가 전혀 움직이지 않는 것처럼 보인다 —
-    // 0에서 시작해 한 프레임 뒤 원래 값으로 되돌려 실제로 채워지는 모습을 보여준다.
-    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview cds-progress-bar[value]'), function (bar) {
-      var target = bar.getAttribute('value');
-      if (!target || target === '0') return;
-      bar.setAttribute('value', '0');
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { bar.setAttribute('value', target); });
-      });
-    });
-
     if (focusTag) {
       var target = document.getElementById('ex-' + encodeURIComponent(focusTag));
       if (target) target.scrollIntoView({ block: 'start' });
