@@ -1518,5 +1518,71 @@
         "vue": null
       }
     ]
+  },
+  "Search": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<div style=\"width: 800px;\">\n  <cds-search autocomplete=\"off\" close-button-label-text=\"Clear search input\" label-text=\"Search\" placeholder=\"Placeholder text\" size=\"md\" type=\"text\" role=\"searchbox\" value=\"\"></cds-search>\n</div>",
+        "react": "<div\n  style={{\n    width: 800\n  }}\n>\n  <Search\n    closeButtonLabelText=\"Clear search input\"\n    id=\"search-default-1\"\n    labelText=\"Site search\"\n    placeholder=\"Placeholder text\"\n    size=\"md\"\n    type=\"search\"\n  />\n</div>",
+        "vue": "<cv-search\n  :light=\"light\"\n  :label=\"label\"\n  :placeholder=\"placeholder\"\n  :disabled=\"disabled\"\n  :size=\"size\"\n  :expandable=\"expandable\"\n  :modelValue=\"modelValue\"\n  :form-item=\"formItem\"\n  :aria-label=\"ariaLabel\"\n  :clear-aria-label=\"clearAriaLabel\"\n  @input=\"onInput\"\n  >\n</cv-search>"
+      }
+    ]
+  },
+  "ExpandableSearch": {
+    "examples": [
+      {
+        "title": "Expandable",
+        "html": "<div style=\"width: 800px;\">\n  <cds-search expandable=\"\" autocomplete=\"off\" close-button-label-text=\"Clear search input\" label-text=\"Search\" placeholder=\"Placeholder text\" size=\"md\" type=\"text\" role=\"searchbox\" value=\"\"></cds-search>\n</div>",
+        "react": "<div\n  style={{\n    marginTop: '25px',\n    width: 800\n  }}\n>\n  <ExpandableSearch\n    closeButtonLabelText=\"Clear search input\"\n    id=\"search-expandable-1\"\n    labelText=\"Site search\"\n    placeholder=\"Placeholder text\"\n    size=\"md\"\n    type=\"search\"\n  />\n</div>",
+        "vue": null
+      }
+    ]
+  },
+  "Select": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-form-item>\n  <cds-select id=\"select\" helper-text=\"Optional helper text\" invalid-text=\"Error message\" label-text=\"Select an option\" placeholder=\"\" size=\"md\" warn-text=\"Warning message\" value=\"\">\n    <cds-select-item value=\"\"></cds-select-item>\n    <cds-select-item value=\"all\">An example option that is really long to show what should be done to\n      handle long text</cds-select-item>\n    <cds-select-item value=\"cloudFoundry\">Option 2</cds-select-item>\n    <cds-select-item value=\"staging\">Option 3</cds-select-item>\n    <cds-select-item value=\"dea\">Option 4</cds-select-item>\n  </cds-select>\n</cds-form-item>",
+        "react": "<div>\n  <Select\n    helperText=\"Optional helper text\"\n    id=\"select-1\"\n    labelText=\"Select an option\"\n    size=\"md\"\n  >\n    <SelectItem\n      text=\"\"\n      value=\"\"\n    />\n    <SelectItem\n      text=\"An example option that is really long to show what should be done to handle long text\"\n      value=\"An example option that is really long to show what should be done to handle long text\"\n    />\n    <SelectItem\n      text=\"Option 2\"\n      value=\"option-2\"\n    />\n    <SelectItem\n      text=\"Option 3\"\n      value=\"option-3\"\n    />\n    <SelectItem\n      text=\"Option 4\"\n      value=\"option-4\"\n    />\n  </Select>\n</div>",
+        "vue": "<div>\n  <cv-select\n      @change=\"onChange\"\n      :label=\"label\"\n      :size=\"size\"\n      :inline=\"inline\"\n      :invalidMessage=\"invalidMessage\"\n      :warningMessage=\"warningMessage\"\n      :helperText=\"helperText\"\n      :hideLabel=\"hideLabel\"\n      :light=\"light\"\n      :disabled=\"disabled\"\n      >\n      <cv-select-option disabled selected hidden value=\"placeholder-item\">Choose an option</cv-select-option>\n      <cv-select-option value=\"so-long\">A much longer cv-select-option that is worth having around to check how text flows</cv-select-option>\n      <cv-select-optgroup label=\"Category 1\">\n        <cv-select-option value=\"cv-select-option1\">cv-select-option 1</cv-select-option>\n        <cv-select-option value=\"cv-select-option2\">cv-select-option 2</cv-select-option>\n      </cv-select-optgroup>\n      <cv-select-optgroup label=\"Category 2\">\n        <cv-select-option value=\"cv-select-option3\">cv-select-option 3</cv-select-option>\n        <cv-select-option value=\"cv-select-option4\">cv-select-option 4</cv-select-option>\n      </cv-select-optgroup>\n  </cv-select>\n</div>"
+      },
+      {
+        "title": "Empty default option",
+        "html": null,
+        "react": "<Select\n  id={`select-1`}\n  labelText=\"Select an option\"\n  helperText=\"Optional helper text\">\n  <SelectItem value=\"\" text=\"\" />\n  <SelectItem value=\"option-1\" text=\"Option 1\" />\n  <SelectItem value=\"option-2\" text=\"Option 2\" />\n</Select>",
+        "vue": null
+      },
+      {
+        "title": "First option default",
+        "html": null,
+        "react": "<Select\n  id={`select-2`}\n  labelText=\"Select an option\"\n  helperText=\"Optional helper text\">\n  <SelectItem value=\"option-1\" text=\"Option 1\" />\n  <SelectItem value=\"option-2\" text=\"Option 2\" />\n  <SelectItem value=\"option-3\" text=\"Option 3\" />\n</Select>",
+        "vue": null
+      },
+      {
+        "title": "Custom option default",
+        "html": null,
+        "react": "<Select\n  id={`select-3`}\n  labelText=\"Select an option\"\n  helperText=\"Optional helper text\"\n  defaultValue=\"option-3\">\n  <SelectItem value=\"option-1\" text=\"Option 1\" />\n  <SelectItem value=\"option-2\" text=\"Option 2\" />\n  <SelectItem value=\"option-3\" text=\"Option 3\" />\n</Select>",
+        "vue": null
+      },
+      {
+        "title": "Inline",
+        "html": "<cds-form-item>\n  <cds-select id=\"select\" inline=\"\" helper-text=\"Optional helper text\" invalid-text=\"Error message\" label-text=\"Select an option\" placeholder=\"\" size=\"md\" warn-text=\"Warning message\" value=\"\">\n    <cds-select-item value=\"\"></cds-select-item>\n    <cds-select-item value=\"all\">An example option that is really long to show what should be done to\n      handle long text</cds-select-item>\n    <cds-select-item value=\"cloudFoundry\">Option 2</cds-select-item>\n    <cds-select-item value=\"staging\">Option 3</cds-select-item>\n    <cds-select-item value=\"dea\">Option 4</cds-select-item>\n  </cds-select>\n</cds-form-item>",
+        "react": "<div>\n  <Select\n    helperText=\"Optional helper text\"\n    id=\"select-1\"\n    inline\n    labelText=\"Select an option\"\n    size=\"md\"\n  >\n    <SelectItem\n      text=\"\"\n      value=\"\"\n    />\n    <SelectItem\n      text=\"Option 1\"\n      value=\"option-1\"\n    />\n    <SelectItem\n      text=\"Option 2\"\n      value=\"option-2\"\n    />\n    <SelectItem\n      text=\"Option 3\"\n      value=\"option-3\"\n    />\n    <SelectItem\n      text=\"Option 4\"\n      value=\"option-4\"\n    />\n  </Select>\n</div>",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<cds-select-skeleton></cds-select-skeleton>",
+        "react": "() => {\n  return <SelectSkeleton />;\n}",
+        "vue": null
+      },
+      {
+        "title": "AI Label",
+        "html": "<div style=\"width: 400px\">\n  <cds-select id=\"select\" helper-text=\"Optional helper text\" invalid-text=\"Error message\" label-text=\"Select an option\" placeholder=\"\" size=\"md\" warn-text=\"Warning message\" value=\"\">\n    <cds-ai-label alignment=\"bottom-left\">\n      <div slot=\"body-text\">\n        <p class=\"secondary\">AI Explained</p>\n        <h2 class=\"ai-label-heading\">84%</h2>\n        <p class=\"secondary bold\">Confidence score</p>\n        <p class=\"secondary\">\n          Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do\n          eiusmod tempor incididunt ut fsil labore et dolore magna aliqua.\n        </p>\n        <hr>\n        <p class=\"secondary\">Model type</p>\n        <p class=\"bold\">Foundation model</p>\n      </div>\n\n      <cds-icon-button kind=\"ghost\" slot=\"actions\" size=\"lg\">\n        <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3\tc3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5\tC13.4,10.5,10.6,12.5,8,12.5z\"></path><path d=\"M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z\"></path></svg>\n        <span slot=\"tooltip-content\"> View </span>\n      </cds-icon-button>\n      <cds-icon-button kind=\"ghost\" slot=\"actions\" size=\"lg\">\n        <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M28,8H20.8284L17.4143,4.5859A2,2,0,0,0,16,4H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10A2,2,0,0,0,28,8ZM8,26V14h8v6.17l-2.59-2.58L12,19l5,5,5-5-1.41-1.41L18,20.17V14a2.0025,2.0025,0,0,0-2-2H8a2.0025,2.0025,0,0,0-2,2V26H4V6H16l4,4h8v2H22v2h6V26Z\"></path></svg>\n        <span slot=\"tooltip-content\"> Open folder</span>\n      </cds-icon-button>\n      <cds-icon-button kind=\"ghost\" slot=\"actions\" size=\"lg\">\n        <svg focusable=\"false\" preserveAspectRatio=\"xMidYMid meet\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" slot=\"icon\" width=\"16\" height=\"16\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M26,28H6a2.0021,2.0021,0,0,1-2-2V11A2.0021,2.0021,0,0,1,6,9h5.6665a2.0119,2.0119,0,0,1,1.2007.4L16.3335,12H26a2.0021,2.0021,0,0,1,2,2V26A2.0021,2.0021,0,0,1,26,28ZM11.6665,11H5.9985L6,26H26V14H15.6665Z\"></path><path d=\"M28,9H17.6665l-4-3H6V4h7.6665a2.0119,2.0119,0,0,1,1.2007.4L18.3335,7H28Z\"></path></svg>\n        <span slot=\"tooltip-content\"> Folders </span>\n      </cds-icon-button>\n      <cds-ai-label-action-button>View details</cds-ai-label-action-button>\n    </cds-ai-label>\n    <cds-select-item value=\"\"></cds-select-item>\n    <cds-select-item value=\"all\">An example option that is really long to show what should be done to\n      handle long text</cds-select-item>\n    <cds-select-item value=\"cloudFoundry\">Option 2</cds-select-item>\n    <cds-select-item value=\"staging\">Option 3</cds-select-item>\n    <cds-select-item value=\"dea\">Option 4</cds-select-item>\n  </cds-select>\n</div>",
+        "react": "<div>\n  <Select\n    decorator={<AILabel className=\"ai-label-container\"><AILabelContent><div><p className=\"secondary\">AI Explained</p><h2 className=\"ai-label-heading\">84%</h2><p className=\"secondary bold\">Confidence score</p><p className=\"secondary\">Lorem ipsum dolor sit amet, di os consectetur adipiscing elit, sed do eiusmod tempor incididunt ut fsil labore et dolore magna aliqua.</p><hr /><p className=\"secondary\">Model type</p><p className=\"bold\">Foundation model</p></div><AILabelActions><IconButton kind=\"ghost\" label=\"View\"><React.ForwardRef /></IconButton><IconButton kind=\"ghost\" label=\"Open Folder\"><React.ForwardRef /></IconButton><IconButton kind=\"ghost\" label=\"Folders\"><React.ForwardRef /></IconButton><Button>View details</Button></AILabelActions></AILabelContent></AILabel>}\n    helperText=\"Optional helper text\"\n    id=\"select-1\"\n    labelText=\"Select an option\"\n    size=\"md\"\n  >\n    <SelectItem\n      text=\"\"\n      value=\"\"\n    />\n    <SelectItem\n      text=\"An example option that is really long to show what should be done to handle long text\"\n      value=\"An example option that is really long to show what should be done to handle long text\"\n    />\n    <SelectItem\n      text=\"Option 2\"\n      value=\"option-2\"\n    />\n    <SelectItem\n      text=\"Option 3\"\n      value=\"option-3\"\n    />\n    <SelectItem\n      text=\"Option 4\"\n      value=\"option-4\"\n    />\n  </Select>\n</div>",
+        "vue": null
+      }
+    ]
   }
 }
