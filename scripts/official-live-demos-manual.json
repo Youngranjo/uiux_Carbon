@@ -1404,5 +1404,15 @@
         "vue": null
       }
     ]
+  },
+  "PaginationNav": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-pagination-nav items-shown=\"10\" page=\"0\" size=\"lg\" tooltip-alignment=\"center\" tooltip-position=\"bottom\" total-items=\"25\">\n</cds-pagination-nav>",
+        "react": "<div\n  style={{\n    width: '800px'\n  }}\n>\n  <PaginationNav\n    itemsShown={10}\n    page={0}\n    size=\"lg\"\n    totalItems={25}\n  />\n</div>",
+        "vue": null
+      }
+    ]
   }
 }
