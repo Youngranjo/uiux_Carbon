@@ -1338,5 +1338,27 @@
         "vue": null
       }
     ]
+  },
+  "OrderedList": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-ordered-list>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n</cds-ordered-list>",
+        "react": "<OrderedList\n>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n  <ListItem>\n    Ordered List level 1\n  </ListItem>\n</OrderedList>",
+        "vue": null
+      },
+      {
+        "title": "Native List Styles",
+        "html": "<cds-ordered-list native=\"\">\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>\n    Ordered List level 1\n    <cds-ordered-list native=\"\">\n      <cds-list-item>Ordered List level 2</cds-list-item>\n      <cds-list-item>Ordered List level 2</cds-list-item>\n      <cds-list-item>Ordered List level 2</cds-list-item>\n      <cds-list-item>Ordered List level 2</cds-list-item>\n    </cds-ordered-list>\n  </cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n</cds-ordered-list>",
+        "react": "() => {\n  return <OrderedList native>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>\n        Ordered List level 1\n        <OrderedList nested>\n          <ListItem>Ordered List level 2</ListItem>\n          <ListItem>Ordered List level 2</ListItem>\n          <ListItem>Ordered List level 2</ListItem>\n          <ListItem>Ordered List level 2</ListItem>\n        </OrderedList>\n      </ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n    </OrderedList>;\n}",
+        "vue": null
+      },
+      {
+        "title": "Nested",
+        "html": "<cds-ordered-list>\n  <cds-list-item>\n    Ordered List level 1\n    <cds-ordered-list>\n      <cds-list-item>Ordered List level 2</cds-list-item>\n      <cds-list-item>\n        Ordered List level 2\n        <cds-ordered-list>\n          <cds-list-item>Ordered List level 3</cds-list-item>\n          <cds-list-item>Ordered List level 3</cds-list-item>\n        </cds-ordered-list>\n      </cds-list-item>\n    </cds-ordered-list>\n  </cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n  <cds-list-item>Ordered List level 1</cds-list-item>\n</cds-ordered-list>",
+        "react": "() => {\n  return <OrderedList>\n      <ListItem>\n        Ordered List level 1\n        <OrderedList nested>\n          <ListItem>Ordered List level 2</ListItem>\n          <ListItem>\n            Ordered List level 2\n            <OrderedList nested>\n              <ListItem>Ordered List level 3</ListItem>\n              <ListItem>Ordered List level 3</ListItem>\n            </OrderedList>\n          </ListItem>\n        </OrderedList>\n      </ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n      <ListItem>Ordered List level 1</ListItem>\n    </OrderedList>;\n}",
+        "vue": null
+      }
+    ]
   }
 }
