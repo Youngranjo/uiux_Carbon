@@ -487,6 +487,21 @@
       if (!trigger) return;
       trigger.addEventListener('click', function () { popover.open = !popover.open; });
     });
+    // Controlled Slider의 "randomize value" 버튼도 공식 데모에선 React state가 처리하지만
+    // 정적 예제엔 그 로직이 없다 — 클릭 시 슬라이더 value와 옆의 숫자 표시를 함께 갱신한다.
+    Array.prototype.forEach.call($main.querySelectorAll('.sg-preview'), function (preview) {
+      var btn = Array.prototype.find.call(preview.querySelectorAll('button'), function (b) {
+        return b.textContent.trim() === 'randomize value';
+      });
+      var slider = preview.querySelector('cds-slider');
+      if (!btn || !slider) return;
+      var heading = preview.querySelector('.slider-headers');
+      btn.addEventListener('click', function () {
+        var next = Math.round(Math.random() * 100);
+        slider.setAttribute('value', next);
+        if (heading) heading.textContent = next;
+      });
+    });
     if (focusTag) {
       var target = document.getElementById('ex-' + encodeURIComponent(focusTag));
       if (target) target.scrollIntoView({ block: 'start' });

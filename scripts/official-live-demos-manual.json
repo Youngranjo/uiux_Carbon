@@ -1584,5 +1584,57 @@
         "vue": null
       }
     ]
+  },
+  "Slider": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-form-item>\n  <cds-slider invalid-text=\"Invalid message goes here\" label-text=\"Slider (must be an increment of 5)\" max=\"100\" min=\"0\" step=\"5\" step-multiplier=\"5\" warn-text=\"Warning message goes here\" value=\"50\">\n    <cds-slider-input aria-label=\"Lower bound\"></cds-slider-input>\n  </cds-slider>\n</cds-form-item>",
+        "react": "<Slider\n  ariaLabelInput=\"Lower bound\"\n  invalidText=\"Invalid message goes here\"\n  labelText=\"Slider (must be an increment of 5)\"\n  max={100}\n  min={0}\n  step={5}\n  stepMultiplier={5}\n  unstable_ariaLabelInputUpper=\"Upper bound\"\n  value={50}\n  warnText=\"Warning message goes here\"\n/>",
+        "vue": "<cv-slider  @change=\"onChange\"/>"
+      },
+      {
+        "title": "Controlled Slider",
+        "html": "<button type=\"button\">randomize value</button>\n<cds-form-item>\n  <cds-slider controlled=\"\" label-text=\"Slider label\" max=\"100\" min=\"0\" step=\"1\" value=\"87\">\n    <cds-slider-input aria-label=\"Slider value\" type=\"number\"></cds-slider-input>\n  </cds-slider>\n</cds-form-item>\n<h1 class=\"slider-headers\">87</h1>",
+        "react": "() => {\n  const [val, setVal] = React.useState(87);\n  return <>\n      <button type=\"button\" onClick={() => setVal(Math.round(Math.random() * 100))}>\n        randomize value\n      </button>\n      <Slider labelText=\"Slider label\" max={100} min={0} value={val} onChange={({\n      value\n    }) => setVal(value)} />\n      <h1>{val}</h1>\n    </>;\n}",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<cds-form-item>\n  <cds-slider-skeleton>\n    <cds-slider> </cds-slider>\n  </cds-slider-skeleton>\n</cds-form-item>",
+        "react": "() => {\n  return <SliderSkeleton />;\n}",
+        "vue": null
+      },
+      {
+        "title": "Slider With Custom Value",
+        "html": null,
+        "react": "() => {\n  return <Slider labelText=\"Slider label with low/medium/high\" value={50} min={0} max={100} stepMultiplier={50} step={1} noValidate hideTextInput formatLabel={val => {\n    if (val < 25) {\n      return 'Low';\n    } else if (val > 75) {\n      return 'High';\n    }\n    return 'Medium';\n  }} />;\n}",
+        "vue": null
+      },
+      {
+        "title": "Slider With Hidden Inputs",
+        "html": null,
+        "react": "() => {\n  return <Slider labelText=\"Slider label\" value={50} min={0} max={100} step={1} stepMultiplier={10} noValidate invalidText=\"Invalid message goes here\" hideTextInput={true} />;\n}",
+        "vue": null
+      },
+      {
+        "title": "Two Handle Skeleton",
+        "html": "<cds-form-item>\n  <cds-slider-skeleton twohandles=\"\"> </cds-slider-skeleton>\n</cds-form-item>",
+        "react": "() => {\n  return <SliderSkeleton twoHandles={true} />;\n}",
+        "vue": null
+      },
+      {
+        "title": "Two Handle Slider",
+        "html": "<cds-form-item>\n  <cds-slider label-text=\"Slider label\" max=\"100\" min=\"0\" step=\"1\" step-multiplier=\"1\" value=\"10\" value-upper=\"90\" invalid-text=\"Invalid message goes here\" warn-text=\"Warning message goes here\">\n    <cds-slider-input id=\"lower\" slot=\"lower-input\" aria-label=\"Lower bound\"></cds-slider-input>\n    <cds-slider-input id=\"upper\" aria-label=\"Upper bound\" name=\"\"></cds-slider-input>\n  </cds-slider>\n</cds-form-item>",
+        "react": "() => {\n  return <Slider ariaLabelInput=\"Lower bound\" unstable_ariaLabelInputUpper=\"Upper bound\" labelText=\"Slider label\" value={10} unstable_valueUpper={90} min={0} max={100} step={1} stepMultiplier={10} invalidText=\"Invalid message goes here\" />;\n}",
+        "vue": null
+      },
+      {
+        "title": "Two Handle Slider With Hidden Inputs",
+        "html": "<cds-form-item>\n  <cds-slider hide-text-input=\"\" label-text=\"Slider label\" max=\"100\" min=\"0\" step=\"1\" step-multiplier=\"1\" value=\"10\" value-upper=\"90\" invalid-text=\"Invalid message goes here\" warn-text=\"Warning message goes here\">\n    <cds-slider-input id=\"lower\" slot=\"lower-input\" aria-label=\"Lower bound\"></cds-slider-input>\n    <cds-slider-input id=\"upper\" aria-label=\"Upper bound\" name=\"\"></cds-slider-input>\n  </cds-slider>\n</cds-form-item>",
+        "react": "() => {\n  return <Slider ariaLabelInput=\"Lower bound\" unstable_ariaLabelInputUpper=\"Upper bound\" labelText=\"Slider label\" value={10} unstable_valueUpper={90} min={0} max={100} step={1} stepMultiplier={10} invalidText=\"Invalid message goes here\" hideTextInput={true} />;\n}",
+        "vue": null
+      }
+    ]
   }
 }
