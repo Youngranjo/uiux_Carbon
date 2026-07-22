@@ -1462,5 +1462,33 @@
         "vue": null
       }
     ]
+  },
+  "ProgressIndicator": {
+    "examples": [
+      {
+        "title": "기본",
+        "html": "<cds-progress-indicator current-index=\"0\">\n  <cds-progress-step description=\"Step 1: Getting started with Carbon Design System\" label=\"First step\" complete=\"\" secondary-label=\"Optional label\"></cds-progress-step>\n  <cds-progress-step description=\"Step 2: Getting started with Carbon Design System\" label=\"Second step with tooltip\" current=\"\"></cds-progress-step>\n  <cds-progress-step description=\"Step 3: Getting started with Carbon Design System\" label=\"Third step with tooltip\"></cds-progress-step>\n  <cds-progress-step description=\"Step 4: Getting started with Carbon Design System\" label=\"Fourth step\" secondary-label=\"Example invalid step\" invalid=\"\"></cds-progress-step>\n  <cds-progress-step disabled=\"\" description=\"Step 5: Getting started with Carbon Design System\" label=\"Fifth step\"></cds-progress-step>\n</cds-progress-indicator>",
+        "react": "<ProgressIndicator\n  currentIndex={0}\n>\n  <ProgressStep\n    complete\n    description=\"Step 1: Getting started with Carbon Design System\"\n    label=\"First step\"\n    secondaryLabel=\"Optional label\"\n  />\n  <ProgressStep\n    current\n    description=\"Step 2: Getting started with Carbon Design System\"\n    label=\"Second step with tooltip\"\n  />\n  <ProgressStep\n    description=\"Step 3: Getting started with Carbon Design System\"\n    label=\"Third step with tooltip\"\n  />\n  <ProgressStep\n    description=\"Step 4: Getting started with Carbon Design System\"\n    invalid\n    label=\"Fourth step\"\n    secondaryLabel=\"Example invalid step\"\n  />\n  <ProgressStep\n    description=\"Step 5: Getting started with Carbon Design System\"\n    disabled\n    label=\"Fifth step\"\n  />\n</ProgressIndicator>",
+        "vue": "<cv-progress\n    :initial-step=\"initialStep\"\n    :steps=\"steps\"\n    :vertical=\"vertical\"\n    :space-equally=\"spaceEqually\"\n    @step-clicked=\"onStepClicked\">\n  </cv-progress>"
+      },
+      {
+        "title": "Interactive",
+        "html": "<cds-progress-indicator current-index=\"1\">\n  <cds-progress-step label=\"Click me\" description=\"Step 1: Register an onChange event\" complete=\"\"></cds-progress-step>\n  <cds-progress-step label=\"Really long label\" description=\"The progress indicator will listen for clicks on the steps\" current=\"\"></cds-progress-step>\n  <cds-progress-step label=\"Third step\" description=\"The progress indicator will listen for clicks on the steps\"></cds-progress-step>\n</cds-progress-indicator>",
+        "react": "() => {\n  return <ProgressIndicator currentIndex={1} onChange={() => alert('Clicked')}>\n      <ProgressStep label=\"Click me\" description=\"Step 1: Register an onChange event\" />\n      <ProgressStep label=\"Really long label\" description=\"The progress indicator will listen for clicks on the steps\" />\n      <ProgressStep label=\"Third step\" description=\"The progress indicator will listen for clicks on the steps\" />\n    </ProgressIndicator>;\n}",
+        "vue": null
+      },
+      {
+        "title": "Skeleton",
+        "html": "<cds-progress-indicator-skeleton>\n  <cds-progress-step-skeleton></cds-progress-step-skeleton>\n  <cds-progress-step-skeleton></cds-progress-step-skeleton>\n  <cds-progress-step-skeleton></cds-progress-step-skeleton>\n  <cds-progress-step-skeleton></cds-progress-step-skeleton>\n</cds-progress-indicator-skeleton>",
+        "react": "() => {\n  return <ProgressIndicatorSkeleton />;\n}",
+        "vue": "<cv-progress-skeleton :vertical=\"vertical\" />"
+      },
+      {
+        "title": "Slotted",
+        "html": null,
+        "react": null,
+        "vue": "<cv-progress\n    :initial-step=\"initialStep\"\n    :vertical=\"vertical\"\n    :spaceEqually=\"spaceEqually\"\n    >\n    <cv-progress-step\n      id=\"step-1\"\n      :label=\"step1\"\n      :complete=\"completeIds.includes('step-1')\"\n      :invalid=\"invalidIds.includes('step-1')\"\n      :disabled=\"disabledIds.includes('step-1')\"\n      additionalInfo=\"with Meg Murry\"\n      description=\"time icon description\"\n      @step-clicked=\"onStepClicked\"\n      >\n      <template v-slot:step-icon>\n        <time-icon :class=\"[{['bx--progress__warning']:invalidIds.includes('step-1')}]\"/>\n      </template>\n    </cv-progress-step>\n    <cv-progress-step\n      id=\"step-2\"\n      :label=\"step2\"\n      :complete=\"completeIds.includes('step-2')\"\n      :invalid=\"invalidIds.includes('step-2')\"\n      :disabled=\"disabledIds.includes('step-2')\"\n      additionalInfo=\"save Charles Wallace\"\n      @step-clicked=\"onStepClicked\"\n      >\n    </cv-progress-step>\n    <cv-progress-step\n      id=\"step-3\"\n      :label=\"step3\"\n      :complete=\"completeIds.includes('step-3')\"\n      :invalid=\"step3Invalid\"\n      :disabled=\"disabledIds.includes('step-3')\"\n      additionalInfo=\"save the world\"\n      @step-clicked=\"onStepClicked\"\n      >\n    </cv-progress-step>\n    <cv-progress-step\n      id=\"step-4\"\n      :label=\"step4\"\n      :complete=\"completeIds.includes('step-4')\"\n      :invalid=\"invalidIds.includes('step-4')\"\n      :disabled=\"step4Disable\"\n      additionalInfo=\"Twins Dennys and Sandy\"\n      @step-clicked=\"onStepClicked\"\n      >\n    </cv-progress-step>\n    <cv-progress-step\n      id=\"step-5\"\n      :label=\"step5\"\n      :complete=\"step5Complete\"\n      :invalid=\"invalidIds.includes('step-5')\"\n      :disabled=\"disabledIds.includes('step-5')\"\n      additionalInfo=\"with Polyhymnia O'Keefe\"\n      @step-clicked=\"onStepClicked\"\n      >\n    </cv-progress-step>\n  </cv-progress>\n  <div><button @click=onStep3Invalid>Toggle step 3 invalid</button></div>\n  <div><button @click=onStep4Disable>Toggle step 4 disabled</button></div>\n  <div><button @click=onStep5Complete>Toggle step 5 complete</button></div>"
+      }
+    ]
   }
 }
